@@ -1,0 +1,21 @@
+---
+note_name: Cabo Verde Open Data
+note_authors: poolborges
+---
+= Notes
+:page-layout: page
+:author: Paulo Borges
+:revnumber: v0.1
+:revdate: 2021-02-17 01:29:00 +0000
+:description: A growing collection of your cool notes.
+:url-asciidoctor: http://asciidoctor.org
+:page-liquid: true
+
+
+++++
+<ul>
+{% for note in site.notes %}
+    <li><a href="{{ note.url }}">{{ note.title }}</a></li>
+{% endfor %}
+</ul>
+++++

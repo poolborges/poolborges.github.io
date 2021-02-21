@@ -81,6 +81,7 @@ PLATFORMS
   universal-darwin-20
 
 DEPENDENCIES
+  asciidoctor
   asciidoctor-diagram (~> 2.1.0)
   coderay (~> 1.1.3)
   jekyll (~> 4.2.0)
