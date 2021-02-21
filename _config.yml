@@ -23,7 +23,7 @@ email: poolborges@hotmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   This site provide notes written by Paulo Borges (aka poolborges).
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://poolborges.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: poolborges
 github_username:  poolborges
 
