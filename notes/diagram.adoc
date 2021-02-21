@@ -1,0 +1,439 @@
+= Diagram
+:page-layout: page
+:author: Paulo Borges
+:revnumber: v0.1
+:revdate: 2021-01-30 
+:revremark: First draft
+:version-label:
+:generated: {localdate} {localtime}
+:icons: fonts
+:sectnums:                                                          
+:toc:                                                               
+:toclevels: 3                                                      
+:toc-title: Conteudo  
+
+NOTE: Edited: 2020-01-30 Other: {docdatetime}
+
+[[doc.summary]]
+== Summary
+
+Nesta nota irei apresentar PlantUML.
+
+== AsciiDoc 
+
+
+Asciidoc:: Linguagem de marcação (Markup Language) para escrever documentos
+
+* eBooks (ex: PDF, EPUB)
+* Documentação (ex: Reference, REST Api, Guides)
+* Apresentação (slideshow) gerado via (Reveal.js) 
+
+
+
+Runtimes
+
+
+* AsciiDoctor (Ruby) implementation de AsciiDoc
+* AsciiDoctorJ (Ruby to Java: Ruby port) 
+* AsciiDoctor.Js (Ruby to Javascript: OPAL port) 
+
+Editor 
+
+* AsciidocFX
+
+Quem usa AsciiDoc
+
+* Pivotal Documentação __Spring Framework__
+* Red Hat Documentação __Openshift__
+* Neo4J Documentação
+* O'Reilly projecto Atlas
+* Github github.com, Gitbook.com
+
+== Plantuml PUMA or TEOZ
+
+* https://plantuml.com/teoz
+
+== UML - Pacotes e Componentes
+
+
+.Diagrama de Classes
+[plantuml]
+----
+interface IService 
+
+interface ISystem {
+    URN id
+    String name
+}
+
+
+class System0 {
+    MimeType mime
+}
+
+ISystem <|-- System0
+----
+
+.Casos de utilização
+[plantuml]
+----
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Cliente
+actor clerk
+rectangle  {
+  Cliente -- (checkout)
+  (checkout) .> (payment) : include
+  (help) .> (checkout) : extends
+  (checkout) -- clerk
+}
+@enduml
+----
+
+
+.Diagrama de Componentes 1
+[plantuml]
+----
+@startuml
+
+' -----------------------------------------------------
+skinparam defaultTextAlignment center
+' -----------------------------------------------------
+left to right direction
+
+
+frame Microprocessor as Arch {
+
+frame "ISA" {
+    node "RISC" <<ISA>>
+    node "CISC" <<ISA>>
+}
+
+frame "Architecture" {
+    node "===OpenRISC\nOpen/RoyaltyFree" <<RISC>> 
+    node "===RISC-V\nOpen/RoyaltyFree" <<RISC>>
+    node "===SPARC\nOpen/RoyaltyFree" <<RISC>>
+    node "===Elbrus\nVLIW/2014" <<VLIW>>
+}
+
+frame "Architecture Other" {
+    
+    node "===ARM" <<RISC>> 
+    node "===x86" <<RISC>>
+    node "===A64" <<RISC>>
+    node "===Itanium" <<RISC>>
+}
+
+}
+
+@enduml
+----
+
+.Diagrama de Componentes 2
+[plantuml]
+----
+@startuml
+frame "Operative System" as pluto {
+
+top to bottom direction
+
+frame "Microsoft" {
+
+    node "===Windows Server" <<Windows>>
+    node "===Windows Mobile" <<Windows>>
+    node "===MSDOS" <<MSDOS>>>
+}
+
+frame "UNIX like" {
+    
+    node "===Ubuntu\n16.04" <<Linux>>
+    node "===GhostBSD\nfoo" <<FreeBSD>>
+    node "===OpenIndiana\nfoo" <<OpenSolaris>>
+}
+}
+
+pippo --[hidden]> pluto
+@enduml
+----
+
+
+[plantuml]
+----
+class BlockProcessor
+class DiagramBlock
+class DitaaBlock
+class PlantUmlBlock
+
+BlockProcessor <|-- DiagramBlock
+DiagramBlock <|-- DitaaBlock
+DiagramBlock <|-- PlantUmlBlock
+----
+
+
+.Example Consciousness.pu
+[plantuml]
+----
+@startuml
+hide empty members
+Causality -left- Self
+
+Self o--> "*" Action: owner  
+Self o--> "*" Action: heir
+Self o--> "*" Action: born
+Self o--> "*" Action: related
+Self o--> "*" Action: live dependent
+(Causality,Self) .. Consciousness
+@enduml
+----
+
+
+== Boundary Diagram 
+
+* ENG: Boundary Diagram
+
+.Example Diagrama de Fronteira
+[plantuml]
+----
+@startuml
+
+actor Analista
+
+Box System #lightblue
+
+boundary Foo2
+control Foo3
+entity Foo4
+database Foo5
+collections Foo6
+participant widget
+
+end Box
+
+Analista -> Foo2 : To boundary
+Analista -> Foo3 : To control
+Analista <-- Foo3 : To actor response
+Analista -> Foo4 : To entity
+Analista -> Foo5 : To database
+Analista -> Foo6 : To collections
+
+@enduml
+----
+
+.Diagram de Maquina de estados
+[plantuml]
+----
+@startuml
+
+title SGPF
+
+hide empty description
+skinparam shadowing false
+
+skinparam state<<history>> {
+    backgroundColor transparent
+    borderColor transparent
+    fontSize 20
+}
+
+
+state Arquivado {
+    
+    
+}
+
+state Rejeitado{
+
+}
+
+state Supenso{
+
+}
+
+
+state "Candidatura" as CDT {
+
+    CDT --> ACT : abrir
+    CDT --> Arquivado : arquivar
+    Arquivado --> CDT : reenquadrar
+}
+
+
+[*] --> CDT
+
+
+state "Activo" as ACT {
+
+    state "Aguarda Despacho Abertura" as ABT 
+    state "Aguarda Parecer Tecnico" as APT
+    state "Aguarda Despacho Financiamento" as ADF
+    state "Aguarda Despacho Reforço" as ADR
+    state "Ⓗ*" as H<<history>>
+
+    H --> Supenso : suspender
+    Supenso --> H : reativar
+    
+    [*] --> ABT
+    
+    ABT --> APT : aprovado
+    ABT --> Arquivado : rejeitado
+    
+    APT --> ADF : favoravel
+    APT --> Arquivado : desfavoravel
+    
+    ADF --> ST_FIN : aprovado
+    ADF --> Rejeitado : rejeitado
+    ST_FIN -L-> ADR : reforco
+    
+
+    state "Em Financiamento" as ST_FIN {
+    
+        state Pagamento
+        state Fechado 
+        state "Ⓗo" as H1<<history>>
+        
+        
+        [*] --> Pagamento
+        Pagamento --> Fechado : conclusão dos pagamentos
+        ADR --> Pagamento : aprovado
+        ADR --> H1 : rejeitado
+    
+    }
+
+}
+
+@enduml
+----
+
+
+.Diagrama Sequencia (torniquete sincrono ou não reativo)
+[plantuml]
+----
+@startuml
+
+Toniquete -> Detector : detectar
+Toniquete <-- Detector: evento
+
+alt evento == CARTAO
+
+Toniquete -> Trinco: desbloquer
+
+else evento == PASSAGEM 
+
+Toniquete -> Trinco: bloquer
+
+else evento == NONE 
+
+end
+
+@enduml
+----
+
+.Diagrama sequencia alice e bob
+[plantuml]
+----
+@startuml
+!pragma teoz true
+{start} Alice -> Bob : start
+Bob -> Max{start} : this arrow is slanted
+Max{end} -> Bob : this arrow is also slanted
+{end} Bob -> Alice : finish
+@enduml
+----
+
+.Example Plantuml
+[plantuml]
+----
+@startuml
+
+Alice -> Bob: Authentication Request
+alt successful case
+  Bob -> Alice: Authentication Accepted
+else some kind of failure
+  Bob -> Alice: Authentication Failure
+  opt
+    loop 1000 times
+      Alice -> Bob: DNS Attack
+    end
+  end
+else Another type of failure
+  Bob -> Alice: Please repeat
+end
+
+@enduml
+----
+
+
+
+== Graphviz
+
+.Example digraph (DOT)
+[graphviz]
+----
+digraph g {
+    a -> b
+    b -> c
+    c -> d
+    d -> a
+}
+----
+
+
+.Example digraph
+[graphviz]
+----
+digraph finite_state_machine {
+    rankdir=LR;
+    size="8.5"
+    node [shape = doublecircle]; LR_0 LR_3 LR_4 LR_8;
+    node [shape = circle];
+    LR_0 -> LR_2 [ label = "SS(B)" ];
+    LR_0 -> LR_1 [ label = "SS(S)" ];
+    LR_1 -> LR_3 [ label = "S($end)" ];
+    LR_2 -> LR_6 [ label = "SS(b)" ];
+    LR_2 -> LR_5 [ label = "SS(a)" ];
+    LR_2 -> LR_4 [ label = "S(A)" ];
+    LR_5 -> LR_7 [ label = "S(b)" ];
+    LR_5 -> LR_5 [ label = "S(a)" ];
+    LR_6 -> LR_6 [ label = "S(b)" ];
+    LR_6 -> LR_5 [ label = "S(a)" ];
+    LR_7 -> LR_8 [ label = "S(b)" ];
+    LR_7 -> LR_5 [ label = "S(a)" ];
+    LR_8 -> LR_6 [ label = "S(b)" ];
+    LR_8 -> LR_5 [ label = "S(a)" ];
+}
+----
+
+== Ditaa
+
+
+This page shows diagrams being used in a regular page.
+
+.Exemplo ditaa
+[ditaa]
+----
+
+      +--------+
+   0  |        |  <- start
+      +--------+
+   1  |        |  <- q  scans from start to end
+      +--------+
+      :  ..... |
+      +--------+
+      |        |  <- end
+      +--------+  <-+
+      |        |    |
+      +--------+    | rest of the
+      :  ..... |    | allocated memory
+      +--------+    |
+  n   |        |    |
+      +--------+  <-+
+----
+
+
+== Reference
+
+* asciidoctor.org/
+* https://plantuml.com/openiconic
+* https://crashedmind.github.io/docdac-site/plantuml_sprites.html
+* https://plantuml-documentation.readthedocs.io/en/latest/diagrams/puml/sequence-2complex-source.html

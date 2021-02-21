@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Diagram | Paulo Borges’s Notes</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Diagram" />
+<meta name="author" content="Paulo Borges" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This site provide notes written by Paulo Borges (aka poolborges)." />
+<meta property="og:description" content="This site provide notes written by Paulo Borges (aka poolborges)." />
+<link rel="canonical" href="/notes/diagram.html" />
+<meta property="og:url" content="/notes/diagram.html" />
+<meta property="og:site_name" content="Paulo Borges’s Notes" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Diagram" />
+<script type="application/ld+json">
+{"url":"/notes/diagram.html","headline":"Diagram","author":{"@type":"Person","name":"Paulo Borges"},"description":"This site provide notes written by Paulo Borges (aka poolborges).","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Paulo Borges's Notes" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Paulo Borges&#39;s Notes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/contacts/">Contatos</a><a class="page-link" href="/notes/diagram.html">Diagram</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Diagram</h1>
+  </header>
+
+  <div class="post-content">
+    <div id="toc" class="toc">
+<div id="toctitle">Conteudo</div>
+<ul class="sectlevel1">
+<li><a href="#doc.summary">1. Summary</a></li>
+<li><a href="#asciidoc">2. AsciiDoc</a></li>
+<li><a href="#plantuml-puma-or-teoz">3. Plantuml PUMA or TEOZ</a></li>
+<li><a href="#uml-pacotes-e-componentes">4. UML - Pacotes e Componentes</a></li>
+<li><a href="#boundary-diagram">5. Boundary Diagram</a></li>
+<li><a href="#graphviz">6. Graphviz</a></li>
+<li><a href="#ditaa">7. Ditaa</a></li>
+<li><a href="#reference">8. Reference</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="./images/icons/note.fonts" alt="Note">
+</td>
+<td class="content">
+Edited: 2020-01-30 Other: 2021-02-21 10:58:05 UTC
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="doc.summary">1. Summary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nesta nota irei apresentar PlantUML.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="asciidoc">2. AsciiDoc</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Asciidoc</dt>
+<dd>
+<p>Linguagem de marcação (Markup Language) para escrever documentos</p>
+<div class="ulist">
+<ul>
+<li>
+<p>eBooks (ex: PDF, EPUB)</p>
+</li>
+<li>
+<p>Documentação (ex: Reference, REST Api, Guides)</p>
+</li>
+<li>
+<p>Apresentação (slideshow) gerado via (Reveal.js)</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Runtimes</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>AsciiDoctor (Ruby) implementation de AsciiDoc</p>
+</li>
+<li>
+<p>AsciiDoctorJ (Ruby to Java: Ruby port)</p>
+</li>
+<li>
+<p>AsciiDoctor.Js (Ruby to Javascript: OPAL port)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Editor</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>AsciidocFX</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Quem usa AsciiDoc</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pivotal Documentação <em>Spring Framework</em></p>
+</li>
+<li>
+<p>Red Hat Documentação <em>Openshift</em></p>
+</li>
+<li>
+<p>Neo4J Documentação</p>
+</li>
+<li>
+<p>O&#8217;Reilly projecto Atlas</p>
+</li>
+<li>
+<p>Github github.com, Gitbook.com</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="plantuml-puma-or-teoz">3. Plantuml PUMA or TEOZ</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://plantuml.com/teoz" class="bare">https://plantuml.com/teoz</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="uml-pacotes-e-componentes">4. UML - Pacotes e Componentes</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="diag-a1794908e9692b50ed911b2e4c4a44b4.png" alt="Diagram" width="217" height="214">
+</div>
+<div class="title">Figure 1. Diagrama de Classes</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="diag-4f9ad83a8da0f52eb684e39d22a19462.png" alt="Diagram" width="330" height="242">
+</div>
+<div class="title">Figure 2. Casos de utilização</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="diag-21238106ba1b4ea230c28582e1923626.png" alt="Diagram" width="484" height="809">
+</div>
+<div class="title">Figure 3. Diagrama de Componentes 1</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="diag-9d930dd2010c6169e6a55545eea9831f.png" alt="Diagram" width="806" height="434">
+</div>
+<div class="title">Figure 4. Diagrama de Componentes 2</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="diag-d4ea51c97c9e9d5294ee56e196f6da49.png" alt="Diagram" width="259" height="284">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="diag-1b95ff34ab77fa12f77d0fdad998c310.png" alt="Diagram" width="477" height="161">
+</div>
+<div class="title">Figure 5. Example Consciousness.pu</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="boundary-diagram">5. Boundary Diagram</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>ENG: Boundary Diagram</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="diag-eafd17a6ba18418d7994229ff86d215a.png" alt="Diagram" width="466" height="375">
+</div>
+<div class="title">Figure 6. Example Diagrama de Fronteira</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="diag-14d92cc0bd7b17aaeb8f9e5490a4c5ec.png" alt="Diagram" width="841" height="1103">
+</div>
+<div class="title">Figure 7. Diagram de Maquina de estados</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="diag-e7cb429a81c4ca7ba0a71778ae657ae8.png" alt="Diagram" width="289" height="281">
+</div>
+<div class="title">Figure 8. Diagrama Sequencia (torniquete sincrono ou não reativo)</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="diag-a433c47dda51336a93c30d61d296b52e.png" alt="Diagram" width="305" height="219">
+</div>
+<div class="title">Figure 9. Diagrama sequencia alice e bob</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="diag-724a22abfb827247b0e2ce2ed52b1148.png" alt="Diagram" width="309" height="373">
+</div>
+<div class="title">Figure 10. Example Plantuml</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="graphviz">6. Graphviz</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="diag-0b397220df9553a95fcbadee9eb3b46a.png" alt="Diagram" width="119" height="347">
+</div>
+<div class="title">Figure 11. Example digraph (DOT)</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="diag-3ea417b052d853e2a830ed0827cd2545.png" alt="Diagram" width="816" height="368">
+</div>
+<div class="title">Figure 12. Example digraph</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ditaa">7. Ditaa</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This page shows diagrams being used in a regular page.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="diag-778b36d2571c08a4cca5604023eb4c88.png" alt="Diagram" width="510" height="280">
+</div>
+<div class="title">Figure 13. Exemplo ditaa</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reference">8. Reference</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>asciidoctor.org/</p>
+</li>
+<li>
+<p><a href="https://plantuml.com/openiconic" class="bare">https://plantuml.com/openiconic</a></p>
+</li>
+<li>
+<p><a href="https://crashedmind.github.io/docdac-site/plantuml_sprites.html" class="bare">https://crashedmind.github.io/docdac-site/plantuml_sprites.html</a></p>
+</li>
+<li>
+<p><a href="https://plantuml-documentation.readthedocs.io/en/latest/diagrams/puml/sequence-2complex-source.html" class="bare">https://plantuml-documentation.readthedocs.io/en/latest/diagrams/puml/sequence-2complex-source.html</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Paulo Borges&#39;s Notes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Paulo Borges&#39;s Notes</li><li><a class="u-email" href="mailto:poolborges@hotmail.com">poolborges@hotmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/poolborges"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">poolborges</span></a></li><li><a href="https://www.twitter.com/poolborges"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">poolborges</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This site provide notes written by Paulo Borges (aka poolborges).</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
