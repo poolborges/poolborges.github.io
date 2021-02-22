@@ -11,6 +11,19 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Setup Java
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '8' # The JDK version to make available on the path.
+        java-package: jdk # (jre, jdk, or jdk+fx) - defaults to jdk
+
+    - name: Setup node and install packages
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '12'
+    - run: npm install -g bpmn-js-cmd
+    - run: npm install -g @mermaid-js/mermaid-cli
+
     # Use GitHub Actions' cache to shorten build times and decrease load on servers
     - uses: actions/cache@v2
       with:
