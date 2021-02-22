@@ -15,28 +15,31 @@ author: poolborges
 <!-- Look the author details up from the site config. -->
 {% assign author = site.data.authors[page.author] %}
 
+<!--
 <span class="author">
     <a href="{{ author.url }}">{{ author.name }}</a>
 </span>
+
 <img class="rounded-circle border border-dark" src="{{ author.image }}" />
-
 <img class="rounded-circle border border-dark" src="https://s.gravatar.com/avatar/f0811b72cb287165980d7c004c6a60ca?s=80"/>
-
-
+-->
 
 {% if author %}
 <div class="well well-sm">
-    <h1>About <a href="{% link authors.adoc %}#{{ page.author }}" target="_blank">{{ author.name }}</a></h1>
+    <h1><a href="{% link authors.adoc %}#{{ page.author }}" target="_blank">{{ author.name }}</a></h1>
     {% if author.image %}
     <img src="{{author.image}}" class="img-circle pull-left m-a-1">
     {% endif %}
     <p>{{ author.bio }}</p>
     <ul class="list-inline social">
         {% if author.github %}
-        <li><a href="{{author.github}}" title="GitHub"><i class="fa fa-github fa-1x"></i></a></li>
+        <li><a href="https://github.com/{{author.github}}" title="GitHub"><i class="fa fa-github fa-1x"></i>GitHub Profile</a></li>
         {% endif %}
         {% if author.twitter %}
-        <li><a href="{{author.twitter}}" title="Twitter"><i class="fa fa-twitter fa-1x"></i></a></li>
+        <li><a href="https://www.twitter.com/{{author.twitter}}" title="Twitter"><i class="fa fa-twitter fa-1x"></i>Twitter Profile</a></li>
+        {% endif %}
+        {% if author.linkedin %}
+        <li><a href="https://www.linkedin.com/in/{{author.linkedin}}" title="Linkedin"><i class="fa fa-linkedin fa-1x"></i>Linkedin Profile</a></li>
         {% endif %}
       </ul>
 </div>
