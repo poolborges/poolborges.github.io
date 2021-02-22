@@ -1,8 +1,8 @@
-= Paulo Borges 
+= README 
 
 Este repositorio mantem https://poolborges.github.io/
 
-
+== Requisites
 
 .Install Commandline version of bpmn-js (https://github.com/gtudan/bpmn-js-cmd)
 ----
@@ -16,10 +16,7 @@ npm install -g @mermaid-js/mermaid-cli
 ----
 
 
-
 == Reference 
-
-TODO 
 
 * https://cpryan.github.io/
 * https://www.digitalocean.com/community/tutorials/jekyll-collections
