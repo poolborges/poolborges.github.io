@@ -1,0 +1,85 @@
+= Doc-as-Code
+:page-layout: page
+:author: poolborges
+:revnumber: v0.1
+:revdate: 2021-02-22 
+:revremark: First draft
+:version-label:
+:generated: {localdate} {localtime}
+:sectnums:                                                          
+:toc:                                                               
+:toclevels: 3                                                      
+:toc-title: Conteudo  
+
+NOTE: Edited: 2021-02-22 Other: {docdatetime}
+
+[[doc.summary]]
+== Summary
+
+Documentation as Code (doc-as-code)
+
+== Asciidoc 
+
+Asciidoc:: Linguagem de marcação (Markup Language) para escrever documentos
+
+* eBooks (ex: PDF, EPUB)
+* Documentação (ex: Reference, REST Api, Guides)
+* Apresentação (slideshow) gerado via (Reveal.js) 
+
+
+Runtimes
+
+* AsciiDoctor (Ruby) implementation de AsciiDoc
+* AsciiDoctorJ (Ruby to Java: Ruby port) 
+* AsciiDoctor.Js (Ruby to Javascript: OPAL port) 
+
+Editor 
+
+* AsciidocFX
+
+Quem usa AsciiDoc
+
+* Pivotal Documentação __Spring Framework__
+* Red Hat Documentação __Openshift__
+* Neo4J Documentação
+* O'Reilly projecto Atlas
+* Github github.com, Gitbook.com
+
+== Asciidoctor diagram extension
+
+Support for 
+
+* AsciiToSVG, 
+* BlockDiag (BlockDiag, SeqDiag, ActDiag, NwDiag, PacketDiag, RackDiag)
+* BPMN
+* Bytefield
+* Ditaa
+* Erd
+* GraphViz
+* Mermaid
+* Nomnoml
+* Msc
+* PlantUML
+* Shaape
+* SvgBob
+* Syntrax
+* UMLet
+* Vega/Vega-Lite
+* WaveDrom
+* WireViz
+
+
+Digram Renderers
+
+* https://kroki.io (Remote Renders, Expose HTTP API)
+
+== JAMstack 
+
+* https://antora.org/[Antora]
+* https://jekyllrb.com[Jekyll]
+* https://docusaurus.io/[Docusaurus]
+
+== Reference
+
+* https://asciidoctor.org/
+* https://asciidoctor.org/docs/asciidoctor-diagram/#enabling-extensions
