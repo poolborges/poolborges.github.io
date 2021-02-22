@@ -2,7 +2,7 @@
 
 Este repositorio mantem https://poolborges.github.io/
 
-== Requisites
+== Requisites for Diagram 
 
 .Install Commandline version of bpmn-js (https://github.com/gtudan/bpmn-js-cmd)
 ----
@@ -13,6 +13,16 @@ npm install -g bpmn-js-cmd
 .Install commandline suport for mmdc (https://github.com/mermaidjs/mermaid.cli)
 ----
 npm install -g @mermaid-js/mermaid-cli
+----
+
+
+.Install Doxygem for dot
+----
+----
+
+
+.Install Java for PlantUML
+----
 ----
 
 == Worflow Actions 
