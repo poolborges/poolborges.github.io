@@ -4,7 +4,6 @@
 :revnumber: v0.1
 :revdate: 2021-02-17 01:29:00 +0000
 :description: A growing collection of your cool projects.
-:url-asciidoctor: http://asciidoctor.org
 :page-liquid: true
 
 

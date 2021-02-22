@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Authors"
+date:   2021-02-21 17:30:00 +0000
+categories: news
+author: poolborges
+---
+= Authors
+:page-layout: page
+:revdate: 2021-02-21 17:30:00 +0000
+:page-liquid: true
+
+
+++++
+{% for author in site.data.authors %}
+<h3><a name="{{ author.url }}">{{ author.name }}</a></h3>
+{% endfor %}
+++++

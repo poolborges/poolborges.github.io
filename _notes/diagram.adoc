@@ -458,8 +458,9 @@ This section shows diagrams written win Ditaa
 
 == BPMN 
 
+.Require cli tool
 ----
-npm install bpmn-js -g
+npm install -g bpmn-js-cmd
 ----
 
 .Example BPMN Diagram coded in xsi
@@ -848,6 +849,13 @@ npm install bpmn-js -g
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </semantic:definitions>
+----
+
+== Mermaid 
+
+.Require tooling 
+----
+npm install -g @mermaid-js/mermaid-cli
 ----
 
 .Example mermaid

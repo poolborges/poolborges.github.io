@@ -3,6 +3,25 @@
 Este repositorio mantem https://poolborges.github.io/
 
 
+
+.Install Commandline version of bpmn-js (https://github.com/gtudan/bpmn-js-cmd)
+----
+npm install -g bpmn-js-cmd
+----
+
+
+.Install commandline suport for mmdc (https://github.com/mermaidjs/mermaid.cli)
+----
+npm install -g @mermaid-js/mermaid-cli
+----
+
+
+
 == Reference 
 
-TODO
+TODO 
+
+* https://cpryan.github.io/
+* https://www.digitalocean.com/community/tutorials/jekyll-collections
+* https://davismcc.github.io/fibroblast-clonality/
+* https://scottdorman.blog/aboutme/
