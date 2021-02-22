@@ -34,7 +34,8 @@ jobs:
       #run: echo "GITHUB_PATH is $GITHUB_PATH"
     
     - name: show path
-      run: echo "$GITHUB_PATH"
+      #run: echo "$GITHUB_PATH"
+      run: echo "$PATH"
 
     # Use GitHub Actions' cache to shorten build times and decrease load on servers
     - uses: actions/cache@v2
