@@ -15,6 +15,15 @@ npm install -g bpmn-js-cmd
 npm install -g @mermaid-js/mermaid-cli
 ----
 
+== Worflow Actions 
+
+.Shoud generate site on schedule not on push
+----
+on:
+  schedule:
+    - cron: "0 0 * * *"
+----
+
 
 == Reference 
 
