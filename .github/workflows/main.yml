@@ -23,7 +23,11 @@ jobs:
         node-version: '12'
     
     # NPM install packages
-    - run: npm install -g bpmn-js-cmd @mermaid-js/mermaid-cli
+    - name: Install npm packages
+      run: npm install -g bpmn-js-cmd @mermaid-js/mermaid-cli
+
+    - name: add npm bin to path
+      run: echo "$(npm bin)" >> $GITHUB_PATH
 
     # Use GitHub Actions' cache to shorten build times and decrease load on servers
     - uses: actions/cache@v2
