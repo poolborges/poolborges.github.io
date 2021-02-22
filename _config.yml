@@ -28,12 +28,13 @@ twitter_username: poolborges
 github_username:  poolborges
 linkedin_username: poolborges
 
-# Directory 
-destination: ./build
+# Directory default: ./_site
+#destination: ./_site default
 
 # Build settings
 theme: minima
 plugins:
+  - asciidoctor-diagram
   - jekyll-asciidoc
   - jekyll-feed
 
@@ -60,6 +61,7 @@ plugins:
 # FOR ASCIIDOC NOTES
 keep_files:
   - images
+asciidoc: {}
 asciidoctor:
   base_dir: :docdir
   safe: unsafe
@@ -69,7 +71,6 @@ asciidoctor:
     idseparator: _
     source-highlighter: coderay
     icons: font
-  attributes:
 
 # Defined Collections
 collections:
