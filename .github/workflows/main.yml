@@ -26,8 +26,12 @@ jobs:
     - name: Install npm packages
       run: npm install -g bpmn-js-cmd @mermaid-js/mermaid-cli
 
-    - name: add npm bin to path
+    - name: add bin to path
       run: echo "$(npm bin)" >> $GITHUB_PATH
+      run: echo "/opt/hostedtoolcache/node/12.20.2/x64/bin" >> $GITHUB_PATH
+      run: echo "$JAVA_HOME/bin" >> $GITHUB_PATH
+      run: echo "NPM BIN is $(npm bin)"
+      run: echo "GITHUB_PATH is $GITHUB_PATH"
 
     # Use GitHub Actions' cache to shorten build times and decrease load on servers
     - uses: actions/cache@v2
