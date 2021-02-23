@@ -13,9 +13,15 @@ note_authors: poolborges
 
 
 ++++
-<ul>
+<ul class="post-list">
 {% for note in site.notes %}
-    <li><a href="{{ note.url }}">{{ note.title }}</a></li>
+  <li>
+    <h3>
+        <a class="post-link" href="{{ note.url | prepend: site.baseurl }}">{{ note.title }}</a>
+    </h3>
+    <span class="post-meta">{{ note.date | date: "%b %-d, %Y" }}</span>
+    <span>{{ note.page-description }}</span>
+  </li>
 {% endfor %}
 </ul>
 ++++
