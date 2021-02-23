@@ -47,7 +47,7 @@ jobs:
 
     # Jekyll source location, target branch (optional)
     - uses: helaili/jekyll-action@v2
-      env:
+      #env:
         # env variable to skip download (@mermaid-js/mermaid-cli)
         #PUPPETEER_SKIP_DOWNLOAD: true
         #PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
