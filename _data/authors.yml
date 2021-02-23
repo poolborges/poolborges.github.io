@@ -1,6 +1,11 @@
 poolborges:
+  id: https://orcid.org/0000-0001-9546-3486
+  identifier: https://poolborges.github.io
   name: Paulo Borges
-  bio: Paulo is a developer.
+  givenName: Paulo 
+  familyName: Borges
+  email: poolborges@hotmail.com
+  bio: Paulo is a system developer from Cabo Verde (From Djadsal)
   image: /images/poolborges_gravatar.png
   twitter: poolborges
   github: poolborges

@@ -1,0 +1,74 @@
+---
+layout: default
+---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "url": "{{ site.url }}{{ page.url }}",
+  "name": {{ page.title | jsonify }},
+  "headline": {{ page.title | jsonify }},
+  "keywords": {{ page.tags | join: ',' | jsonify }},
+  "description": {{ page.excerpt | strip_newlines | strip | jsonify }},
+  "articleBody": {{ page.content | strip_html | jsonify }},
+  "datePublished": {{ page.date | jsonify }},
+  "dateModified": {{ page.last_modified_at | default: page.date | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ site.data.authors[author].name | jsonify }},
+    "givenName": {{ site.data.authors[author].givenName | jsonify }},
+    "familyName": {{ site.data.authors[author].familyName | jsonify }},
+    "email": {{ site.data.authors[author].email | jsonify }},
+    "@id": {{ site.data.authors[author].id | jsonify }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.title | jsonify }},
+    "url": "{{ site.url }}",
+    "logo": {
+      "@type": "ImageObject",
+      "width": 32,
+      "height": 32,
+      "url": "{{ site.url }}/icon/favicon.ico"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}{{ page.url }}"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "width": {{ page.img_width | default: site.img_width }},
+    "height": {{ page.img_height | default: site.img_height }},
+    "url": "{{ site.url }}{{ page.img_url | default: site.img_url }}"
+  }
+}
+</script>
+
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+
+    <p class="post-meta">
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: date_format }}
+      </time>
+      {%- if page.modified_date -%}
+        ~ 
+        {%- assign mdate = page.modified_date | date_to_xmlschema -%}
+        <time class="dt-modified" datetime="{{ mdate }}" itemprop="dateModified">
+          {{ mdate | date: date_format }}
+        </time>
+      {%- endif -%}
+    </p>
+
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+</article>

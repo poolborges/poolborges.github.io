@@ -1,13 +1,21 @@
----
-project_name: Cabo Verde Open Data
-project_developers: poolborges
----
 = Cabo Verde Open Data (CVOD)
 :page-layout: page
 :title: Cabo Verde Open Data
 :author: Paulo Borges
 :revnumber: v0.1
 :revdate: 2021-02-21 
-:description: This project amin to provide open data about Cabo Verde.
+:page-project_name: Cabo Verde Open Data
+:page-project_developers: poolborges
+:page-project_url: https://github.com/poolborges/caboverde-dataset
+:page-description: This project provide open data about Cabo Verde.
+
+[[doc.summary]]
+== Sumario
 
 Este projeto tem com objetivo disponibilizar dados abertos sobre Cabo Verde
+
+
+[[doc.reference]]
+== Referencias 
+
+* https://github.com/poolborges/caboverde-dataset
