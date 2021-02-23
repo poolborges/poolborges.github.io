@@ -1,8 +1,11 @@
 = README 
 
-Este repositorio mantem https://poolborges.github.io/
+Disponivel em 
 
-== Requisites for Diagram 
+* https://github.com/poolborges/poolborges.github.io/
+* https://poolborges.github.io/
+
+== Requisitos
 
 .Install Commandline version of bpmn-js (https://github.com/gtudan/bpmn-js-cmd)
 ----
@@ -16,13 +19,15 @@ npm install -g @mermaid-js/mermaid-cli
 ----
 
 
-.Install Doxygem for dot
+.Install Graphvizdot for dot (graphvizdot)
 ----
+TODO: Installar graphvizdot no seu sistema operativa
 ----
 
 
 .Install Java for PlantUML
 ----
+TODO: Instalar Java/JRE no seu sistema operativo
 ----
 
 == Worflow Actions 
