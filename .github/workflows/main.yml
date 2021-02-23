@@ -49,11 +49,12 @@ jobs:
     - uses: helaili/jekyll-action@v2
       env:
         # env variable to skip download (@mermaid-js/mermaid-cli)
-        PUPPETEER_SKIP_DOWNLOAD: true
-        PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
+        #PUPPETEER_SKIP_DOWNLOAD: true
+        #PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
+        #PUPPETEER_PRODUCT: firefox
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         jekyll_src: './'
         target_branch: 'gh-pages'
-        pre_build_commands: apk --update add openjdk8 graphviz nodejs npm && npm install -g bpmn-js-cmd @mermaid-js/mermaid-cli
+        pre_build_commands: apk --update add openjdk8 graphviz nodejs npm && npm install --unsafe-perm=true -g bpmn-js-cmd @mermaid-js/mermaid-cli
      
