@@ -1,0 +1,378 @@
+= PlantUML - Diagramas
+:page-layout: note
+:author: poolborges
+:revnumber: v0.1
+:revdate: 2021-02-17 01:29:00 +0000
+:revremark: First draft
+:version-label:
+:generated_: {localdate} {localtime}
+:generated: {docdatetime}
+:page-modified_date: 2021-02-23 11:22:00 +0000
+:sectnums:                                                          
+:toc:                                                               
+:toclevels: 3                                                      
+:toc-title!: Conteudo  
+:page-description: Breve descrição e exemplos de diagramas com PlantUML
+
+
+[[doc.summary]]
+== Sumario
+
+Nesta nota irei apresentar PlantUML.
+
+Architetura PUMA or TEOZ
+
+* https://plantuml.com/teoz
+
+== Plantuml - Pacotes e Componentes
+
+.Diagrama de Classes
+[plantuml]
+----
+interface IService 
+
+interface ISystem {
+    URN id
+    String name
+}
+
+
+class System0 {
+    MimeType mime
+}
+
+ISystem <|-- System0
+----
+
+.Casos de utilização
+[plantuml]
+----
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Cliente
+actor clerk
+rectangle  {
+  Cliente -- (checkout)
+  (checkout) .> (payment) : include
+  (help) .> (checkout) : extends
+  (checkout) -- clerk
+}
+@enduml
+----
+
+
+.Diagrama de Componentes 1
+[plantuml]
+----
+@startuml
+
+' -----------------------------------------------------
+skinparam defaultTextAlignment center
+' -----------------------------------------------------
+left to right direction
+
+
+frame Microprocessor as Arch {
+
+frame "ISA" {
+    node "RISC" <<ISA>>
+    node "CISC" <<ISA>>
+}
+
+frame "Architecture" {
+    node "===OpenRISC\nOpen/RoyaltyFree" <<RISC>> 
+    node "===RISC-V\nOpen/RoyaltyFree" <<RISC>>
+    node "===SPARC\nOpen/RoyaltyFree" <<RISC>>
+    node "===Elbrus\nVLIW/2014" <<VLIW>>
+}
+
+frame "Architecture Other" {
+    
+    node "===ARM" <<RISC>> 
+    node "===x86" <<RISC>>
+    node "===A64" <<RISC>>
+    node "===Itanium" <<RISC>>
+}
+
+}
+
+@enduml
+----
+
+.Diagrama de Componentes 2
+[plantuml]
+----
+@startuml
+frame "Operative System" as pluto {
+
+top to bottom direction
+
+frame "Microsoft" {
+
+    node "===Windows Server" <<Windows>>
+    node "===Windows Mobile" <<Windows>>
+    node "===MSDOS" <<MSDOS>>>
+}
+
+frame "UNIX like" {
+    
+    node "===Ubuntu\n16.04" <<Linux>>
+    node "===GhostBSD\nfoo" <<FreeBSD>>
+    node "===OpenIndiana\nfoo" <<OpenSolaris>>
+}
+}
+
+pippo --[hidden]> pluto
+@enduml
+----
+
+
+[plantuml]
+----
+class BlockProcessor
+class DiagramBlock
+class DitaaBlock
+class PlantUmlBlock
+
+BlockProcessor <|-- DiagramBlock
+DiagramBlock <|-- DitaaBlock
+DiagramBlock <|-- PlantUmlBlock
+----
+
+
+.Example Consciousness.pu
+[plantuml]
+----
+@startuml
+hide empty members
+Causality -left- Self
+
+Self o--> "*" Action: owner  
+Self o--> "*" Action: heir
+Self o--> "*" Action: born
+Self o--> "*" Action: related
+Self o--> "*" Action: live dependent
+(Causality,Self) .. Consciousness
+@enduml
+----
+
+
+== Plantuml - Boundary Diagram 
+
+Boundary Diagram:: TODO definição aqui
+
+.Example Diagrama de Fronteira
+[plantuml]
+----
+@startuml
+
+actor Analista
+
+Box System #lightblue
+
+boundary Foo2
+control Foo3
+entity Foo4
+database Foo5
+collections Foo6
+participant widget
+
+end Box
+
+Analista -> Foo2 : To boundary
+Analista -> Foo3 : To control
+Analista <-- Foo3 : To actor response
+Analista -> Foo4 : To entity
+Analista -> Foo5 : To database
+Analista -> Foo6 : To collections
+
+@enduml
+----
+
+.Diagram de Maquina de estados
+[plantuml]
+----
+@startuml
+
+title SGPF
+
+hide empty description
+skinparam shadowing false
+
+skinparam state<<history>> {
+    backgroundColor transparent
+    borderColor transparent
+    fontSize 20
+}
+
+
+state Arquivado {
+}
+
+state Rejeitado{
+}
+
+state Supenso{
+}
+
+
+state "Candidatura" as CDT {
+
+    CDT --> ACT : abrir
+    CDT --> Arquivado : arquivar
+    Arquivado --> CDT : reenquadrar
+}
+
+
+[*] --> CDT
+
+
+state "Activo" as ACT {
+
+    state "Aguarda Despacho Abertura" as ABT 
+    state "Aguarda Parecer Tecnico" as APT
+    state "Aguarda Despacho Financiamento" as ADF
+    state "Aguarda Despacho Reforço" as ADR
+    state "Ⓗ*" as H<<history>>
+
+    H --> Supenso : suspender
+    Supenso --> H : reativar
+    
+    [*] --> ABT
+    
+    ABT --> APT : aprovado
+    ABT --> Arquivado : rejeitado
+    
+    APT --> ADF : favoravel
+    APT --> Arquivado : desfavoravel
+    
+    ADF --> ST_FIN : aprovado
+    ADF --> Rejeitado : rejeitado
+    ST_FIN -L-> ADR : reforco
+    
+
+    state "Em Financiamento" as ST_FIN {
+    
+        state Pagamento
+        state Fechado 
+        state "Ⓗo" as H1<<history>>
+        
+        
+        [*] --> Pagamento
+        Pagamento --> Fechado : conclusão dos pagamentos
+        ADR --> Pagamento : aprovado
+        ADR --> H1 : rejeitado
+    
+    }
+
+}
+
+@enduml
+----
+
+
+.Diagrama Sequencia (torniquete sincrono ou não reativo)
+[plantuml]
+----
+@startuml
+
+Toniquete -> Detector : detectar
+Toniquete <-- Detector: evento
+
+alt evento == CARTAO
+
+Toniquete -> Trinco: desbloquer
+
+else evento == PASSAGEM 
+
+Toniquete -> Trinco: bloquer
+
+else evento == NONE 
+
+end
+
+@enduml
+----
+
+.Diagrama sequencia alice e bob
+[plantuml]
+----
+@startuml
+!pragma teoz true
+{start} Alice -> Bob : start
+Bob -> Max{start} : this arrow is slanted
+Max{end} -> Bob : this arrow is also slanted
+{end} Bob -> Alice : finish
+@enduml
+----
+
+.Diagram Example of MVC 
+[plantuml]
+----
+@startuml
+
+actor User
+
+Box WebApplication (Spring MVC) #lightblue
+
+  participant FrontController
+  participant BookController
+  participant BookService
+  participant BookRepository
+
+end Box
+
+Box Storage (Database) #lightgreen
+    participant Database
+end Box
+
+User -> FrontController: /book/{id}
+activate FrontController
+
+FrontController -> BookController: getBook(id)
+BookController -> BookService: getBook(id)
+BookService -> BookRepository: findOne(id)
+BookRepository -> Database: sql
+BookRepository <- Database
+BookService <- BookRepository: Book
+BookController <-> BookService: BookDto
+FrontController <- BookController: BookOutputModel
+
+User <- FrontController: json
+deactivate FrontController
+
+@enduml
+----
+
+.Example Plantuml
+[plantuml]
+----
+@startuml
+
+Alice -> Bob: Authentication Request
+alt successful case
+  Bob -> Alice: Authentication Accepted
+else some kind of failure
+  Bob -> Alice: Authentication Failure
+  opt
+    loop 1000 times
+      Alice -> Bob: DNS Attack
+    end
+  end
+else Another type of failure
+  Bob -> Alice: Please repeat
+end
+
+@enduml
+----
+
+
+
+== Reference
+
+* https://asciidoctor.org/
+* https://plantuml.com/openiconic
+* https://crashedmind.github.io/docdac-site/plantuml_sprites.html
+* https://plantuml-documentation.readthedocs.io/en/latest/diagrams/puml/sequence-2complex-source.html
+* https://asciidoctor.org/docs/asciidoctor-diagram/#enabling-extensions
