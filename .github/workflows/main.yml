@@ -50,6 +50,7 @@ jobs:
       env:
         # env variable to skip download (@mermaid-js/mermaid-cli)
         PUPPETEER_SKIP_DOWNLOAD: true
+        PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         jekyll_src: './'
