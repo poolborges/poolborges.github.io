@@ -1,4 +1,4 @@
-= BPMN - Diagramas
+= Diagramas BPMN
 :page-layout: note
 :author: poolborges
 :revnumber: v0.1

@@ -1,4 +1,4 @@
-= Ditaa - Diagramas
+= Diagramas Ditaa
 :page-layout: note
 :author: poolborges
 :revnumber: v0.1

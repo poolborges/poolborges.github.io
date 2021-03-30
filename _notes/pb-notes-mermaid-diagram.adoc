@@ -1,4 +1,4 @@
-= Ditaa - Mermaid
+= Diagramas Mermaid 
 :page-layout: note
 :author: poolborges
 :revnumber: v0.1
