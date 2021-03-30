@@ -25,6 +25,8 @@ author: poolborges
 -->
 
 {% if author %}
+
+<!--
 <div class="well well-sm">
     <h1><a href="{% link authors.adoc %}#{{ page.author }}" target="_blank">{{ author.name }}</a></h1>
     {% if author.image %}
@@ -43,5 +45,20 @@ author: poolborges
         {% endif %}
       </ul>
 </div>
+-->
+
+
+ <div class="card">
+  <img src="{{author.image}}" alt="{{ author.name }}" style="width:100%">
+  <h1>{{ author.name }}</h1>
+  <p class="title">CEO & Founder, Example</p>
+  <p>IPC/ESTGOH and IPL/ISEL</p>
+  <a href="https://dribbble.com/poolborges"><i class="fa fa-dribbble"></i></a>
+  <a href="https://www.twitter.com/{{author.twitter}}"><i class="fa fa-twitter"></i></a>
+  <a href="https://www.linkedin.com/in/{{author.linkedin}}"><i class="fa fa-linkedin"></i></a>
+  <a href="#"><i class="fa fa-facebook"></i></a>
+  <p><button>Contact</button></p>
+</div> 
+
 {% endif %}
 ++++
