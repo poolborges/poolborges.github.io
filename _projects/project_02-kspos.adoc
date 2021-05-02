@@ -1,0 +1,44 @@
+= Point of Sales
+:page-layout: page
+:title: Point of Sales
+:author: Paulo Borges
+:revnumber: v0.1
+:revdate: 2021-02-25 
+:page-project_name: Point of Sales (Ponto de Venda)
+:page-project_developers: poolborges
+:page-project_url: https://github.com/poolborges/unicenta-pos
+:page-description: Ponto de Venda (PDV) de codigo aberto de Cabo Verde para o Mundo.
+
+[[doc.summary]]
+== Sumario
+
+Open source Point of Sales.
+
+Ponto de Venda - Baseado no UnicentaPOS(que foi baseado no OpenbravoPOS), mas adaptado a realidade de Cabo Verde.
+
+Previsão de Lançamento entre Dezembro 2021 a Janeiro 2022
+
+== Funcinalidades
+
+* Vendas
+* Gestão de inventário (Estoque)
+
+== Solução 
+
+Restauração
+
+* Bar 
+* Restaurantes
+
+Comercio 
+
+* Mercearia
+* Padarias
+
+== Screenshot
+
+
+[[doc.reference]]
+== Referencias 
+
+* https://github.com/poolborges/unicenta-pos

@@ -1,0 +1,20 @@
+= Point of Sales
+:page-layout: page
+:title: Digital Signage
+:author: Paulo Borges
+:revnumber: v0.1
+:revdate: 2021-02-25 
+:page-project_name: Digital Signage
+:page-project_developers: poolborges
+:page-project_url: https://github.com/poolborges/unicenta-pos
+:page-description: Open source Digital Signage.
+
+[[doc.summary]]
+== Sumario
+
+Open source Digital Signage.
+
+[[doc.reference]]
+== Referencias 
+
+* https://github.com/poolborges/Vodigi

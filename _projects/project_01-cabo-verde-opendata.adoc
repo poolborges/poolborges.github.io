@@ -16,9 +16,13 @@ Este projeto tem com objetivo disponibilizar dados abertos sobre Cabo Verde
 
 == Sub-projetos
 
+
+Cabo Verde Open Dataset
+
 * https://poolborges.github.io/caboverde-dataset/
 
-* Election Dataviz
+Election Dataviz (Web tool)
+
 ** https://poolborges.github.io/caboverde-dataset/caboverde-elections/
 
 [[doc.reference]]
