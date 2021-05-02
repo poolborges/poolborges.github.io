@@ -39,6 +39,15 @@ on:
     - cron: "0 0 * * *"
 ----
 
+== jekyll Usefull commmands
+
+
+----
+bundle exec jekyll clean  
+bundle exec jekyll build  
+bundle exec jekyll serve --verbose --trace
+----
+
 
 == Reference 
 
