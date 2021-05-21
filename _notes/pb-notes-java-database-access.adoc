@@ -1,0 +1,398 @@
+= Java Database Access
+:page-layout: note
+:author: poolborges
+:revnumber: v0.1
+:revdate: 2021-05-17 14:30:00 +0000
+:revremark: First draft
+:version-label:
+:generated_: {localdate} {localtime}
+:generated: {docdatetime}
+:page-modified_date: 2021-05-17 14:30:00 +0000
+:sectnums:                                                          
+:toc:                                                               
+:toclevels: 3                                                      
+:toc-title!: Conteudo  
+:page-description: This document present a set of Java libraries to data access or Object-Relational Mapping (ORM)
+:keywords: eclipselink, hibernate, jpa, jooq
+
+
+[[doc.summary]]
+== Sumario
+
+Object-Relational Mapping (ORM)
+
+== JAVA ORM 
+
+* https://github.com/speedment/speedment[Speedment]
+* https://github.com/speedment/jpa-streamer/jpa-streamer[Speedment JPAStreamer]
+* http://www.jooq.org[jOOQ]
+* http://www.jinq.org/[Jinq]
+* https://ebean.io/[Ebean ORM for Java/Kotlin]
+* https://github.com/mybatis/ibatis-2[iBATIS]
+* https://github.com/ebean-orm/avaje-ebeanorm[Avaje Ebean]
+* https://github.com/feedzai/pdb[Feedzai PDB]
+* https://www.eclipse.org/eclipselink/[Eclipse Link (JPA Implementation)]
+* https://hibernate.org/[Hibernate (JPA Implementation)]
+* http://openjpa.apache.org/[Apache OpenJPA (JPA Implementation)]
+* https://www.datanucleus.org/[DataNucleus Access Platform (JPA/JDO Implementation)]
+* https://github.com/goldmansachs/reladomo[Reladomo]
+* https://cayenne.apache.org/[Apache Cayenne]
+* https://github.com/domaframework/doma[DAO Oriented Database Mapping Framework for Java ]
+* https://github.com/jdbi/jdbi[JDBI]
+* ORM Lite
+* Spring JdbcTemplate
+* Squiggle SQL Builder  
+* sqlbuilder
+* SQLJ 
+
+
+
+== Java Especificações 
+
+* JDO API (JSR0012, JSR0243)
+* JPA (PA 2.2+
+
+----
+pkg:maven/javax.persistence/javax.persistence.api/2.2
+----
+
+
+== JPA 
+
+TODO ..
+
+
+== Spring JdbcTemplate
+
+.Example using JdbcTemplate
+[source, java]
+----
+PreparedStatementCreator psc =
+    new ParameterizedPreparedStatementCreator()
+        .setSql("update Employee set name = :name where id = :id")
+        .setParameter("name", "Bob")
+        .setParameter("id", 42);
+
+new JdbcTemplate(dataSource).update(psc);
+----
+
+== SQL Builder Utilities
+
+* https://github.com/jkrasnay/sqlbuilder
+* compile 'ca.krasnay:sqlbuilder:1.2'
+* Can be use with Spring JdbcTemplate
+
+.Example Select
+[source, java]
+----
+new SelectBuilder()
+    .column("name")
+    .column("age")
+    .from("Employee")
+    .where("dept = 'engineering'")
+    .where("salary > 100000")
+    .toString();
+----
+
+
+.Example with integrate with JdbcTemplate
+[source, java]
+----
+PreparedStatementCreator psc =
+    new UpdateCreator("Employee")
+        .setValue("name", "Bob")
+        .whereEquals("id", 42);
+
+new JdbcTemplate(dataSource).update(psc);
+----
+
+== SQLJ (Proprietary)
+
+* https://www.mojohaus.org/sqlj-maven-plugin/
+** org.codehaus.mojo:sqlj-maven-plugin:1.4-SNAPSHOT:sqlj
+
+Implementations
+
+* Oracle (Reference Implementation)
+* IBM
+
+Sites
+
+* https://www.infoworld.com/article/2076416/sqlj--the--open-sesame--of-java-database-applications.html
+* https://www.ibm.com/docs/en/radfws/9.6.1?topic=applications-introduction-sqlj
+* https://www.ibm.com/docs/en/developer-for-zos/9.5.1?topic=support-what-is-sqlj
+* http://kursinfo.himolde.no/in-kurs/in135/Oracle9i/901_doc/java.901/a90212/overview.htm
+
+.Example with SQLJ
+[source, java]
+----
+#sql iterator SeatCursor(Integer row, Integer col, String type, int status);
+
+Integer status = ?;
+SeatCursor sc; 
+#sql sc = { 
+    select rownum, colnum from seats where status <= :status 
+};  
+while(sc.next()) 
+{    
+#sql { insert into categ values(:(sc.row()), :(sc.col())) };  
+}   
+sc.close();
+----
+
+
+== sqlbuilder
+
+* https://openhms.sourceforge.io/sqlbuilder/
+* Last Published: 2020-09-10| Version: 3.0.1
+
+.Example with sqlbuilder
+[source, java]
+----
+// assuming these objects have already been created
+Table table1, table2;
+Column t1Col1, t1Col2, t2Col1;
+Join joinOfT1AndT2;
+ 
+String selectQuery =
+  (new SelectQuery())
+  .addColumns(t1Col1, t1Col2, t2Col1)
+  .addJoin(SelectQuery.JoinType.INNER_JOIN, joinOfT1AndT2)
+  .addOrderings(t1Col1)
+  .validate().toString();
+----
+
+== Squiggle SQL Builder 
+
+Squiggle is a little Java library for dynamically generating SQL SELECT statements.
+
+* https://code.google.com/archive/p/squiggle-sql/
+* joe.truemesh.com/squiggle/
+
+.Example with squiggle
+[source, java]
+----
+SelectQuery select = new SelectQuery();
+
+Table people = new Table("people");
+
+select.addColumn(people, "firstname"); select.addColumn(people, "lastname");
+
+select.addOrder(people, "age", Order.DESCENDING);
+----
+
+== Amazom Carbonado (Java ORM)
+
+* https://github.com/Carbonado/Carbonado
+
+
+
+== Jinq 
+
+JINQ: Easy Database Queries for Java 8
+
+LINQ-style queries for Java 8 
+
+Sites
+
+* https://github.com/my2iu/Jinq
+
+
+
+== JDBI
+
+* https://jdbi.org/
+* https://github.com/jdbi/jdbi
+
+
+== Ebean 
+
+.Example Ebean 
+[source, java]
+----
+List<Person> boys = 
+    Ebean.find(Person.class)
+    .where()
+        .eq("gender", "M")
+        .le("age", 18)
+    .orderBy("firstName")
+    .findList();
+----
+
+== jOOQ
+
+Sites 
+
+* https://groups.google.com/g/jooq-user
+
+.Example jOOQ
+[source, java]
+----
+List<EmployeeDTO> records = create
+         .select(EMPLOYEE.LASTNAME, EMPLOYEE.FIRSTNAME, EMPLOYEE.SALARY)
+         .from(EMPLOYEE)
+         .where(EMPLOYEE.SALARY.between(80000, 100000))
+         .fetchInto(EmployeeDTO.class);
+----
+
+
+== Speedment
+
+* Speedment is a Stream ORM Java Toolkit and Runtime 
+
+
+Sites 
+
+* https://speedment.com/
+* https://github.com/speedment/speedment
+
+Speedment Edition (Licenses)
+
+* Speedment Open Source (OSS) - This site covers the Speedment Open Source project available under the Apache 2 license.
+* Speedment Stream - The same great features as Speedment OSS with support for commercial databases (i.e. Oracle, MS SQL Server, DB2, AS400). Learn more at speedment.com/stream.
+* Speedment HyperStream - An extension av Speedment Stream which also includes hypersonic query performance enabled by a unique in-JVM-memory management model. Learn more at speedment.com/hyperStream.
+
+Speedment Open Source
+
+* MySQL
+* MariaDB
+* PostgreSQL
+* SQLite
+
+JPAStreamer
+
+.Example JPAStreamer
+[source, java]
+----
+List<Film> list = films.stream()
+    .filter(Film.RATING.equal("PG-13"))
+    .sorted(Film.LENGTH)
+    .collect(toList());
+----
+
+
+
+== Reladomo ORM
+
+* Reladomo is an enterprise grade object-relational mapping framework for Java. 
+* https://goldmansachs.github.io/reladomo/
+* Support: Sybase (ASE & IQ), DB2, Oracle, Postgres, MS-SQL, H2, Derby, "generic" ...
+
+
+Mapping 
+
+* TODO...
+
+
+== Feedzai PulseDB 
+
+* https://github.com/feedzai/pdb
+
+----
+PulseDB is a database-mapping software library written in Java, 
+it provides a transparent access and manipulation to a great variety 
+of database implementations. 
+
+PDB provides a DSL that covers most of SQL functionalities 
+and allows to easily integrate persistence into your projects and modules. 
+----
+
+
+
+== Obevo (Schema Management, Migration)
+
+Get Your Database SDLC under Control 
+
+Obevo is a database deployment tool that handles enterprise scale schemas and complexity 
+
+
+Sites
+
+* https://github.com/goldmansachs/obevo
+* https://www.infoq.com/articles/Obevo-Introduction
+
+
+
+== Liquibase (Schema Migration)
+
+.Example invoke liquidbase from cli 
+[source, bash]
+----
+liquibase --changeLogFile=dbchangelog_gen.sql --logLevel=debug generateChangeLog
+----
+
+.Example liquidbase configuration 
+[source, txt]
+----
+liquibase –driver=org.postgresql.Driver \
+–classpath=myFiles\postgresql-9.4.1212.jre7.jar \
+–changeLogFile=myFiles/db.changelog-1.0.xml \
+–url=”jdbc:postgresql://localhost:5432/MYDATABASE” \
+–username=postgres \
+–password=postgres \
+generateChangeLog
+----
+
+
+.liquibase.properties
+[source, txt]
+----
+url=jdbc:mysql://localhost:3306/unicenta
+username=root
+password=root
+driver=com.mysql.cj.jdbc.Driver
+outputChangeLogFile=src/main/resources/liquibase/liquibase-outputChangeLog.xml
+----
+
+.Maven plugin
+[source, xml]
+----
+<plugin>
+    <groupId>org.liquibase</groupId>
+    <artifactId>liquibase-maven-plugin</artifactId>
+    <version>3.4.1</version>
+    <configuration>                  
+        <propertyFile>src/main/resources/liquibase/liquibase.properties</propertyFile>
+    </configuration> 
+    
+    <dependencies>
+        <dependency> 
+            <groupId>mysql</groupId>  
+            <artifactId>mysql-connector-java</artifactId>  
+            <version>8.0.21</version> 
+            <scope>runtime</scope>
+        </dependency> 
+    </dependencies>               
+</plugin>
+----
+
+[source, bash]
+----
+mvn liquibase:generateChangeLog
+----
+
+
+
+== PostgreSQL Advanced Features
+
+* UDT
+
+
+== Reactive Relational Database Connectivity (R2DBC)
+
+TODO...
+
+
+
+== Asynchronous Database Access API (ADBA)
+
+TODO...
+
+* https://blogs.oracle.com/java/jdbc-next:-a-new-asynchronous-api-for-connecting-to-a-database
+
+
+
+
+== Reference
+
+* https://www.sciencedirect.com/science/article/abs/pii/S1477842415000020

@@ -1,0 +1,208 @@
+= Java Database Migration
+:page-layout: note
+:author: poolborges
+:revnumber: v0.1
+:revdate: 2021-05-17 14:30:00 +0000
+:revremark: First draft
+:version-label:
+:generated_: {localdate} {localtime}
+:generated: {docdatetime}
+:page-modified_date: 2021-05-17 14:30:00 +0000
+:sectnums:                                                          
+:toc:                                                               
+:toclevels: 3                                                      
+:toc-title!: Conteudo  
+:page-description: Database version control
+:keywords: liquidbase Flyway
+
+
+[[doc.summary]]
+== Sumario
+
+TODO
+
+== Database
+
+
+Objetos normalmente presentes num sistema de gestão de base de dados.
+
+* Tables 
+* Live Data 
+* PL/SQL Packages
+* Materialized Views
+* Triggers
+* DB Links
+
+
+== Migration DB 
+
+Migrations-based database deployment tool
+
+* Liquidbase (XML, JSON, YAML, as well as SQL)
+* Flyway (SQL scripts)
+* DbUp (SQL scripts)
+* RoundhousE (SQL scripts)
+
+
+== Flyway 
+
+* Create "Hidden" Table to store information about version 
+* Calculate Checksum of files
+
+App Structure
+
+* src/resources/krapp_sample/database/migration
+* src/resources/krapp_sample/database/migration/v1_initial_db.sql
+* src/resources/krapp_sample/database/migration/v2_create_adicional_table.sql
+
+.Example of Flyway 
+[source, java]
+----
+public class AppMain {
+
+    public static void main(String[] args){
+        Flyway fly new Flyway()
+        fly.setDataSource("jdbc:h2:file:./krapp_sample_db","sa", null)
+        fly.setLocations("krapp_sample/database/migration");
+        fly.migrate();
+    }
+}
+----
+
+== Liquidbase
+
+How Work 
+
+.Table DATABASECHANGELOG
+[source, sql]
+----
+insert into DATABASECHANGELOG  (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, EXECTYPE, MD5SUM, DESCRIPTION, COMMENTS, TAG, LIQUIBASE, CONTEXTS, LABELS) 
+values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+----
+
+App Structure
+
+* src/resources/krapp_sample/database/migration
+* src/resources/krapp_sample/database/migration/v1_initial_db.xml
+* src/resources/krapp_sample/database/migration/v2_create_adicional_table.xml
+
+.Configure to process SQL
+----
+<changeSet id="1">
+    <sqlFile path="v1_initial_db.sql" />
+</changeSet>
+
+<changeSet id="1">
+    <sqlFile path="v2_create_adicional_table.sql" />
+</changeSet>
+----
+
+Changeset - Can define attribute 
+
+* runAlways="true"
+* unOnChange="true"
+* failOnError="false"
+* context="test" //ex: Only on test or Production Data base 
+* LiquidBase DSL - To define database Structure
+** Usefull to generate sql for diferente database
+
+.Example Using LiquidBase DSL
+----
+<changeSet="1" author="poolborges">
+    <createTable tableName="Product">
+        <column name="id" type="int" autoIncrement="true" />
+        <column name="firstname" type="varchar(50)" />
+        <column name="lastname" type="varchar(50)" />
+    </createTable>
+</changeSet>
+----
+
+
+.Example of Liquidbase 
+[source, java]
+----
+public class AppMain {
+
+    public static void main(String[] args){
+        
+    }
+}
+----
+
+----
+ant rollback
+----
+
+
+----
+<databaseChangeLog>
+    <include file="changelog_001.xml" relativeToChangelogfile="true"/>
+    <include file="changelog_001.xml" relativeToChangelogfile="true"/>
+</databaseChangeLog>
+----
+
+
+
+----
+<databaseChangeLog>
+    <changeSet>
+        <modifiedType 
+    </changeSet>
+    
+    <changeSet>
+        <renameColumn
+            tableName="order_comment"
+            oldColumnName="author_id"
+            newColumnName="employee_id" />
+    </changeSet>
+    
+    <changeSet id="202105030138" author="poolborges" context="dev, test">
+        <insert tableName="product">
+            <column name="id" valueNumeric="1" />
+            <column name="name" value="Laranja" />
+        </insert>
+        
+        <delete tableName="product">
+            <where> id in (1, 2)</where>
+        </delete>
+    </changeSet>
+    
+    <changeSet>
+        <loadData tableName="CLIENT" file="cls.csv">
+            <column header="id" name="ProductId" />
+            <column header="id" name="ProductId" />
+         </loadData>
+    </changeSet>
+    
+    <changeSet id="202105030139" author="poolborges">
+        <sql>
+            ALTER TABLE payment
+            ADD CONTRAINT payment_type_enum
+            CHECK (payment_type IN ('DEBIT', 'CREDIT'))
+         </sql>
+         <rollback>
+            <sql>ALTER TABLE payment DROP CONTRAINT payment_type_enum</sql>
+         <rollback>
+    </changeSet>
+</databaseChangeLog>
+----
+
+
+== Obevo 
+
+About 
+
+* Powerfull and Complex tool
+* Your Database SDLC under Control
+* https://goldmansachs.github.io/obevo/
+* https://github.com/goldmansachs/obevo
+* https://www.infoq.com/articles/Obevo-Introduction/
+
+
+== Reference
+
+* https://www.liquibase.org/
+* https://flywaydb.org/
+* https://goldmansachs.github.io/obevo/
+* https://www.findbestopensource.com/product/goldmansachs-obevo
+
