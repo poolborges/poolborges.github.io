@@ -81,3 +81,11 @@ collections:
   notes:
     output: true
     sort_by: title
+
+# For jekyll-seo-tag
+webmaster_verifications:
+  google: _LLMR_ca_ZDaTsm3ZH8STl2K5ZpXuY6v77lcQ5eyL4U
+  #bing: 1234
+  #alexa: 1234
+  #yandex: 1234
+  #baidu: 1234

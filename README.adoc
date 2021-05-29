@@ -5,6 +5,14 @@ Disponivel em
 * https://github.com/poolborges/poolborges.github.io/
 * https://poolborges.github.io/
 
+
+== Template 
+
+* minima
+** https://github.com/jekyll/minima
+** https://github.com/jekyll/jekyll-seo-tag#usage
+
+
 == Requisitos
 
 .Install Commandline version of bpmn-js (https://github.com/gtudan/bpmn-js-cmd)
