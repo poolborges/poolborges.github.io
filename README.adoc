@@ -57,6 +57,7 @@ bundle install
 bundle exec jekyll clean  
 bundle exec jekyll build  
 bundle exec jekyll serve --verbose --trace
+bundle exec jekyll serve --host=localhost --drafts --future --watch --verbose --trace
 ----
 
 
