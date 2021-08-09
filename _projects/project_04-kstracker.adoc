@@ -1,0 +1,21 @@
+= Point of Sales
+:page-layout: page
+:title: GPS Tracker Viwer
+:author: Paulo Borges
+:revnumber: v0.1
+:revdate: 2021-08-09 
+:page-project_name: GPS Tracker Viwer
+:page-project_developers: poolborges
+:page-project_url: https://github.com/poolborges/pb-tracking
+:page-description: Open source GPS Tracker Viwer.
+
+[[doc.summary]]
+== Sumario
+
+Open source GPS Tracker Viwer.
+
+[[doc.reference]]
+== Referencias 
+
+* https://poolborges.github.io/pb-tracking/
+* https://github.com/poolborges/pb-tracking
