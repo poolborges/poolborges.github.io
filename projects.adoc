@@ -9,7 +9,7 @@
 
 ++++
 <ul class="post-list">
-{% assign projects_sorted = site.projects | sort: 'revdate' | reverse %}
+{% assign projects_sorted = site.projects | sort: 'date' | reverse %}
 {% for project in projects_sorted %}
   <li>
     <h4>

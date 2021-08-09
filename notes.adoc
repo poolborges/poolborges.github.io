@@ -6,7 +6,7 @@ note_authors: poolborges
 :page-layout: page
 :author: Paulo Borges
 :revnumber: v0.1
-:revdate: 2021-02-17 01:29:00 +0000
+:revdate: 2021-08-09 18:43:00 +0000
 :description: A growing collection of your cool notes.
 :url-asciidoctor: http://asciidoctor.org
 :page-liquid: true
@@ -14,7 +14,8 @@ note_authors: poolborges
 
 ++++
 <ul class="post-list">
-{% for note in site.notes %}
+{% assign notes_sorted = site.notes | sort: 'date' | reverse %}
+{% for note in notes_sorted %}
   <li>
     <h3>
         <a class="post-link" href="{{ note.url | prepend: site.baseurl }}">{{ note.title }}</a>
