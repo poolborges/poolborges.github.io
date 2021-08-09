@@ -1,15 +1,16 @@
 = Projects
 :page-layout: page
-:author: Paulo Borges
+:page-author: poolborges
 :revnumber: v0.1
 :revdate: 2021-02-17 01:29:00 +0000
-:description: A growing collection of your cool projects.
+:page-description: A growing collection of your cool projects.
 :page-liquid: true
 
 
 ++++
 <ul class="post-list">
-{% for project in site.projects %}
+{% assign projects_sorted = site.projects | sort: 'revdate' | reverse %}
+{% for project in projects_sorted %}
   <li>
     <h4>
         <a class="post-link" href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a>
