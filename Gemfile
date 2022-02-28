@@ -7,7 +7,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 4.2.0"
+gem "jekyll", "~> 4.2.1"
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 gem "minima", "~> 2.5"
 
@@ -19,16 +19,16 @@ gem 'coderay', '~> 1.1.3'
 # gem "github-pages", group: :jekyll_plugins
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem 'asciidoctor-diagram', '~> 2.1.0'
+  gem 'asciidoctor-diagram', '~> 2.2.1'
   gem 'jekyll-asciidoc', '~> 3.0.0'
-  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-feed", "~> 0.16"
   gem "jekyll-sitemap", "~> 1.4.0"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
 platforms :mingw, :x64_mingw, :mswin, :jruby do
-  gem "tzinfo", "~> 1.2"
+  gem "tzinfo", "~> 2.0.4"
   gem "tzinfo-data"
 end
 
