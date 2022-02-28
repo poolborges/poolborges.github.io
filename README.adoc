@@ -19,13 +19,17 @@ Disponivel em
 ----
 # puppeteer@8.0.0
 
-npm install -g bpmn-js-cli
+npm install -g bpmn-js@^8.x
+npm install -g bpmn-js-cli@^2.x
 ----
 
 
 .Install commandline suport for mmdc (https://github.com/mermaidjs/mermaid.cli)
 ----
-npm install -g @mermaid-js/mermaid-cli
+# used: puppeteer@13.4.0
+
+npm install -g @mermaid-js/mermaid-cli@^8.x
+
 ----
 
 
