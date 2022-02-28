@@ -1,0 +1,43 @@
+= Kriol Open Source Software
+:page-layout: page
+:title: KriolOSS
+:author: Paulo Borges
+:revnumber: v0.1
+:revdate: 2022-02-25 
+:page-project_name: Kriol Open Source Software (KriolOSS)
+:page-project_developers: poolborges
+:page-project_url: https://github.com/kriolos
+:page-description: Iniciativa de codigo aberto em Cabo Verde.
+
+[[doc.summary]]
+== Sumario
+
+Kriol Open Source Software (KriolOSS).
+
+Iniciativa de codigo aberto em Cabo Verde.
+
+Incepçao Janeiro 2022
+
+Keyword: OSS, Open source, Free, Foundation
+
+== Missao
+
+...
+
+== Valores 
+
+...
+
+== Objeivos (2022)
+
+...
+
+== Projeos
+
+
+* e-Fatura Cabo Verde (open Implementation)
+
+[[doc.reference]]
+== Referencias 
+
+...
