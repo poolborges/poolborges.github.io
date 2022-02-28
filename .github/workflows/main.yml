@@ -56,5 +56,5 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         jekyll_src: './'
         target_branch: 'gh-pages'
-        pre_build_commands: apk --update add openjdk8 graphviz nodejs npm && npm install --unsafe-perm=true -g bpmn-js@^8.x bpmn-js-clibpmn-js-cli@^2.x @mermaid-js/mermaid-cli@^8.x
+        pre_build_commands: apk --update add openjdk8 graphviz nodejs npm && npm install --unsafe-perm=true -g bpmn-js@^8.x bpmn-js-cli@^2.x @mermaid-js/mermaid-cli@^8.x
      
