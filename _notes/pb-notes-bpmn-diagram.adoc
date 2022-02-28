@@ -25,7 +25,7 @@ BPMN:: Business Process Modeling Notation
 
 .Require cli tool
 ----
-npm install -g bpmn-js-cmd
+npm install -g bpmn-js-cli
 ----
 
 .Example BPMN Diagram coded in xsi

@@ -24,7 +24,7 @@ jobs:
     
     # NPM install packages
     #- name: Install npm packages
-    #  run: npm install -g bpmn-js-cmd @mermaid-js/mermaid-cli
+    #  run: npm install -g bpmn-js-cli @mermaid-js/mermaid-cli
 
     #- name: add bin to path
       #run: echo "$(npm bin)" >> $GITHUB_PATH
@@ -56,5 +56,5 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         jekyll_src: './'
         target_branch: 'gh-pages'
-        pre_build_commands: apk --update add openjdk8 graphviz nodejs npm && npm install --unsafe-perm=true -g bpmn-js-cmd @mermaid-js/mermaid-cli
+        pre_build_commands: apk --update add openjdk8 graphviz nodejs npm && npm install --unsafe-perm=true -g bpmn-js-cli @mermaid-js/mermaid-cli
      

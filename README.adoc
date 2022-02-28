@@ -15,9 +15,11 @@ Disponivel em
 
 == Requisitos
 
-.Install Commandline version of bpmn-js (https://github.com/gtudan/bpmn-js-cmd)
+.Install Commandline version of bpmn-js (https://github.com/bpmn-io/bpmn-js-cli)
 ----
-npm install -g bpmn-js-cmd
+# puppeteer@8.0.0
+
+npm install -g bpmn-js-cli
 ----
 
 
