@@ -1,0 +1,276 @@
+= Industrial Protocol 
+:page-layout: note
+:author: poolborges
+:revnumber: v0.1
+:revdate: 2022-02-18 14:03:00 +0000
+:revremark: First draft
+:version-label:
+:generated_: {localdate} {localtime}
+:generated: {docdatetime}
+:page-modified_date: 2022-02-18 14:03:00 +0000
+:sectnums:                                                          
+:toc:                                                               
+:toclevels: 3                                                      
+:toc-title!: Conteudo  
+:page-description: IIoT Industrial Protocol
+
+[[doc.summary]]
+== Summary
+
+== About 
+
+* Industrial Automation & Control
+* 0-10V signal
+
+
+== PLC vd DCS
+
+* PLC (Programmable Logical Control)
+* DCS (Ditributed Control System)
+
+
+== Current-loop (Analog Sensor)
+
+* 4-20mA Signal
+* Pair of wire for each sensor 
+* One sense value for each pair of wire
+* On controller side need a Analog Digital Converter
+
+== Bell 202 Model Standard 
+
+* Defined at Late 1970
+* on 1980 start used
+* Modulation Method: Audio Frequency-Shift Keying (AFSK)
+** 1200 Hz (indicate binary value of 1), 2200 Hz (indicate binary value of  0)
+* For encode and transmit digital data at rate of 12000 bps (bit per second)
+* halft-duplex (trasmitir numa direcção por vez)
+* Provide continually signing as a AC sign wave that shift its frequency
+
+
+== IEC 61158 Fieldbus
+
+Industrial communication networks - Fieldbus specifications
+
+* https://www.felser.ch/download/iec_61158_fieldbus.html
+
+----
+IEC 61158 consists of the following parts, under the general title Digital data communications for measurement and control - Fieldbus for use in industrial control systems:
+
+*   Part 1: Overview and guidance for the IEC 61158 series
+*   Part 2: Physical Layer specification and service definition
+*   Part 3: Data Link Service definition
+*   Part 4: Data Link Protocol specification
+*   Part 5: Application Layer Service definition
+*   Part 6: Application Layer Protocol specification
+----
+
+== Types/Brands of fieldbus
+
+* Fieldbus 
+* HART 
+* Modbus (Modicom/Schneider Electric)
+* Modbus TCP 
+* Modbus Plus 
+* Lon Works (Echelon Corporation)
+* BACNet 
+* Foundation FiedBus 
+* DNP 
+* DeviceNet (Rockwell Automation)
+* CAN 
+* CAN Open  (many Vendors)
+* COntrolNet (many Vendors)
+* EtherNet/IP 
+* EtherCAT protocol
+* Profinet 
+* Profibus (Siemens)
+* Profibus PA
+* Profibus-DP (Descentralised Peripherals)
+* M-Bus (Meter-Bus)
+
+
+== Modbus
+
+* Oldest: Published by Modicom(Schenneider Electric) 1979
+* http://www.modbus.org/
+* Version: V1.1b3 April 26, 2012
+** www.modbus.org/docs/Modbus_Application_Protocol_V1_1b3.pdf
+
+Types
+
+* Modbus RTU
+* Modbus ASCII
+* Modbus TCP 
+* Modbus Plus 
+
+Physical Media 
+
+* RS323, RS048 (two wire)
+* Ethernet 
+
+
+.Request Format
+----
+[Device Addres(Broadcast Address) |Function Code |Data |CRC Error Check]
+----
+
+== Profibus (PROcess FIeld BUS)
+
+* Release: 1993
+* Stats: 50 Million Devices in 2017
+* Connector similar ao conector DB9 (Porta Serial)
+* Cabo Cor (
+* Popularizado: Pela Siemens
+* Cada Device com unico endereço: 1-127
+** Endereço configuravel por software (STEP7, TIA-PORTAL), hardware (DIP Switch)
+*** SIMATIC ET200SP
+* Cabos: 50...1000meters
+* 9600 bps - 2Mbps
+
+
+== Profinet (PROcess FIeld BUS)
+
+* Connector: RJ-45 Ethernet Jack
+* Cabo: Normalmente cor verde (Cabos ""), mas qq cabo de rede com proteçao para ambiente industrial serve
+** 100 Metros
+** reponse time: < 1ms
+* Standard Ethernet swith podem ser usados para expandir a rede
+* 100 Mbps
+** Industrial Ethernet Switch (SCALANCE)
+* Types de endereços: IP Address, MAC Address, Device Name
+
+== Profibus Support
+
+* Porfibus vs Profinet - https://www.youtube.com/watch?v=YxF9QgRAx8A
+* Profibus DP (Descentralised Peripherals) - https://www.youtube.com/watch?v=zJDsEqCyTqc
+
+== Fieldbus 
+
+
+* Node
+* Trunk (In, Out)
+* Fieldbus Power Supply/Conditioner
+* DCS/PLC Controller 
+* Workstation/HMI
+* Maximun number of field devices per segment is 32 
+
+== HART
+
+* Highway Addressable Remote Transducer (HART) Protocol
+* Network of 63
+* Each device can send up to 35-50 item 
+** psi, Configuration, Diagnostic Alert, tagname
+
+
+.Request type package
+----
+[Node # |Read Value |Process Value |Other Data |16]
+----
+
+----
+HART device runs on 4-20 mA signal as base and digital information is 
+modulated on it using Frequency Shift Keying (FSK) modulation technique 
+as 2100 Hz as "0" and 1200 Hz as "1" to be read at the demodulator/receiver.
+----
+
+The **HART Protocol** implements layers 1,2, 3, 4 and 7 of the Open System Interconnection (OSI) 7-layer protocol model: The HART Physical Layer is based on the Bell 202 standard, using frequency shift keying (FSK) to communicate at 1200 bps. The signal frequencies representing bit values of 0 and 1 are 2200 and 1200Hz respectively.
+
+Network Caracterization
+
+* Type of Network: Device (Process Automation)
+* Physical Media: 
+** 4-20 mA analog instrumentation wiring 
+** 2.4 GHz wireless
+* Network Topology: One-on-One, multidrop, wireless mesh
+
+Others
+
+* https://www.youtube.com/watch?v=pXkun-PEiY0
+
+== HART-IP
+
+...
+
+== WirelessHART (IEC 62591- ED.1.0)
+
+...
+
+== HART Analyzer
+
+* https://archive.codeplex.com/?p=hartanalyzer
+* https://github.com/jan-schubert/HARTAnalyzer
+
+----
+Finaltec HART Analyzer is a tool to monitor the HART protocol between field 
+devices and your PC. It used Hart Communication Protocol Lite for the 
+communication.
+
+Dotnet
+----
+
+== HartProtocolLite
+
+* https://github.com/jan-schubert/HartCommunicationProtocolLite
+* https://archive.codeplex.com/?p=hartprotocollite
+
+----
+Hart Communication Protocol Lite is a small and simple project to 
+communicate with field devices via HART protocol. It's developed in C#.
+----
+
+
+== HART Device Description (DD)
+
+A HART Device Description (DD) is fundamentally a model of a HART-compliant field device.
+
+
+== Electronic Device Description Language (IEC 61804-3, EDDL)
+
+...
+
+== BACnet
+
+BACnet Data Communication Protocol for Building Automation and Control Networks
+
+* "Master-Slave/Token-Passing"
+* "Point-to-Point" protocol
+* http://www.bacnet.org/
+* http://www.bacnet.org/Bibliography/ES-7-96/ES-7-96.htm
+
+
+----
+NPDU - Network Protocol Data Units 
+APDU - Application Protocol Data Unit
+----
+
+== BACnet I/P for Java
+
+* https://github.com/infiniteautomation/BACnet4J
+* https://sourceforge.net/projects/bacnet4j/
+* GNU General Public License version 3.0 (GPLv3)
+
+----
+A high-performance implementation of the BACnet I/P protocol 
+written for Java (minimum version 1.5) by Serotonin Software. 
+Supports all BACnet services and full message segregation. 
+Can be used for field devices or for control platforms.
+----
+
+
+== FieldComm Group
+
+* https://fieldcommgroup.org/
+
+== Haystack
+
+* https://project-haystack.org/doc
+
+----
+We standardize semantic data models and web
+services with the goal of making it easier to unlock value from the vast quantity
+of data being generated by the smart devices that permeate our homes, buildings,
+factories, and cities. Applications include automation, control, energy, HVAC,
+lighting, and other environmental systems.
+----
+
+
+

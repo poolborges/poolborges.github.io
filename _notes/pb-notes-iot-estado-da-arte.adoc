@@ -1,0 +1,574 @@
+= IoT Estado da Arte 
+:page-layout: note
+:author: poolborges
+:revnumber: v0.1
+:revdate: 2022-02-18 14:03:00 +0000
+:revremark: First draft
+:version-label:
+:generated_: {localdate} {localtime}
+:generated: {docdatetime}
+:page-modified_date: 2022-02-18 14:03:00 +0000
+:sectnums:                                                          
+:toc:                                                               
+:toclevels: 3                                                      
+:toc-title!: Conteudo  
+:page-description: IoT Estado da Arte 
+
+[[doc.summary]]
+== Sumario
+
+* NOTES for "IoT State of Art"
+
+== Categorias de rede   
+
+* Personal Area Network (PAN)
+** Wireless personal area networks (WPANs)
+* Local Area Network (LAN)
+* Wide Area Network (WAN)
+* Low Power Wide Area (LPWA)
+* Home Area Network (HAN)
+
+== Link Layer
+
+* 802.15.4 
+* Power
+
+== Routing and Mobility 
+
+* TODO
+
+== Caracteristicas
+
+* Range (Short rane, Long range)
+* Lagura de banda
+* Taxa de transferencia
+* Data Throughput
+
+
+== Wireless Frequency bands  
+
+* Licenciadas
+* Não Licenciadas
+** 2.4 GHz ISM
+** Sub-1 GHz ISM 
+*** 433/868/780/915 MHz ISM
+
+
+== Cellular **IoT**
+
+* Narrowband-Internet of Things (NB-IoT) - 3GPP standards: 
+* Long-Term Evolution for Machines (LTE-M) - 3GPP standards:
+* 5G 
+* GSM
+* LTE
+
+
+== Short-range radio connectivity
+
+* TODO
+
+=== WIFI 
+
+* Short Range
+
+
+=== Zigbee
+
+Zigbee é nome de um conjunto de especificações IEEE 802.15.4
+
+* Low-power,
+* Low data rate: 250 kbit/s
+* Physical range: 10 to 20 meters (approx)
+** line-of-sight: 10-100 meters
+* Applications: Home energy monitors, 
+* Specification Version: 
+** Zigbee 2004 Specification (Specification 1.0)
+** Zigbee 2006 Specification  
+** Zigbee 2007 Specification (Zigbee PRO
+** Zigbee Smart Energy V2.0 (on top of Zigbee IP 
+** Zigbee RF4CE 
+
+
+Zigbee Alliance is supported by 
+
+* Board Members from Comcast, Huawei, The Kroger Co., Landis+Gyr, 
+* LEEDARSON, Legrand Group, MMB Networks, NXP Semiconductors, 
+* Signify (formerly Philips Lighting), Schneider Electric, Silicon Labs, 
+* SmartThings, Somfy, Texas Instruments, and Wulian. 
+
+
+==== Zigbee Cluster Library (ZCL).
+
+Door Lock Cluster 
+
+At the application layer, 
+Zigbee provides a standardized communication protocol through entities called “clusters.” 
+Clusters define what commands a device can send or receive, 
+and what pieces of data or attributes a device cares about. 
+The Door Lock Cluster defines everything from how a door is locked and unlocked to schedules and pin codes for the lock. Thus, at the absolute top of the Zigbee protocol stack, a door lock has a very specific and standardized way that it communicates with the rest of the Zigbee network and the outside world.
+
+=== ZWave 
+
+* TODO
+
+=== Bluethoot 5
+
+* TODO
+
+=== Thread
+
+OpenThread, an open-source implementation of Thread
+
+Thread is a 6LoWPAN-based protocol
+mesh networking (Up to 250 devices)
+
+Transport Layer 
+* UDP + DTLS 
+
+Network Layer 
+* Distance Vector Routing 
+* IPv6 
+* 6LoWPAN 
+
+Organizations:
+* Apple, Arm, Google/Nest, Nordic Semiconductors, NXP Semiconductors, OSRAM, Qualcomm, Schneider Electric, Siemens, Silicon Labs, Somfy, and Yale Security. 
+
+Products
+
+*  Comcast Xfinity Home Security, Echo Show,  Amazon Echo Plus 
+
+=== Dotdot
+
+Dotdot is based on the Zigbee Cluster Library (ZCL) 
+
+
+The core of the dotdot language is the zigbee interoperability layer, 
+but without the protocol. A layer comprises a protocol, interface, 
+and service (the action that the layer performs). 
+The dotdot language is agnostic to underlying networks and protocol message structure, 
+so it defines only the interface and the action. Hence, it is an interaction model, 
+defining the behavior and interaction between devices.
+
+For each qualified network, a dotdot specification will also standardize 
+or recommend protocols to complete the application layer
+For example, a dotdot device on a zigbee network uses 
+standard ZCL APS messages (and defines the format). 
+A dotdot device on an IP network uses standard ZCLIP URI messages.
+
+
+Organization: DSR, MMB Networks, NXP Semiconductors, Silicon Labs, and Ubilogix. 
+
+
+=== DASH7
+
+
+Wireless Data Communication that evole from on ISO/IEC 18000-7
+
+* 433 MHz ISM band 
+* Medium Range
+* 100m to 500m. 
+
+* OSS-7: Dash7 Open Source Stack: Apache License, Version 2.0. 
+* ISO/IEC 18000-7 Information technology - Radio frequency identification for item management - Part 7: Parameters for active air interface communications at 433 MHz 
+* https://www.youtube.com/watch?v=ead-fFj4fyc
+
+
+Frequency vs Range
+
+* 433MHz (Range: 1Km ) 
+* 868/915MHz (Range: 0.45 Km) - 863-870 MHz (EU) or the 902-928 MHz (US) frequency bands. 
+* 2.4 GHz (Range: 0.2 Km)
+
+Tree topology 
+
+* Simple Routing (2 hops)
+
+Topology 
+
+* Gateway 
+* Subcontroller 
+* Endpoint 
+
+Features
+
+* Mid to Long range 
+* Low Power 
+* hardwre provider independent 
+* Mobile 
+* Ful stack spcification
+* Dynamic pull/push
+* Low power wakeup
+* Light: packet size limited to 256bytes 
+
+
+Hardware 
+
+* https://blog.st.com/wizzilab-wizzikit-da7/
+
+Use Case 
+
+* Wizzilab (france, Parking guidance and information)
+* Matrix product Development (EUA, sensor measure for food industry, 
+* university Antwerpen (bird track System: sensor with 1g, bird with 20g)
+* Belivium (Stralo, Museum location content based on beacon)
+
+=== Wireless M-BUS
+
+A radio variant of M-Bus (Wireless M-Bus) is also specified in EN 13757-4. The M-Bus was developed to fill the need for a system for the networking and remote reading of utility meters, for example to measure the consumption of gas or water in the home.
+
+Wireless M-Bus is the European standard for wireless meter communication with gas, electric, water and heat meters (EN 13757).
+
+The Silicon Labs wireless M-Bus software and stack provide: Fully compliant wireless M-Bus protocol stack. Worldwide wireless M-Bus support with modes and configurations 868 MHz modes S1, S1-m, S2, T1, T2, C1, C2.
+
+=== RFID
+
+* TODO
+
+== 6LoWPAN
+
+6LoWPAN (Ipv6 Over Low Power Area Network) is defined in RFC 4944.
+
+
+== Dotdot Specification
+
+* TODO
+
+== KNX IoT
+
+* KNX over Thread Stack 
+* https://openweave.io/
+
+== LPWA
+
+* TODO
+
+=== SIGFOX
+
+* began in 2009
+* Long Range 
+
+
+=== LoRa
+
+* Long Range 
+
+
+=== NB-IoT
+
+* 20 dB coverage enhancement, 
+* 100,000 connections in each cell, 
+* terminal batteries with a 10-year service lifespan
+
+
+== EC-GSM
+
+* TODO
+
+=== LTE Cat-M1 
+
+* 1.4 Frontend(vs. 20 MHz) + 1 Antena (Expensive Chipset)
+* 1 Mbps Half-Duplex
+* Power Safe: Power Saving Mode(PSM), Extended Discontinuous Reception (eDRx)
+
+* Costs
+** Modules: $15 
+** Data: $1-$3/Month 
+
+* LTE-M Sensor Suite (LinkLabs)
+** PTCRB and VZN Certified communication board
+** Open Source Atmel L21 project for user Application 
+** Open source power/sensor board 
+
+== LTE-M
+
+* TODO
+
+
+== WeMo
+
+* TODO
+
+
+== long-range Bluetooth
+
+Data Throughput
+
+* 6 lane
+
+
+== Standard 
+
+* OMA Lightweight M2M 1.1 (LwM2M 1.1)
+
+
+== Organismos de Padronização
+
+* 3GPP
+* GSMA
+
+
+== Security 
+
+* https://www.gsma.com/iot/iot-security/iot-security-guidelines/[GSMA’s IoT Security Guidelines].
+** ETSI TS 103 645 V1.1.1 (2019-02) - CYBER; Cyber Security for Consumer Internet of Things
+
+
+== Temas 
+
+* https://en.wikipedia.org/wiki/SmartThings[SmartThings] hubs
+* Home Energy Management System (HEMS)
+
+
+
+== Inteligent Transport System (ITS) 
+
+* ITS G5 (802.11p)
+* V2X
+
+
+== Projetos 
+
+* Google Lighthouse 3.0 (JSON, Node)
+
+
+== 6LoWPAN
+
+* https://www.youtube.com/watch?v=4baf7N2N_Wo
+
+=== ROLL RPL "Ripple"
+
+* Proactive Distance Vector
+* Low-Power and Lossy Network (LLN) 
+
+=== IEFT 
+
+* 6LoWPAN 
+* ROLL 
+* IPv6 
+
+=== IEEE 802.15.4
+
+* IEEE 802.15.4 MAC
+* IPv6/6LoWPAN
+* ZigBee Radio Frequency for Consumer Electronics (RF4CE)
+* ZigBee Smart Energy 
+* ZigBee® PRO
+
+== ZigBee Protocol 
+
+* ZigBee LightLink (ZLL)
+* ZigBee Home Automation (ZHA) 
+* ZigBee Smart Energy (ZSE)
+* ZigBee Building Automation (ZBA),
+* ZigBee Remote Control (ZRC).
+
+
+== SmartConnect 6LoWPAN
+
+* TODO
+
+== Hardware 
+
+* SAMR21-XPRO
+
+
+Serial Remote Procedure Call
+
+
+== Z-Wave  
+
+* Propetary
+* Only one manufacture
+
+
+== Aplication Protocol 
+
+* Firewall 
+* Compression 
+* Lossy links 
+* Frame-size, Bandwith Limitation 
+* Multicast (Expensive
+* Application Securty 
+* Mobility 
+* Node Ientification 
+* Sleep Cycle
+
+
+== Aplication Protocol 
+
+* Dotdot 1.0 specification 
+** Dotdot over Thread 
+* RTP 
+* HTTP (Webservice: SOAP, REST)
+** 6lowapp.net (
+* CoAP (from: Constraint Rest Enviroment working group)
+* Protocol X From : Open Connectivity Foundation (OCF) merged with AllSeen Alliance
+
+== Other Application Protocols 
+
+Service Discovery 
+
+* Service Location Protocol (SLP) 
+* Device Profile Web Service (DPWS) 
+
+Management 
+
+* Simple Network Management Protocol (SNMP) 
+* LWM2M
+
+M2M Telemetry 
+
+* MQ Telemetry Transport for Swnsors (MQTT-S)
+
+Build Automation (Specilize industry protocol)
+
+* BACnet/IP 
+* oBIX 
+
+Energy Industry (Specilize industry protocol)
+
+* ANSI c12 
+* Device Language Message Specification (DLMS) 
+* ZipBee Smart Energy 2.0
+
+Home 
+
+* ECHONET Lite
+
+== ECHONET Lite
+
+* HEMS (Home Energy Management System)
+
+
+== Devices Profile for Web Services (DPWS) 
+
+* TODO
+
+== Web Services for Devices (WS4D)
+
+* WS4D.org
+
+
+Web Services for Devices (WS4D) 
+is an initiative bringing Service-Oriented Architecture (SOA) 
+and Web services technology to the application domains of 
+industrial automation, home entertainment, automotive systems 
+and telecommunication systems.
+
+
+== SOA for Devices (SOA4D)
+
+* SOA4D.org
+* DPWS stack (both C and Java versions) 
+* add-ons (like WS-Management and WS-Security implementations) 
+
+
+== Service Oriented Device and Delivery Architecture (SODA)
+
+* TODO
+
+== WS-DD Specifications 
+
+OASIS Web Services Discovery (WS-DD) and Web Services Devices Profile DPWS
+
+* Devices Profile for Web Services (DPWS) 1.1 
+* SOAP-over-UDP 1.1
+* Web Services Dynamic Discovery (WS-Discovery) 1.1
+
+
+WS-I Basic Profile Version 1.1 specification
+WS-I Basic Profile 2.0 specification
+
+
+== Protocols 
+
+* UPnP - Universal Plug and Play 
+* SSDP - Simple Service Discovery Protocol 
+* SCPD - Service Control Protocol Definition 
+* SOAP - Simple Object Acess Protocol 
+* DLNA - 
+
+== Universal Plug and Play (UPnP)
+
+UPnP-arch-DeviceArchitecture-v1-0
+
+* http://upnp.org/specs/arch/UPnP-arch-DeviceArchitecture-v1.0.pdf
+* http://upnp.org/specs/arch/UPnP-arch-DeviceArchitecture-v1.1-AnnexA.pdf
+
+About 
+
+* UDP/1900
+** HTTP over UDP allowing devices to discovery each other 
+** Multicast 2.39.255.255.250
+
+* UPnP Stack 
+** Discovery - Advertising and Searching 
+** Description -  An XML file describing the device 
+** Control - Call and action or query for value 
+** Eventing - User for announcing state changes
+** Presentation - UI...Web page or management portal
+
+
+== Multicast Doman Name System (mDNS) - (bonjour)
+
+* TODO
+
+== DNS Service-Discovery(DNS-SD)
+
+* TODO
+
+== DLNA 
+
+* Linux dLeyna 
+
+
+== Reference
+
+* http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01
+* sensei-project.eu 
+
+== PicoGW
+
+An open source device server, distributed by Kanagawa institute of technology
+It converts various devices specific protocols to webapi
+A minimalist's housing Web API gateway that supports ECHONET Lite (works on node.js) 
+based on Housing API by Daiwa House Industry(http://www.daiwahouse.co.jp/lab/HousingAPI/)
+
+https://github.com/KAIT-HEMS/PicoGW
+
+
+== IEEE 802.11
+
+* IEEE802.11ai - Fast Initial Link Set-up
+
+* http://www.ieee802.org/11/Reports/tgai_update.htm
+
+== Network Security 
+
+* TLS - required for encrypting information in TCP/IP communication
+* IPSec - for communication encrypted with IP layer.
+* PANA 
+* DTLS
+
+
+
+== Thinking Things protocol
+
+* Developed by: telfonica 
+* Closed protocol 
+
+
+== ECHONET Lite Application Communication Interface (AIF) Specifications
+
+* protocol for HEMS (Home Energy Management System)
+* https://www.meti.go.jp/english/press/2019/0206_002.html
+* As international standards for this technology
+** ISO/IEC14543-4-3 - Information technology -- Home electronic systems (HES) architecture -- Part 3-10: Wireless short-packet (WSP) protocol optimized for energy harvesting -- Architecture and lower layer protocols
+** IEC62394
+
+
+
+
+== Reference
+
+* sensei-project.eu 
