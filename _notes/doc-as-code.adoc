@@ -50,6 +50,8 @@ Quem usa AsciiDoc
 
 == JAMstack 
 
+JAM:: JavaScript, API and Markup
+
 * https://antora.org/[Antora]
 * https://jekyllrb.com[Jekyll]
 * https://docusaurus.io/[Docusaurus]
