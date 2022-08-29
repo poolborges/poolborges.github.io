@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Diagramas BPMN | Paulo Borges’s Notes</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Diagramas BPMN" />
+<meta name="author" content="Paulo Borges" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Breve descrição e exemplos de diagramas com BPMN" />
+<meta property="og:description" content="Breve descrição e exemplos de diagramas com BPMN" />
+<link rel="canonical" href="https://poolborges.github.io/notes/pb-notes-bpmn-diagram.html" />
+<meta property="og:url" content="https://poolborges.github.io/notes/pb-notes-bpmn-diagram.html" />
+<meta property="og:site_name" content="Paulo Borges’s Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-09T18:45:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Diagramas BPMN" />
+<meta name="google-site-verification" content="_LLMR_ca_ZDaTsm3ZH8STl2K5ZpXuY6v77lcQ5eyL4U" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Paulo Borges"},"headline":"Diagramas BPMN","dateModified":"2021-08-09T18:45:00+00:00","datePublished":"2021-08-09T18:45:00+00:00","description":"Breve descrição e exemplos de diagramas com BPMN","url":"https://poolborges.github.io/notes/pb-notes-bpmn-diagram.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://poolborges.github.io/notes/pb-notes-bpmn-diagram.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://poolborges.github.io/feed.xml" title="Paulo Borges's Notes" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Paulo Borges&#39;s Notes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/authors.html">Authors</a><a class="page-link" href="/notes.html">Notes</a><a class="page-link" href="/projects.html">Projects</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "url": "https://poolborges.github.io/notes/pb-notes-bpmn-diagram.html",
+  "name": "Diagramas BPMN",
+  "headline": "Diagramas BPMN",
+  "keywords": "",
+  "description": "<div id=\"toc\" class=\"toc\"><div id=\"toctitle\"></div><ul class=\"sectlevel1\"><li><a href=\"#doc.summary\">1. Sumario</a></li></ul></div><div class=\"sect1\"><h2 id=\"doc.summary\">1. Sumario</h2><div class=\"sectionbody\"></div></div>",
+  "articleBody": "\n\n\n1. Sumario\n2. BPMN\n\n\n\n1. Sumario\n\n\nNesta nota apresentarei exemplos de BPMN\n\n\n\nBPMN\n\nBusiness Process Modeling Notation\n\n\n\n\n\n\n2. BPMN\n\n\nRequire cli tool\n\nnpm install -g bpmn-js-cli\n\n\n\nExample BPMN Diagram coded in xsi\n\nFailed to generate image: Could not find the 'bpmn-js' executable in PATH; add it to the PATH or specify its location using the 'bpmn-js' document attribute\n&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\n&lt;semantic:definitions xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:di=\"http://www.omg.org/spec/DD/20100524/DI\" xmlns:bpmndi=\"http://www.omg.org/spec/BPMN/20100524/DI\" xmlns:dc=\"http://www.omg.org/spec/DD/20100524/DC\" xmlns:semantic=\"http://www.omg.org/spec/BPMN/20100524/MODEL\" id=\"_1275940932088\" targetNamespace=\"http://www.trisotech.com/definitions/_1275940932088\" exporter=\"Camunda Modeler\" exporterVersion=\"1.16.0\"&gt;\n  &lt;semantic:message id=\"_1275940932310\" /&gt;\n  &lt;semantic:message id=\"_1275940932433\" /&gt;\n  &lt;semantic:process id=\"_6-1\" isExecutable=\"false\"&gt;\n    &lt;semantic:laneSet id=\"ls_6-438\"&gt;\n      &lt;semantic:lane id=\"_6-650\" name=\"clerk\"&gt;\n        &lt;semantic:flowNodeRef&gt;OrderReceivedEvent&lt;/semantic:flowNodeRef&gt;\n        &lt;semantic:flowNodeRef&gt;_6-652&lt;/semantic:flowNodeRef&gt;\n        &lt;semantic:flowNodeRef&gt;_6-674&lt;/semantic:flowNodeRef&gt;\n        &lt;semantic:flowNodeRef&gt;CalmCustomerTask&lt;/semantic:flowNodeRef&gt;\n      &lt;/semantic:lane&gt;\n      &lt;semantic:lane id=\"_6-446\" name=\"pizza chef\"&gt;\n        &lt;semantic:flowNodeRef&gt;_6-463&lt;/semantic:flowNodeRef&gt;\n      &lt;/semantic:lane&gt;\n      &lt;semantic:lane id=\"_6-448\" name=\"delivery boy\"&gt;\n        &lt;semantic:flowNodeRef&gt;_6-514&lt;/semantic:flowNodeRef&gt;\n        &lt;semantic:flowNodeRef&gt;_6-565&lt;/semantic:flowNodeRef&gt;\n        &lt;semantic:flowNodeRef&gt;_6-616&lt;/semantic:flowNodeRef&gt;\n      &lt;/semantic:lane&gt;\n    &lt;/semantic:laneSet&gt;\n    &lt;semantic:startEvent id=\"OrderReceivedEvent\" name=\"Order received\"&gt;\n      &lt;semantic:outgoing&gt;_6-630&lt;/semantic:outgoing&gt;\n      &lt;semantic:messageEventDefinition messageRef=\"_1275940932310\" /&gt;\n    &lt;/semantic:startEvent&gt;\n    &lt;semantic:parallelGateway id=\"_6-652\" name=\"\"&gt;\n      &lt;semantic:incoming&gt;_6-630&lt;/semantic:incoming&gt;\n      &lt;semantic:outgoing&gt;_6-691&lt;/semantic:outgoing&gt;\n      &lt;semantic:outgoing&gt;_6-693&lt;/semantic:outgoing&gt;\n    &lt;/semantic:parallelGateway&gt;\n    &lt;semantic:intermediateCatchEvent id=\"_6-674\" name=\"„where is my pizza?“\"&gt;\n      &lt;semantic:incoming&gt;_6-691&lt;/semantic:incoming&gt;\n      &lt;semantic:incoming&gt;_6-746&lt;/semantic:incoming&gt;\n      &lt;semantic:outgoing&gt;_6-748&lt;/semantic:outgoing&gt;\n      &lt;semantic:messageEventDefinition messageRef=\"_1275940932433\" /&gt;\n    &lt;/semantic:intermediateCatchEvent&gt;\n    &lt;semantic:task id=\"CalmCustomerTask\" name=\"Calm customer\"&gt;\n      &lt;semantic:incoming&gt;_6-748&lt;/semantic:incoming&gt;\n      &lt;semantic:outgoing&gt;_6-746&lt;/semantic:outgoing&gt;\n    &lt;/semantic:task&gt;\n    &lt;semantic:task id=\"_6-463\" name=\"Bake the pizza\"&gt;\n      &lt;semantic:incoming&gt;_6-693&lt;/semantic:incoming&gt;\n      &lt;semantic:outgoing&gt;_6-632&lt;/semantic:outgoing&gt;\n    &lt;/semantic:task&gt;\n    &lt;semantic:task id=\"_6-514\" name=\"Deliver the pizza\"&gt;\n      &lt;semantic:incoming&gt;_6-632&lt;/semantic:incoming&gt;\n      &lt;semantic:outgoing&gt;_6-634&lt;/semantic:outgoing&gt;\n    &lt;/semantic:task&gt;\n    &lt;semantic:task id=\"_6-565\" name=\"Receive payment\"&gt;\n      &lt;semantic:incoming&gt;_6-634&lt;/semantic:incoming&gt;\n      &lt;semantic:outgoing&gt;_6-636&lt;/semantic:outgoing&gt;\n    &lt;/semantic:task&gt;\n    &lt;semantic:endEvent id=\"_6-616\" name=\"\"&gt;\n      &lt;semantic:incoming&gt;_6-636&lt;/semantic:incoming&gt;\n      &lt;semantic:terminateEventDefinition /&gt;\n    &lt;/semantic:endEvent&gt;\n    &lt;semantic:sequenceFlow id=\"_6-630\" name=\"\" sourceRef=\"OrderReceivedEvent\" targetRef=\"_6-652\" /&gt;\n    &lt;semantic:sequenceFlow id=\"_6-632\" name=\"\" sourceRef=\"_6-463\" targetRef=\"_6-514\" /&gt;\n    &lt;semantic:sequenceFlow id=\"_6-634\" name=\"\" sourceRef=\"_6-514\" targetRef=\"_6-565\" /&gt;\n    &lt;semantic:sequenceFlow id=\"_6-636\" name=\"\" sourceRef=\"_6-565\" targetRef=\"_6-616\" /&gt;\n    &lt;semantic:sequenceFlow id=\"_6-691\" name=\"\" sourceRef=\"_6-652\" targetRef=\"_6-674\" /&gt;\n    &lt;semantic:sequenceFlow id=\"_6-693\" name=\"\" sourceRef=\"_6-652\" targetRef=\"_6-463\" /&gt;\n    &lt;semantic:sequenceFlow id=\"_6-746\" name=\"\" sourceRef=\"CalmCustomerTask\" targetRef=\"_6-674\" /&gt;\n    &lt;semantic:sequenceFlow id=\"_6-748\" name=\"\" sourceRef=\"_6-674\" targetRef=\"CalmCustomerTask\" /&gt;\n  &lt;/semantic:process&gt;\n  &lt;semantic:message id=\"_1275940932198\" /&gt;\n  &lt;semantic:process id=\"_6-2\" isExecutable=\"false\"&gt;\n    &lt;semantic:startEvent id=\"_6-61\" name=\"Hungry for pizza\"&gt;\n      &lt;semantic:outgoing&gt;_6-125&lt;/semantic:outgoing&gt;\n    &lt;/semantic:startEvent&gt;\n    &lt;semantic:task id=\"SelectAPizzaTask\" name=\"Select a pizza\"&gt;\n      &lt;semantic:incoming&gt;_6-125&lt;/semantic:incoming&gt;\n      &lt;semantic:outgoing&gt;_6-178&lt;/semantic:outgoing&gt;\n    &lt;/semantic:task&gt;\n    &lt;semantic:task id=\"_6-127\" name=\"Order a pizza\"&gt;\n      &lt;semantic:incoming&gt;_6-178&lt;/semantic:incoming&gt;\n      &lt;semantic:outgoing&gt;_6-420&lt;/semantic:outgoing&gt;\n    &lt;/semantic:task&gt;\n    &lt;semantic:eventBasedGateway id=\"_6-180\" name=\"\"&gt;\n      &lt;semantic:incoming&gt;_6-420&lt;/semantic:incoming&gt;\n      &lt;semantic:incoming&gt;_6-430&lt;/semantic:incoming&gt;\n      &lt;semantic:outgoing&gt;_6-422&lt;/semantic:outgoing&gt;\n      &lt;semantic:outgoing&gt;_6-424&lt;/semantic:outgoing&gt;\n    &lt;/semantic:eventBasedGateway&gt;\n    &lt;semantic:intermediateCatchEvent id=\"_6-202\" name=\"pizza received\"&gt;\n      &lt;semantic:incoming&gt;_6-422&lt;/semantic:incoming&gt;\n      &lt;semantic:outgoing&gt;_6-428&lt;/semantic:outgoing&gt;\n      &lt;semantic:messageEventDefinition messageRef=\"_1275940932198\" /&gt;\n    &lt;/semantic:intermediateCatchEvent&gt;\n    &lt;semantic:intermediateCatchEvent id=\"_6-219\" name=\"60 minutes\"&gt;\n      &lt;semantic:incoming&gt;_6-424&lt;/semantic:incoming&gt;\n      &lt;semantic:outgoing&gt;_6-426&lt;/semantic:outgoing&gt;\n      &lt;semantic:timerEventDefinition&gt;\n        &lt;semantic:timeDate /&gt;\n      &lt;/semantic:timerEventDefinition&gt;\n    &lt;/semantic:intermediateCatchEvent&gt;\n    &lt;semantic:task id=\"_6-236\" name=\"Ask for the pizza\"&gt;\n      &lt;semantic:incoming&gt;_6-426&lt;/semantic:incoming&gt;\n      &lt;semantic:outgoing&gt;_6-430&lt;/semantic:outgoing&gt;\n    &lt;/semantic:task&gt;\n    &lt;semantic:task id=\"_6-304\" name=\"Pay the pizza\"&gt;\n      &lt;semantic:incoming&gt;_6-428&lt;/semantic:incoming&gt;\n      &lt;semantic:outgoing&gt;_6-434&lt;/semantic:outgoing&gt;\n    &lt;/semantic:task&gt;\n    &lt;semantic:task id=\"_6-355\" name=\"Eat the pizza\"&gt;\n      &lt;semantic:incoming&gt;_6-434&lt;/semantic:incoming&gt;\n      &lt;semantic:outgoing&gt;_6-436&lt;/semantic:outgoing&gt;\n    &lt;/semantic:task&gt;\n    &lt;semantic:endEvent id=\"_6-406\" name=\"Hunger satisfied\"&gt;\n      &lt;semantic:incoming&gt;_6-436&lt;/semantic:incoming&gt;\n    &lt;/semantic:endEvent&gt;\n    &lt;semantic:sequenceFlow id=\"_6-125\" name=\"\" sourceRef=\"_6-61\" targetRef=\"SelectAPizzaTask\" /&gt;\n    &lt;semantic:sequenceFlow id=\"_6-178\" name=\"\" sourceRef=\"SelectAPizzaTask\" targetRef=\"_6-127\" /&gt;\n    &lt;semantic:sequenceFlow id=\"_6-420\" name=\"\" sourceRef=\"_6-127\" targetRef=\"_6-180\" /&gt;\n    &lt;semantic:sequenceFlow id=\"_6-422\" name=\"\" sourceRef=\"_6-180\" targetRef=\"_6-202\" /&gt;\n    &lt;semantic:sequenceFlow id=\"_6-424\" name=\"\" sourceRef=\"_6-180\" targetRef=\"_6-219\" /&gt;\n    &lt;semantic:sequenceFlow id=\"_6-426\" name=\"\" sourceRef=\"_6-219\" targetRef=\"_6-236\" /&gt;\n    &lt;semantic:sequenceFlow id=\"_6-428\" name=\"\" sourceRef=\"_6-202\" targetRef=\"_6-304\" /&gt;\n    &lt;semantic:sequenceFlow id=\"_6-430\" name=\"\" sourceRef=\"_6-236\" targetRef=\"_6-180\" /&gt;\n    &lt;semantic:sequenceFlow id=\"_6-434\" name=\"\" sourceRef=\"_6-304\" targetRef=\"_6-355\" /&gt;\n    &lt;semantic:sequenceFlow id=\"_6-436\" name=\"\" sourceRef=\"_6-355\" targetRef=\"_6-406\" /&gt;\n  &lt;/semantic:process&gt;\n  &lt;semantic:collaboration id=\"C1275940932557\"&gt;\n    &lt;semantic:participant id=\"_6-53\" name=\"Pizza Customer\" processRef=\"_6-2\" /&gt;\n    &lt;semantic:participant id=\"_6-438\" name=\"Pizza vendor\" processRef=\"_6-1\" /&gt;\n    &lt;semantic:messageFlow id=\"_6-638\" name=\"pizza order\" sourceRef=\"_6-127\" targetRef=\"OrderReceivedEvent\" /&gt;\n    &lt;semantic:messageFlow id=\"_6-642\" name=\"\" sourceRef=\"_6-236\" targetRef=\"_6-674\" /&gt;\n    &lt;semantic:messageFlow id=\"_6-646\" name=\"receipt\" sourceRef=\"_6-565\" targetRef=\"_6-304\" /&gt;\n    &lt;semantic:messageFlow id=\"_6-648\" name=\"money\" sourceRef=\"_6-304\" targetRef=\"_6-565\" /&gt;\n    &lt;semantic:messageFlow id=\"_6-640\" name=\"pizza\" sourceRef=\"_6-514\" targetRef=\"_6-202\" /&gt;\n    &lt;semantic:messageFlow id=\"_6-750\" name=\"\" sourceRef=\"CalmCustomerTask\" targetRef=\"_6-236\" /&gt;\n  &lt;/semantic:collaboration&gt;\n  &lt;bpmndi:BPMNDiagram id=\"Trisotech.Visio-_6\" name=\"Untitled Diagram\" documentation=\"\" resolution=\"96.00000267028808\"&gt;\n    &lt;bpmndi:BPMNPlane bpmnElement=\"C1275940932557\"&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6-53\" bpmnElement=\"_6-53\" isHorizontal=\"true\"&gt;\n        &lt;dc:Bounds x=\"12\" y=\"12\" width=\"1044\" height=\"294\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6-438\" bpmnElement=\"_6-438\" isHorizontal=\"true\"&gt;\n        &lt;dc:Bounds x=\"12\" y=\"372\" width=\"905\" height=\"337\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6__6-650\" bpmnElement=\"_6-650\" isHorizontal=\"true\"&gt;\n        &lt;dc:Bounds x=\"42\" y=\"372\" width=\"875\" height=\"114\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6__6-446\" bpmnElement=\"_6-446\" isHorizontal=\"true\"&gt;\n        &lt;dc:Bounds x=\"42\" y=\"486\" width=\"875\" height=\"114\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6__6-448\" bpmnElement=\"_6-448\" isHorizontal=\"true\"&gt;\n        &lt;dc:Bounds x=\"42\" y=\"600\" width=\"875\" height=\"109\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6_OrderReceivedEvent\" bpmnElement=\"OrderReceivedEvent\"&gt;\n        &lt;dc:Bounds x=\"79\" y=\"405\" width=\"30\" height=\"30\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6__6-652\" bpmnElement=\"_6-652\"&gt;\n        &lt;dc:Bounds x=\"140\" y=\"399\" width=\"42\" height=\"42\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6__6-674\" bpmnElement=\"_6-674\"&gt;\n        &lt;dc:Bounds x=\"218\" y=\"404\" width=\"32\" height=\"32\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6_CalmCustomerTask\" bpmnElement=\"CalmCustomerTask\"&gt;\n        &lt;dc:Bounds x=\"286\" y=\"386\" width=\"83\" height=\"68\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6__6-463\" bpmnElement=\"_6-463\"&gt;\n        &lt;dc:Bounds x=\"252\" y=\"521\" width=\"83\" height=\"68\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6__6-514\" bpmnElement=\"_6-514\"&gt;\n        &lt;dc:Bounds x=\"464\" y=\"629\" width=\"83\" height=\"68\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6__6-565\" bpmnElement=\"_6-565\"&gt;\n        &lt;dc:Bounds x=\"603\" y=\"629\" width=\"83\" height=\"68\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6__6-616\" bpmnElement=\"_6-616\"&gt;\n        &lt;dc:Bounds x=\"722\" y=\"647\" width=\"32\" height=\"32\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6__6-61\" bpmnElement=\"_6-61\"&gt;\n        &lt;dc:Bounds x=\"66\" y=\"96\" width=\"30\" height=\"30\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6__6-74\" bpmnElement=\"SelectAPizzaTask\"&gt;\n        &lt;dc:Bounds x=\"145\" y=\"77\" width=\"83\" height=\"68\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6__6-127\" bpmnElement=\"_6-127\"&gt;\n        &lt;dc:Bounds x=\"265\" y=\"77\" width=\"83\" height=\"68\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6__6-180\" bpmnElement=\"_6-180\"&gt;\n        &lt;dc:Bounds x=\"378\" y=\"90\" width=\"42\" height=\"42\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6__6-202\" bpmnElement=\"_6-202\"&gt;\n        &lt;dc:Bounds x=\"647\" y=\"95\" width=\"32\" height=\"32\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6__6-219\" bpmnElement=\"_6-219\"&gt;\n        &lt;dc:Bounds x=\"448\" y=\"184\" width=\"32\" height=\"32\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6__6-236\" bpmnElement=\"_6-236\"&gt;\n        &lt;dc:Bounds x=\"517\" y=\"166\" width=\"83\" height=\"68\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6__6-304\" bpmnElement=\"_6-304\"&gt;\n        &lt;dc:Bounds x=\"726\" y=\"77\" width=\"83\" height=\"68\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6__6-355\" bpmnElement=\"_6-355\"&gt;\n        &lt;dc:Bounds x=\"834\" y=\"77\" width=\"83\" height=\"68\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNShape id=\"Trisotech.Visio__6__6-406\" bpmnElement=\"_6-406\"&gt;\n        &lt;dc:Bounds x=\"956\" y=\"95\" width=\"32\" height=\"32\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNShape&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-640\" bpmnElement=\"_6-640\"&gt;\n        &lt;di:waypoint x=\"506\" y=\"629\" /&gt;\n        &lt;di:waypoint x=\"506\" y=\"384\" /&gt;\n        &lt;di:waypoint x=\"663\" y=\"384\" /&gt;\n        &lt;di:waypoint x=\"663\" y=\"127\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-630\" bpmnElement=\"_6-630\"&gt;\n        &lt;di:waypoint x=\"109\" y=\"420\" /&gt;\n        &lt;di:waypoint x=\"140\" y=\"420\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-691\" bpmnElement=\"_6-691\"&gt;\n        &lt;di:waypoint x=\"182\" y=\"420\" /&gt;\n        &lt;di:waypoint x=\"200\" y=\"420\" /&gt;\n        &lt;di:waypoint x=\"218\" y=\"420\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-648\" bpmnElement=\"_6-648\"&gt;\n        &lt;di:waypoint x=\"754\" y=\"145\" /&gt;\n        &lt;di:waypoint x=\"754\" y=\"408\" /&gt;\n        &lt;di:waypoint x=\"630\" y=\"408\" /&gt;\n        &lt;di:waypoint x=\"631\" y=\"629\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-422\" bpmnElement=\"_6-422\"&gt;\n        &lt;di:waypoint x=\"420\" y=\"111\" /&gt;\n        &lt;di:waypoint x=\"438\" y=\"111\" /&gt;\n        &lt;di:waypoint x=\"647\" y=\"111\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-646\" bpmnElement=\"_6-646\" messageVisibleKind=\"non_initiating\"&gt;\n        &lt;di:waypoint x=\"658\" y=\"629\" /&gt;\n        &lt;di:waypoint x=\"658\" y=\"432\" /&gt;\n        &lt;di:waypoint x=\"782\" y=\"432\" /&gt;\n        &lt;di:waypoint x=\"782\" y=\"145\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-428\" bpmnElement=\"_6-428\"&gt;\n        &lt;di:waypoint x=\"679\" y=\"111\" /&gt;\n        &lt;di:waypoint x=\"726\" y=\"111\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-748\" bpmnElement=\"_6-748\"&gt;\n        &lt;di:waypoint x=\"250\" y=\"420\" /&gt;\n        &lt;di:waypoint x=\"268\" y=\"420\" /&gt;\n        &lt;di:waypoint x=\"286\" y=\"420\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-420\" bpmnElement=\"_6-420\"&gt;\n        &lt;di:waypoint x=\"348\" y=\"111\" /&gt;\n        &lt;di:waypoint x=\"366\" y=\"111\" /&gt;\n        &lt;di:waypoint x=\"378\" y=\"111\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-636\" bpmnElement=\"_6-636\"&gt;\n        &lt;di:waypoint x=\"686\" y=\"663\" /&gt;\n        &lt;di:waypoint x=\"704\" y=\"663\" /&gt;\n        &lt;di:waypoint x=\"722\" y=\"663\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-750\" bpmnElement=\"_6-750\"&gt;\n        &lt;di:waypoint x=\"328\" y=\"386\" /&gt;\n        &lt;di:waypoint x=\"328\" y=\"348\" /&gt;\n        &lt;di:waypoint x=\"572\" y=\"348\" /&gt;\n        &lt;di:waypoint x=\"572\" y=\"234\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-436\" bpmnElement=\"_6-436\"&gt;\n        &lt;di:waypoint x=\"918\" y=\"111\" /&gt;\n        &lt;di:waypoint x=\"936\" y=\"111\" /&gt;\n        &lt;di:waypoint x=\"956\" y=\"111\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-632\" bpmnElement=\"_6-632\"&gt;\n        &lt;di:waypoint x=\"335\" y=\"555\" /&gt;\n        &lt;di:waypoint x=\"353\" y=\"555\" /&gt;\n        &lt;di:waypoint x=\"353\" y=\"663\" /&gt;\n        &lt;di:waypoint x=\"464\" y=\"663\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-634\" bpmnElement=\"_6-634\"&gt;\n        &lt;di:waypoint x=\"548\" y=\"663\" /&gt;\n        &lt;di:waypoint x=\"603\" y=\"663\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-125\" bpmnElement=\"_6-125\"&gt;\n        &lt;di:waypoint x=\"96\" y=\"111\" /&gt;\n        &lt;di:waypoint x=\"114\" y=\"111\" /&gt;\n        &lt;di:waypoint x=\"145\" y=\"111\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-430\" bpmnElement=\"_6-430\"&gt;\n        &lt;di:waypoint x=\"600\" y=\"200\" /&gt;\n        &lt;di:waypoint x=\"618\" y=\"200\" /&gt;\n        &lt;di:waypoint x=\"618\" y=\"252\" /&gt;\n        &lt;di:waypoint x=\"576\" y=\"252\" /&gt;\n        &lt;di:waypoint x=\"549\" y=\"252\" /&gt;\n        &lt;di:waypoint x=\"360\" y=\"252\" /&gt;\n        &lt;di:waypoint x=\"360\" y=\"111\" /&gt;\n        &lt;di:waypoint x=\"378\" y=\"111\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-642\" bpmnElement=\"_6-642\"&gt;\n        &lt;di:waypoint x=\"545\" y=\"234\" /&gt;\n        &lt;di:waypoint x=\"545\" y=\"324\" /&gt;\n        &lt;di:waypoint x=\"234\" y=\"324\" /&gt;\n        &lt;di:waypoint x=\"234\" y=\"404\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-424\" bpmnElement=\"_6-424\"&gt;\n        &lt;di:waypoint x=\"399\" y=\"132\" /&gt;\n        &lt;di:waypoint x=\"399\" y=\"200\" /&gt;\n        &lt;di:waypoint x=\"448\" y=\"200\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-638\" bpmnElement=\"_6-638\"&gt;\n        &lt;di:waypoint x=\"306\" y=\"145\" /&gt;\n        &lt;di:waypoint x=\"306\" y=\"252\" /&gt;\n        &lt;di:waypoint x=\"94\" y=\"252\" /&gt;\n        &lt;di:waypoint x=\"94\" y=\"405\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-426\" bpmnElement=\"_6-426\"&gt;\n        &lt;di:waypoint x=\"480\" y=\"200\" /&gt;\n        &lt;di:waypoint x=\"498\" y=\"200\" /&gt;\n        &lt;di:waypoint x=\"517\" y=\"200\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-693\" bpmnElement=\"_6-693\"&gt;\n        &lt;di:waypoint x=\"161\" y=\"441\" /&gt;\n        &lt;di:waypoint x=\"161\" y=\"556\" /&gt;\n        &lt;di:waypoint x=\"252\" y=\"555\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-178\" bpmnElement=\"_6-178\"&gt;\n        &lt;di:waypoint x=\"228\" y=\"111\" /&gt;\n        &lt;di:waypoint x=\"265\" y=\"111\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-746\" bpmnElement=\"_6-746\"&gt;\n        &lt;di:waypoint x=\"370\" y=\"420\" /&gt;\n        &lt;di:waypoint x=\"386\" y=\"420\" /&gt;\n        &lt;di:waypoint x=\"386\" y=\"474\" /&gt;\n        &lt;di:waypoint x=\"191\" y=\"474\" /&gt;\n        &lt;di:waypoint x=\"191\" y=\"420\" /&gt;\n        &lt;di:waypoint x=\"218\" y=\"420\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n      &lt;bpmndi:BPMNEdge id=\"Trisotech.Visio__6__6-434\" bpmnElement=\"_6-434\"&gt;\n        &lt;di:waypoint x=\"810\" y=\"111\" /&gt;\n        &lt;di:waypoint x=\"834\" y=\"111\" /&gt;\n        &lt;bpmndi:BPMNLabel /&gt;\n      &lt;/bpmndi:BPMNEdge&gt;\n    &lt;/bpmndi:BPMNPlane&gt;\n  &lt;/bpmndi:BPMNDiagram&gt;\n&lt;/semantic:definitions&gt;\n\n\n\n",
+  "datePublished": "2021-08-09 18:45:00 +0000",
+  "dateModified": "2021-08-09 18:45:00 +0000",
+  "author": {
+    "@type": "Person",
+    "name": null,
+    "givenName": null,
+    "familyName": null,
+    "email": null,
+    "@id": null
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Paulo Borges's Notes",
+    "url": "https://poolborges.github.io",
+    "logo": {
+      "@type": "ImageObject",
+      "width": 32,
+      "height": 32,
+      "url": "https://poolborges.github.io/icon/favicon.ico"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://poolborges.github.io/notes/pb-notes-bpmn-diagram.html"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "width": ,
+    "height": ,
+    "url": "https://poolborges.github.io"
+  }
+}
+</script>
+
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Diagramas BPMN</h1>
+
+    <p class="post-meta"><time class="dt-published" datetime="2021-08-09T18:45:00+00:00" itemprop="datePublished">
+        Aug 9, 2021
+      </time>~<time class="dt-modified" datetime="2021-08-09T18:45:00+00:00" itemprop="dateModified">
+          Aug 9, 2021
+        </time></p>
+
+  </header>
+
+  <div class="post-content">
+    <div id="toc" class="toc">
+<div id="toctitle"></div>
+<ul class="sectlevel1">
+<li><a href="#doc.summary">1. Sumario</a></li>
+<li><a href="#bpmn">2. BPMN</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="doc.summary">1. Sumario</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nesta nota apresentarei exemplos de BPMN</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">BPMN</dt>
+<dd>
+<p>Business Process Modeling Notation</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="bpmn">2. BPMN</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">Require cli tool</div>
+<div class="content">
+<pre>npm install -g bpmn-js-cli</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example BPMN Diagram coded in xsi</div>
+<div class="content">
+<pre>Failed to generate image: Could not find the 'bpmn-js' executable in PATH; add it to the PATH or specify its location using the 'bpmn-js' document attribute
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;semantic:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:semantic="http://www.omg.org/spec/BPMN/20100524/MODEL" id="_1275940932088" targetNamespace="http://www.trisotech.com/definitions/_1275940932088" exporter="Camunda Modeler" exporterVersion="1.16.0"&gt;
+  &lt;semantic:message id="_1275940932310" /&gt;
+  &lt;semantic:message id="_1275940932433" /&gt;
+  &lt;semantic:process id="_6-1" isExecutable="false"&gt;
+    &lt;semantic:laneSet id="ls_6-438"&gt;
+      &lt;semantic:lane id="_6-650" name="clerk"&gt;
+        &lt;semantic:flowNodeRef&gt;OrderReceivedEvent&lt;/semantic:flowNodeRef&gt;
+        &lt;semantic:flowNodeRef&gt;_6-652&lt;/semantic:flowNodeRef&gt;
+        &lt;semantic:flowNodeRef&gt;_6-674&lt;/semantic:flowNodeRef&gt;
+        &lt;semantic:flowNodeRef&gt;CalmCustomerTask&lt;/semantic:flowNodeRef&gt;
+      &lt;/semantic:lane&gt;
+      &lt;semantic:lane id="_6-446" name="pizza chef"&gt;
+        &lt;semantic:flowNodeRef&gt;_6-463&lt;/semantic:flowNodeRef&gt;
+      &lt;/semantic:lane&gt;
+      &lt;semantic:lane id="_6-448" name="delivery boy"&gt;
+        &lt;semantic:flowNodeRef&gt;_6-514&lt;/semantic:flowNodeRef&gt;
+        &lt;semantic:flowNodeRef&gt;_6-565&lt;/semantic:flowNodeRef&gt;
+        &lt;semantic:flowNodeRef&gt;_6-616&lt;/semantic:flowNodeRef&gt;
+      &lt;/semantic:lane&gt;
+    &lt;/semantic:laneSet&gt;
+    &lt;semantic:startEvent id="OrderReceivedEvent" name="Order received"&gt;
+      &lt;semantic:outgoing&gt;_6-630&lt;/semantic:outgoing&gt;
+      &lt;semantic:messageEventDefinition messageRef="_1275940932310" /&gt;
+    &lt;/semantic:startEvent&gt;
+    &lt;semantic:parallelGateway id="_6-652" name=""&gt;
+      &lt;semantic:incoming&gt;_6-630&lt;/semantic:incoming&gt;
+      &lt;semantic:outgoing&gt;_6-691&lt;/semantic:outgoing&gt;
+      &lt;semantic:outgoing&gt;_6-693&lt;/semantic:outgoing&gt;
+    &lt;/semantic:parallelGateway&gt;
+    &lt;semantic:intermediateCatchEvent id="_6-674" name="„where is my pizza?“"&gt;
+      &lt;semantic:incoming&gt;_6-691&lt;/semantic:incoming&gt;
+      &lt;semantic:incoming&gt;_6-746&lt;/semantic:incoming&gt;
+      &lt;semantic:outgoing&gt;_6-748&lt;/semantic:outgoing&gt;
+      &lt;semantic:messageEventDefinition messageRef="_1275940932433" /&gt;
+    &lt;/semantic:intermediateCatchEvent&gt;
+    &lt;semantic:task id="CalmCustomerTask" name="Calm customer"&gt;
+      &lt;semantic:incoming&gt;_6-748&lt;/semantic:incoming&gt;
+      &lt;semantic:outgoing&gt;_6-746&lt;/semantic:outgoing&gt;
+    &lt;/semantic:task&gt;
+    &lt;semantic:task id="_6-463" name="Bake the pizza"&gt;
+      &lt;semantic:incoming&gt;_6-693&lt;/semantic:incoming&gt;
+      &lt;semantic:outgoing&gt;_6-632&lt;/semantic:outgoing&gt;
+    &lt;/semantic:task&gt;
+    &lt;semantic:task id="_6-514" name="Deliver the pizza"&gt;
+      &lt;semantic:incoming&gt;_6-632&lt;/semantic:incoming&gt;
+      &lt;semantic:outgoing&gt;_6-634&lt;/semantic:outgoing&gt;
+    &lt;/semantic:task&gt;
+    &lt;semantic:task id="_6-565" name="Receive payment"&gt;
+      &lt;semantic:incoming&gt;_6-634&lt;/semantic:incoming&gt;
+      &lt;semantic:outgoing&gt;_6-636&lt;/semantic:outgoing&gt;
+    &lt;/semantic:task&gt;
+    &lt;semantic:endEvent id="_6-616" name=""&gt;
+      &lt;semantic:incoming&gt;_6-636&lt;/semantic:incoming&gt;
+      &lt;semantic:terminateEventDefinition /&gt;
+    &lt;/semantic:endEvent&gt;
+    &lt;semantic:sequenceFlow id="_6-630" name="" sourceRef="OrderReceivedEvent" targetRef="_6-652" /&gt;
+    &lt;semantic:sequenceFlow id="_6-632" name="" sourceRef="_6-463" targetRef="_6-514" /&gt;
+    &lt;semantic:sequenceFlow id="_6-634" name="" sourceRef="_6-514" targetRef="_6-565" /&gt;
+    &lt;semantic:sequenceFlow id="_6-636" name="" sourceRef="_6-565" targetRef="_6-616" /&gt;
+    &lt;semantic:sequenceFlow id="_6-691" name="" sourceRef="_6-652" targetRef="_6-674" /&gt;
+    &lt;semantic:sequenceFlow id="_6-693" name="" sourceRef="_6-652" targetRef="_6-463" /&gt;
+    &lt;semantic:sequenceFlow id="_6-746" name="" sourceRef="CalmCustomerTask" targetRef="_6-674" /&gt;
+    &lt;semantic:sequenceFlow id="_6-748" name="" sourceRef="_6-674" targetRef="CalmCustomerTask" /&gt;
+  &lt;/semantic:process&gt;
+  &lt;semantic:message id="_1275940932198" /&gt;
+  &lt;semantic:process id="_6-2" isExecutable="false"&gt;
+    &lt;semantic:startEvent id="_6-61" name="Hungry for pizza"&gt;
+      &lt;semantic:outgoing&gt;_6-125&lt;/semantic:outgoing&gt;
+    &lt;/semantic:startEvent&gt;
+    &lt;semantic:task id="SelectAPizzaTask" name="Select a pizza"&gt;
+      &lt;semantic:incoming&gt;_6-125&lt;/semantic:incoming&gt;
+      &lt;semantic:outgoing&gt;_6-178&lt;/semantic:outgoing&gt;
+    &lt;/semantic:task&gt;
+    &lt;semantic:task id="_6-127" name="Order a pizza"&gt;
+      &lt;semantic:incoming&gt;_6-178&lt;/semantic:incoming&gt;
+      &lt;semantic:outgoing&gt;_6-420&lt;/semantic:outgoing&gt;
+    &lt;/semantic:task&gt;
+    &lt;semantic:eventBasedGateway id="_6-180" name=""&gt;
+      &lt;semantic:incoming&gt;_6-420&lt;/semantic:incoming&gt;
+      &lt;semantic:incoming&gt;_6-430&lt;/semantic:incoming&gt;
+      &lt;semantic:outgoing&gt;_6-422&lt;/semantic:outgoing&gt;
+      &lt;semantic:outgoing&gt;_6-424&lt;/semantic:outgoing&gt;
+    &lt;/semantic:eventBasedGateway&gt;
+    &lt;semantic:intermediateCatchEvent id="_6-202" name="pizza received"&gt;
+      &lt;semantic:incoming&gt;_6-422&lt;/semantic:incoming&gt;
+      &lt;semantic:outgoing&gt;_6-428&lt;/semantic:outgoing&gt;
+      &lt;semantic:messageEventDefinition messageRef="_1275940932198" /&gt;
+    &lt;/semantic:intermediateCatchEvent&gt;
+    &lt;semantic:intermediateCatchEvent id="_6-219" name="60 minutes"&gt;
+      &lt;semantic:incoming&gt;_6-424&lt;/semantic:incoming&gt;
+      &lt;semantic:outgoing&gt;_6-426&lt;/semantic:outgoing&gt;
+      &lt;semantic:timerEventDefinition&gt;
+        &lt;semantic:timeDate /&gt;
+      &lt;/semantic:timerEventDefinition&gt;
+    &lt;/semantic:intermediateCatchEvent&gt;
+    &lt;semantic:task id="_6-236" name="Ask for the pizza"&gt;
+      &lt;semantic:incoming&gt;_6-426&lt;/semantic:incoming&gt;
+      &lt;semantic:outgoing&gt;_6-430&lt;/semantic:outgoing&gt;
+    &lt;/semantic:task&gt;
+    &lt;semantic:task id="_6-304" name="Pay the pizza"&gt;
+      &lt;semantic:incoming&gt;_6-428&lt;/semantic:incoming&gt;
+      &lt;semantic:outgoing&gt;_6-434&lt;/semantic:outgoing&gt;
+    &lt;/semantic:task&gt;
+    &lt;semantic:task id="_6-355" name="Eat the pizza"&gt;
+      &lt;semantic:incoming&gt;_6-434&lt;/semantic:incoming&gt;
+      &lt;semantic:outgoing&gt;_6-436&lt;/semantic:outgoing&gt;
+    &lt;/semantic:task&gt;
+    &lt;semantic:endEvent id="_6-406" name="Hunger satisfied"&gt;
+      &lt;semantic:incoming&gt;_6-436&lt;/semantic:incoming&gt;
+    &lt;/semantic:endEvent&gt;
+    &lt;semantic:sequenceFlow id="_6-125" name="" sourceRef="_6-61" targetRef="SelectAPizzaTask" /&gt;
+    &lt;semantic:sequenceFlow id="_6-178" name="" sourceRef="SelectAPizzaTask" targetRef="_6-127" /&gt;
+    &lt;semantic:sequenceFlow id="_6-420" name="" sourceRef="_6-127" targetRef="_6-180" /&gt;
+    &lt;semantic:sequenceFlow id="_6-422" name="" sourceRef="_6-180" targetRef="_6-202" /&gt;
+    &lt;semantic:sequenceFlow id="_6-424" name="" sourceRef="_6-180" targetRef="_6-219" /&gt;
+    &lt;semantic:sequenceFlow id="_6-426" name="" sourceRef="_6-219" targetRef="_6-236" /&gt;
+    &lt;semantic:sequenceFlow id="_6-428" name="" sourceRef="_6-202" targetRef="_6-304" /&gt;
+    &lt;semantic:sequenceFlow id="_6-430" name="" sourceRef="_6-236" targetRef="_6-180" /&gt;
+    &lt;semantic:sequenceFlow id="_6-434" name="" sourceRef="_6-304" targetRef="_6-355" /&gt;
+    &lt;semantic:sequenceFlow id="_6-436" name="" sourceRef="_6-355" targetRef="_6-406" /&gt;
+  &lt;/semantic:process&gt;
+  &lt;semantic:collaboration id="C1275940932557"&gt;
+    &lt;semantic:participant id="_6-53" name="Pizza Customer" processRef="_6-2" /&gt;
+    &lt;semantic:participant id="_6-438" name="Pizza vendor" processRef="_6-1" /&gt;
+    &lt;semantic:messageFlow id="_6-638" name="pizza order" sourceRef="_6-127" targetRef="OrderReceivedEvent" /&gt;
+    &lt;semantic:messageFlow id="_6-642" name="" sourceRef="_6-236" targetRef="_6-674" /&gt;
+    &lt;semantic:messageFlow id="_6-646" name="receipt" sourceRef="_6-565" targetRef="_6-304" /&gt;
+    &lt;semantic:messageFlow id="_6-648" name="money" sourceRef="_6-304" targetRef="_6-565" /&gt;
+    &lt;semantic:messageFlow id="_6-640" name="pizza" sourceRef="_6-514" targetRef="_6-202" /&gt;
+    &lt;semantic:messageFlow id="_6-750" name="" sourceRef="CalmCustomerTask" targetRef="_6-236" /&gt;
+  &lt;/semantic:collaboration&gt;
+  &lt;bpmndi:BPMNDiagram id="Trisotech.Visio-_6" name="Untitled Diagram" documentation="" resolution="96.00000267028808"&gt;
+    &lt;bpmndi:BPMNPlane bpmnElement="C1275940932557"&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6-53" bpmnElement="_6-53" isHorizontal="true"&gt;
+        &lt;dc:Bounds x="12" y="12" width="1044" height="294" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6-438" bpmnElement="_6-438" isHorizontal="true"&gt;
+        &lt;dc:Bounds x="12" y="372" width="905" height="337" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6__6-650" bpmnElement="_6-650" isHorizontal="true"&gt;
+        &lt;dc:Bounds x="42" y="372" width="875" height="114" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6__6-446" bpmnElement="_6-446" isHorizontal="true"&gt;
+        &lt;dc:Bounds x="42" y="486" width="875" height="114" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6__6-448" bpmnElement="_6-448" isHorizontal="true"&gt;
+        &lt;dc:Bounds x="42" y="600" width="875" height="109" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6_OrderReceivedEvent" bpmnElement="OrderReceivedEvent"&gt;
+        &lt;dc:Bounds x="79" y="405" width="30" height="30" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6__6-652" bpmnElement="_6-652"&gt;
+        &lt;dc:Bounds x="140" y="399" width="42" height="42" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6__6-674" bpmnElement="_6-674"&gt;
+        &lt;dc:Bounds x="218" y="404" width="32" height="32" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6_CalmCustomerTask" bpmnElement="CalmCustomerTask"&gt;
+        &lt;dc:Bounds x="286" y="386" width="83" height="68" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6__6-463" bpmnElement="_6-463"&gt;
+        &lt;dc:Bounds x="252" y="521" width="83" height="68" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6__6-514" bpmnElement="_6-514"&gt;
+        &lt;dc:Bounds x="464" y="629" width="83" height="68" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6__6-565" bpmnElement="_6-565"&gt;
+        &lt;dc:Bounds x="603" y="629" width="83" height="68" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6__6-616" bpmnElement="_6-616"&gt;
+        &lt;dc:Bounds x="722" y="647" width="32" height="32" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6__6-61" bpmnElement="_6-61"&gt;
+        &lt;dc:Bounds x="66" y="96" width="30" height="30" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6__6-74" bpmnElement="SelectAPizzaTask"&gt;
+        &lt;dc:Bounds x="145" y="77" width="83" height="68" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6__6-127" bpmnElement="_6-127"&gt;
+        &lt;dc:Bounds x="265" y="77" width="83" height="68" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6__6-180" bpmnElement="_6-180"&gt;
+        &lt;dc:Bounds x="378" y="90" width="42" height="42" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6__6-202" bpmnElement="_6-202"&gt;
+        &lt;dc:Bounds x="647" y="95" width="32" height="32" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6__6-219" bpmnElement="_6-219"&gt;
+        &lt;dc:Bounds x="448" y="184" width="32" height="32" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6__6-236" bpmnElement="_6-236"&gt;
+        &lt;dc:Bounds x="517" y="166" width="83" height="68" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6__6-304" bpmnElement="_6-304"&gt;
+        &lt;dc:Bounds x="726" y="77" width="83" height="68" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6__6-355" bpmnElement="_6-355"&gt;
+        &lt;dc:Bounds x="834" y="77" width="83" height="68" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNShape id="Trisotech.Visio__6__6-406" bpmnElement="_6-406"&gt;
+        &lt;dc:Bounds x="956" y="95" width="32" height="32" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNShape&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-640" bpmnElement="_6-640"&gt;
+        &lt;di:waypoint x="506" y="629" /&gt;
+        &lt;di:waypoint x="506" y="384" /&gt;
+        &lt;di:waypoint x="663" y="384" /&gt;
+        &lt;di:waypoint x="663" y="127" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-630" bpmnElement="_6-630"&gt;
+        &lt;di:waypoint x="109" y="420" /&gt;
+        &lt;di:waypoint x="140" y="420" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-691" bpmnElement="_6-691"&gt;
+        &lt;di:waypoint x="182" y="420" /&gt;
+        &lt;di:waypoint x="200" y="420" /&gt;
+        &lt;di:waypoint x="218" y="420" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-648" bpmnElement="_6-648"&gt;
+        &lt;di:waypoint x="754" y="145" /&gt;
+        &lt;di:waypoint x="754" y="408" /&gt;
+        &lt;di:waypoint x="630" y="408" /&gt;
+        &lt;di:waypoint x="631" y="629" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-422" bpmnElement="_6-422"&gt;
+        &lt;di:waypoint x="420" y="111" /&gt;
+        &lt;di:waypoint x="438" y="111" /&gt;
+        &lt;di:waypoint x="647" y="111" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-646" bpmnElement="_6-646" messageVisibleKind="non_initiating"&gt;
+        &lt;di:waypoint x="658" y="629" /&gt;
+        &lt;di:waypoint x="658" y="432" /&gt;
+        &lt;di:waypoint x="782" y="432" /&gt;
+        &lt;di:waypoint x="782" y="145" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-428" bpmnElement="_6-428"&gt;
+        &lt;di:waypoint x="679" y="111" /&gt;
+        &lt;di:waypoint x="726" y="111" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-748" bpmnElement="_6-748"&gt;
+        &lt;di:waypoint x="250" y="420" /&gt;
+        &lt;di:waypoint x="268" y="420" /&gt;
+        &lt;di:waypoint x="286" y="420" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-420" bpmnElement="_6-420"&gt;
+        &lt;di:waypoint x="348" y="111" /&gt;
+        &lt;di:waypoint x="366" y="111" /&gt;
+        &lt;di:waypoint x="378" y="111" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-636" bpmnElement="_6-636"&gt;
+        &lt;di:waypoint x="686" y="663" /&gt;
+        &lt;di:waypoint x="704" y="663" /&gt;
+        &lt;di:waypoint x="722" y="663" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-750" bpmnElement="_6-750"&gt;
+        &lt;di:waypoint x="328" y="386" /&gt;
+        &lt;di:waypoint x="328" y="348" /&gt;
+        &lt;di:waypoint x="572" y="348" /&gt;
+        &lt;di:waypoint x="572" y="234" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-436" bpmnElement="_6-436"&gt;
+        &lt;di:waypoint x="918" y="111" /&gt;
+        &lt;di:waypoint x="936" y="111" /&gt;
+        &lt;di:waypoint x="956" y="111" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-632" bpmnElement="_6-632"&gt;
+        &lt;di:waypoint x="335" y="555" /&gt;
+        &lt;di:waypoint x="353" y="555" /&gt;
+        &lt;di:waypoint x="353" y="663" /&gt;
+        &lt;di:waypoint x="464" y="663" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-634" bpmnElement="_6-634"&gt;
+        &lt;di:waypoint x="548" y="663" /&gt;
+        &lt;di:waypoint x="603" y="663" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-125" bpmnElement="_6-125"&gt;
+        &lt;di:waypoint x="96" y="111" /&gt;
+        &lt;di:waypoint x="114" y="111" /&gt;
+        &lt;di:waypoint x="145" y="111" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-430" bpmnElement="_6-430"&gt;
+        &lt;di:waypoint x="600" y="200" /&gt;
+        &lt;di:waypoint x="618" y="200" /&gt;
+        &lt;di:waypoint x="618" y="252" /&gt;
+        &lt;di:waypoint x="576" y="252" /&gt;
+        &lt;di:waypoint x="549" y="252" /&gt;
+        &lt;di:waypoint x="360" y="252" /&gt;
+        &lt;di:waypoint x="360" y="111" /&gt;
+        &lt;di:waypoint x="378" y="111" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-642" bpmnElement="_6-642"&gt;
+        &lt;di:waypoint x="545" y="234" /&gt;
+        &lt;di:waypoint x="545" y="324" /&gt;
+        &lt;di:waypoint x="234" y="324" /&gt;
+        &lt;di:waypoint x="234" y="404" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-424" bpmnElement="_6-424"&gt;
+        &lt;di:waypoint x="399" y="132" /&gt;
+        &lt;di:waypoint x="399" y="200" /&gt;
+        &lt;di:waypoint x="448" y="200" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-638" bpmnElement="_6-638"&gt;
+        &lt;di:waypoint x="306" y="145" /&gt;
+        &lt;di:waypoint x="306" y="252" /&gt;
+        &lt;di:waypoint x="94" y="252" /&gt;
+        &lt;di:waypoint x="94" y="405" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-426" bpmnElement="_6-426"&gt;
+        &lt;di:waypoint x="480" y="200" /&gt;
+        &lt;di:waypoint x="498" y="200" /&gt;
+        &lt;di:waypoint x="517" y="200" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-693" bpmnElement="_6-693"&gt;
+        &lt;di:waypoint x="161" y="441" /&gt;
+        &lt;di:waypoint x="161" y="556" /&gt;
+        &lt;di:waypoint x="252" y="555" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-178" bpmnElement="_6-178"&gt;
+        &lt;di:waypoint x="228" y="111" /&gt;
+        &lt;di:waypoint x="265" y="111" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-746" bpmnElement="_6-746"&gt;
+        &lt;di:waypoint x="370" y="420" /&gt;
+        &lt;di:waypoint x="386" y="420" /&gt;
+        &lt;di:waypoint x="386" y="474" /&gt;
+        &lt;di:waypoint x="191" y="474" /&gt;
+        &lt;di:waypoint x="191" y="420" /&gt;
+        &lt;di:waypoint x="218" y="420" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+      &lt;bpmndi:BPMNEdge id="Trisotech.Visio__6__6-434" bpmnElement="_6-434"&gt;
+        &lt;di:waypoint x="810" y="111" /&gt;
+        &lt;di:waypoint x="834" y="111" /&gt;
+        &lt;bpmndi:BPMNLabel /&gt;
+      &lt;/bpmndi:BPMNEdge&gt;
+    &lt;/bpmndi:BPMNPlane&gt;
+  &lt;/bpmndi:BPMNDiagram&gt;
+&lt;/semantic:definitions&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+  </div>
+
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Paulo Borges&#39;s Notes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Paulo Borges&#39;s Notes</li><li><a class="u-email" href="mailto:poolborges@hotmail.com">poolborges@hotmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/poolborges"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">poolborges</span></a></li><li><a href="https://www.linkedin.com/in/poolborges"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">poolborges</span></a></li><li><a href="https://www.twitter.com/poolborges"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">poolborges</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This site provide contents written by Paulo Borges (aka poolborges).</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

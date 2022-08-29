@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Java Database Migration | Paulo Borges’s Notes</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Java Database Migration" />
+<meta name="author" content="Paulo Borges" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Database version control" />
+<meta property="og:description" content="Database version control" />
+<link rel="canonical" href="https://poolborges.github.io/notes/pb-notes-java-database-migration.html" />
+<meta property="og:url" content="https://poolborges.github.io/notes/pb-notes-java-database-migration.html" />
+<meta property="og:site_name" content="Paulo Borges’s Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-09T18:49:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Java Database Migration" />
+<meta name="google-site-verification" content="_LLMR_ca_ZDaTsm3ZH8STl2K5ZpXuY6v77lcQ5eyL4U" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Paulo Borges"},"headline":"Java Database Migration","dateModified":"2021-08-09T18:49:00+00:00","datePublished":"2021-08-09T18:49:00+00:00","description":"Database version control","url":"https://poolborges.github.io/notes/pb-notes-java-database-migration.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://poolborges.github.io/notes/pb-notes-java-database-migration.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://poolborges.github.io/feed.xml" title="Paulo Borges's Notes" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Paulo Borges&#39;s Notes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/authors.html">Authors</a><a class="page-link" href="/notes.html">Notes</a><a class="page-link" href="/projects.html">Projects</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "url": "https://poolborges.github.io/notes/pb-notes-java-database-migration.html",
+  "name": "Java Database Migration",
+  "headline": "Java Database Migration",
+  "keywords": "",
+  "description": "<div id=\"toc\" class=\"toc\"><div id=\"toctitle\"></div><ul class=\"sectlevel1\"><li><a href=\"#doc.summary\">1. Sumario</a></li></ul></div><div class=\"sect1\"><h2 id=\"doc.summary\">1. Sumario</h2><div class=\"sectionbody\"></div></div>",
+  "articleBody": "\n\n\n1. Sumario\n2. Database\n3. Migration DB\n4. Flyway\n5. Liquidbase\n6. Obevo\n7. Reference\n\n\n\n1. Sumario\n\n\nTODO\n\n\n\n\n2. Database\n\n\nObjetos normalmente presentes num sistema de gestão de base de dados.\n\n\n\n\nTables\n\n\nLive Data\n\n\nPL/SQL Packages\n\n\nMaterialized Views\n\n\nTriggers\n\n\nDB Links\n\n\n\n\n\n\n3. Migration DB\n\n\nMigrations-based database deployment tool\n\n\n\n\nLiquidbase (XML, JSON, YAML, as well as SQL)\n\n\nFlyway (SQL scripts)\n\n\nDbUp (SQL scripts)\n\n\nRoundhousE (SQL scripts)\n\n\n\n\n\n\n4. Flyway\n\n\n\n\nCreate \"Hidden\" Table to store information about version\n\n\nCalculate Checksum of files\n\n\n\n\nApp Structure\n\n\n\n\nsrc/resources/krapp_sample/database/migration\n\n\nsrc/resources/krapp_sample/database/migration/v1_initial_db.sql\n\n\nsrc/resources/krapp_sample/database/migration/v2_create_adicional_table.sql\n\n\n\n\nExample of Flyway\n\npublic class AppMain {\n\n    public static void main(String[] args){\n        Flyway fly new Flyway()\n        fly.setDataSource(&quot;jdbc:h2:file:./krapp_sample_db&quot;,&quot;sa&quot;, null)\n        fly.setLocations(&quot;krapp_sample/database/migration&quot;);\n        fly.migrate();\n    }\n}\n\n\n\n\n\n5. Liquidbase\n\n\nHow Work\n\n\nTable DATABASECHANGELOG\n\ninsert into DATABASECHANGELOG  (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, EXECTYPE, MD5SUM, DESCRIPTION, COMMENTS, TAG, LIQUIBASE, CONTEXTS, LABELS)\nvalues (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)\n\n\n\nApp Structure\n\n\n\n\nsrc/resources/krapp_sample/database/migration\n\n\nsrc/resources/krapp_sample/database/migration/v1_initial_db.xml\n\n\nsrc/resources/krapp_sample/database/migration/v2_create_adicional_table.xml\n\n\n\n\nConfigure to process SQL\n\n&lt;changeSet id=\"1\"&gt;\n    &lt;sqlFile path=\"v1_initial_db.sql\" /&gt;\n&lt;/changeSet&gt;\n\n&lt;changeSet id=\"1\"&gt;\n    &lt;sqlFile path=\"v2_create_adicional_table.sql\" /&gt;\n&lt;/changeSet&gt;\n\n\n\nChangeset - Can define attribute\n\n\n\n\nrunAlways=\"true\"\n\n\nunOnChange=\"true\"\n\n\nfailOnError=\"false\"\n\n\ncontext=\"test\" //ex: Only on test or Production Data base\n\n\nLiquidBase DSL - To define database Structure\n\n\n\nUsefull to generate sql for diferente database\n\n\n\n\n\n\n\nExample Using LiquidBase DSL\n\n&lt;changeSet=\"1\" author=\"poolborges\"&gt;\n    &lt;createTable tableName=\"Product\"&gt;\n        &lt;column name=\"id\" type=\"int\" autoIncrement=\"true\" /&gt;\n        &lt;column name=\"firstname\" type=\"varchar(50)\" /&gt;\n        &lt;column name=\"lastname\" type=\"varchar(50)\" /&gt;\n    &lt;/createTable&gt;\n&lt;/changeSet&gt;\n\n\n\nExample of Liquidbase\n\npublic class AppMain {\n\n    public static void main(String[] args){\n\n    }\n}\n\n\n\n\nant rollback\n\n\n\n\n&lt;databaseChangeLog&gt;\n    &lt;include file=\"changelog_001.xml\" relativeToChangelogfile=\"true\"/&gt;\n    &lt;include file=\"changelog_001.xml\" relativeToChangelogfile=\"true\"/&gt;\n&lt;/databaseChangeLog&gt;\n\n\n\n\n&lt;databaseChangeLog&gt;\n    &lt;changeSet&gt;\n        &lt;modifiedType\n    &lt;/changeSet&gt;\n\n    &lt;changeSet&gt;\n        &lt;renameColumn\n            tableName=\"order_comment\"\n            oldColumnName=\"author_id\"\n            newColumnName=\"employee_id\" /&gt;\n    &lt;/changeSet&gt;\n\n    &lt;changeSet id=\"202105030138\" author=\"poolborges\" context=\"dev, test\"&gt;\n        &lt;insert tableName=\"product\"&gt;\n            &lt;column name=\"id\" valueNumeric=\"1\" /&gt;\n            &lt;column name=\"name\" value=\"Laranja\" /&gt;\n        &lt;/insert&gt;\n\n        &lt;delete tableName=\"product\"&gt;\n            &lt;where&gt; id in (1, 2)&lt;/where&gt;\n        &lt;/delete&gt;\n    &lt;/changeSet&gt;\n\n    &lt;changeSet&gt;\n        &lt;loadData tableName=\"CLIENT\" file=\"cls.csv\"&gt;\n            &lt;column header=\"id\" name=\"ProductId\" /&gt;\n            &lt;column header=\"id\" name=\"ProductId\" /&gt;\n         &lt;/loadData&gt;\n    &lt;/changeSet&gt;\n\n    &lt;changeSet id=\"202105030139\" author=\"poolborges\"&gt;\n        &lt;sql&gt;\n            ALTER TABLE payment\n            ADD CONTRAINT payment_type_enum\n            CHECK (payment_type IN ('DEBIT', 'CREDIT'))\n         &lt;/sql&gt;\n         &lt;rollback&gt;\n            &lt;sql&gt;ALTER TABLE payment DROP CONTRAINT payment_type_enum&lt;/sql&gt;\n         &lt;rollback&gt;\n    &lt;/changeSet&gt;\n&lt;/databaseChangeLog&gt;\n\n\n\n\n\n6. Obevo\n\n\nAbout\n\n\n\n\nPowerfull and Complex tool\n\n\nYour Database SDLC under Control\n\n\nhttps://goldmansachs.github.io/obevo/\n\n\nhttps://github.com/goldmansachs/obevo\n\n\nhttps://www.infoq.com/articles/Obevo-Introduction/\n\n\n\n\n\n\n7. Reference\n\n\n\n\nhttps://www.liquibase.org/\n\n\nhttps://flywaydb.org/\n\n\nhttps://goldmansachs.github.io/obevo/\n\n\nhttps://www.findbestopensource.com/product/goldmansachs-obevo\n\n\n\n\n",
+  "datePublished": "2021-08-09 18:49:00 +0000",
+  "dateModified": "2021-08-09 18:49:00 +0000",
+  "author": {
+    "@type": "Person",
+    "name": null,
+    "givenName": null,
+    "familyName": null,
+    "email": null,
+    "@id": null
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Paulo Borges's Notes",
+    "url": "https://poolborges.github.io",
+    "logo": {
+      "@type": "ImageObject",
+      "width": 32,
+      "height": 32,
+      "url": "https://poolborges.github.io/icon/favicon.ico"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://poolborges.github.io/notes/pb-notes-java-database-migration.html"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "width": ,
+    "height": ,
+    "url": "https://poolborges.github.io"
+  }
+}
+</script>
+
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Java Database Migration</h1>
+
+    <p class="post-meta"><time class="dt-published" datetime="2021-08-09T18:49:00+00:00" itemprop="datePublished">
+        Aug 9, 2021
+      </time>~<time class="dt-modified" datetime="2021-08-09T18:49:00+00:00" itemprop="dateModified">
+          Aug 9, 2021
+        </time></p>
+
+  </header>
+
+  <div class="post-content">
+    <div id="toc" class="toc">
+<div id="toctitle"></div>
+<ul class="sectlevel1">
+<li><a href="#doc.summary">1. Sumario</a></li>
+<li><a href="#database">2. Database</a></li>
+<li><a href="#migration_db">3. Migration DB</a></li>
+<li><a href="#flyway">4. Flyway</a></li>
+<li><a href="#liquidbase">5. Liquidbase</a></li>
+<li><a href="#obevo">6. Obevo</a></li>
+<li><a href="#reference">7. Reference</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="doc.summary">1. Sumario</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TODO</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="database">2. Database</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Objetos normalmente presentes num sistema de gestão de base de dados.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Tables</p>
+</li>
+<li>
+<p>Live Data</p>
+</li>
+<li>
+<p>PL/SQL Packages</p>
+</li>
+<li>
+<p>Materialized Views</p>
+</li>
+<li>
+<p>Triggers</p>
+</li>
+<li>
+<p>DB Links</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="migration_db">3. Migration DB</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Migrations-based database deployment tool</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Liquidbase (XML, JSON, YAML, as well as SQL)</p>
+</li>
+<li>
+<p>Flyway (SQL scripts)</p>
+</li>
+<li>
+<p>DbUp (SQL scripts)</p>
+</li>
+<li>
+<p>RoundhousE (SQL scripts)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="flyway">4. Flyway</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Create "Hidden" Table to store information about version</p>
+</li>
+<li>
+<p>Calculate Checksum of files</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>App Structure</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>src/resources/krapp_sample/database/migration</p>
+</li>
+<li>
+<p>src/resources/krapp_sample/database/migration/v1_initial_db.sql</p>
+</li>
+<li>
+<p>src/resources/krapp_sample/database/migration/v2_create_adicional_table.sql</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example of Flyway</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">AppMain</span> {
+
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args){
+        Flyway fly <span class="keyword">new</span> Flyway()
+        fly.setDataSource(<span class="string"><span class="delimiter">&quot;</span><span class="content">jdbc:h2:file:./krapp_sample_db</span><span class="delimiter">&quot;</span></span>,<span class="string"><span class="delimiter">&quot;</span><span class="content">sa</span><span class="delimiter">&quot;</span></span>, <span class="predefined-constant">null</span>)
+        fly.setLocations(<span class="string"><span class="delimiter">&quot;</span><span class="content">krapp_sample/database/migration</span><span class="delimiter">&quot;</span></span>);
+        fly.migrate();
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="liquidbase">5. Liquidbase</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>How Work</p>
+</div>
+<div class="listingblock">
+<div class="title">Table DATABASECHANGELOG</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sql"><span class="class">insert</span> <span class="class">into</span> DATABASECHANGELOG  (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, EXECTYPE, MD5SUM, DESCRIPTION, COMMENTS, TAG, LIQUIBASE, CONTEXTS, LABELS)
+<span class="keyword">values</span> (<span class="error">?</span>, <span class="error">?</span>, <span class="error">?</span>, <span class="error">?</span>, <span class="error">?</span>, <span class="error">?</span>, <span class="error">?</span>, <span class="error">?</span>, <span class="error">?</span>, <span class="error">?</span>, <span class="error">?</span>, <span class="error">?</span>, <span class="error">?</span>)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>App Structure</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>src/resources/krapp_sample/database/migration</p>
+</li>
+<li>
+<p>src/resources/krapp_sample/database/migration/v1_initial_db.xml</p>
+</li>
+<li>
+<p>src/resources/krapp_sample/database/migration/v2_create_adicional_table.xml</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Configure to process SQL</div>
+<div class="content">
+<pre>&lt;changeSet id="1"&gt;
+    &lt;sqlFile path="v1_initial_db.sql" /&gt;
+&lt;/changeSet&gt;
+
+&lt;changeSet id="1"&gt;
+    &lt;sqlFile path="v2_create_adicional_table.sql" /&gt;
+&lt;/changeSet&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Changeset - Can define attribute</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>runAlways="true"</p>
+</li>
+<li>
+<p>unOnChange="true"</p>
+</li>
+<li>
+<p>failOnError="false"</p>
+</li>
+<li>
+<p>context="test" //ex: Only on test or Production Data base</p>
+</li>
+<li>
+<p>LiquidBase DSL - To define database Structure</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Usefull to generate sql for diferente database</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example Using LiquidBase DSL</div>
+<div class="content">
+<pre>&lt;changeSet="1" author="poolborges"&gt;
+    &lt;createTable tableName="Product"&gt;
+        &lt;column name="id" type="int" autoIncrement="true" /&gt;
+        &lt;column name="firstname" type="varchar(50)" /&gt;
+        &lt;column name="lastname" type="varchar(50)" /&gt;
+    &lt;/createTable&gt;
+&lt;/changeSet&gt;</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example of Liquidbase</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">AppMain</span> {
+
+    <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args){
+
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ant rollback</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;databaseChangeLog&gt;
+    &lt;include file="changelog_001.xml" relativeToChangelogfile="true"/&gt;
+    &lt;include file="changelog_001.xml" relativeToChangelogfile="true"/&gt;
+&lt;/databaseChangeLog&gt;</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;databaseChangeLog&gt;
+    &lt;changeSet&gt;
+        &lt;modifiedType
+    &lt;/changeSet&gt;
+
+    &lt;changeSet&gt;
+        &lt;renameColumn
+            tableName="order_comment"
+            oldColumnName="author_id"
+            newColumnName="employee_id" /&gt;
+    &lt;/changeSet&gt;
+
+    &lt;changeSet id="202105030138" author="poolborges" context="dev, test"&gt;
+        &lt;insert tableName="product"&gt;
+            &lt;column name="id" valueNumeric="1" /&gt;
+            &lt;column name="name" value="Laranja" /&gt;
+        &lt;/insert&gt;
+
+        &lt;delete tableName="product"&gt;
+            &lt;where&gt; id in (1, 2)&lt;/where&gt;
+        &lt;/delete&gt;
+    &lt;/changeSet&gt;
+
+    &lt;changeSet&gt;
+        &lt;loadData tableName="CLIENT" file="cls.csv"&gt;
+            &lt;column header="id" name="ProductId" /&gt;
+            &lt;column header="id" name="ProductId" /&gt;
+         &lt;/loadData&gt;
+    &lt;/changeSet&gt;
+
+    &lt;changeSet id="202105030139" author="poolborges"&gt;
+        &lt;sql&gt;
+            ALTER TABLE payment
+            ADD CONTRAINT payment_type_enum
+            CHECK (payment_type IN ('DEBIT', 'CREDIT'))
+         &lt;/sql&gt;
+         &lt;rollback&gt;
+            &lt;sql&gt;ALTER TABLE payment DROP CONTRAINT payment_type_enum&lt;/sql&gt;
+         &lt;rollback&gt;
+    &lt;/changeSet&gt;
+&lt;/databaseChangeLog&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="obevo">6. Obevo</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>About</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Powerfull and Complex tool</p>
+</li>
+<li>
+<p>Your Database SDLC under Control</p>
+</li>
+<li>
+<p><a href="https://goldmansachs.github.io/obevo/" class="bare">https://goldmansachs.github.io/obevo/</a></p>
+</li>
+<li>
+<p><a href="https://github.com/goldmansachs/obevo" class="bare">https://github.com/goldmansachs/obevo</a></p>
+</li>
+<li>
+<p><a href="https://www.infoq.com/articles/Obevo-Introduction/" class="bare">https://www.infoq.com/articles/Obevo-Introduction/</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reference">7. Reference</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.liquibase.org/" class="bare">https://www.liquibase.org/</a></p>
+</li>
+<li>
+<p><a href="https://flywaydb.org/" class="bare">https://flywaydb.org/</a></p>
+</li>
+<li>
+<p><a href="https://goldmansachs.github.io/obevo/" class="bare">https://goldmansachs.github.io/obevo/</a></p>
+</li>
+<li>
+<p><a href="https://www.findbestopensource.com/product/goldmansachs-obevo" class="bare">https://www.findbestopensource.com/product/goldmansachs-obevo</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+  </div>
+
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Paulo Borges&#39;s Notes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Paulo Borges&#39;s Notes</li><li><a class="u-email" href="mailto:poolborges@hotmail.com">poolborges@hotmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/poolborges"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">poolborges</span></a></li><li><a href="https://www.linkedin.com/in/poolborges"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">poolborges</span></a></li><li><a href="https://www.twitter.com/poolborges"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">poolborges</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This site provide contents written by Paulo Borges (aka poolborges).</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Java Database Access | Paulo Borges’s Notes</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="Java Database Access" />
+<meta name="author" content="Paulo Borges" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This document present a set of Java libraries to data access or Object-Relational Mapping (ORM)" />
+<meta property="og:description" content="This document present a set of Java libraries to data access or Object-Relational Mapping (ORM)" />
+<link rel="canonical" href="https://poolborges.github.io/notes/pb-notes-java-database-access.html" />
+<meta property="og:url" content="https://poolborges.github.io/notes/pb-notes-java-database-access.html" />
+<meta property="og:site_name" content="Paulo Borges’s Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-09T18:48:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Java Database Access" />
+<meta name="google-site-verification" content="_LLMR_ca_ZDaTsm3ZH8STl2K5ZpXuY6v77lcQ5eyL4U" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Paulo Borges"},"headline":"Java Database Access","dateModified":"2021-08-09T18:48:00+00:00","datePublished":"2021-08-09T18:48:00+00:00","description":"This document present a set of Java libraries to data access or Object-Relational Mapping (ORM)","url":"https://poolborges.github.io/notes/pb-notes-java-database-access.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://poolborges.github.io/notes/pb-notes-java-database-access.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://poolborges.github.io/feed.xml" title="Paulo Borges's Notes" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Paulo Borges&#39;s Notes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/authors.html">Authors</a><a class="page-link" href="/notes.html">Notes</a><a class="page-link" href="/projects.html">Projects</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "url": "https://poolborges.github.io/notes/pb-notes-java-database-access.html",
+  "name": "Java Database Access",
+  "headline": "Java Database Access",
+  "keywords": "",
+  "description": "<div id=\"toc\" class=\"toc\"><div id=\"toctitle\"></div><ul class=\"sectlevel1\"><li><a href=\"#doc.summary\">1. Sumario</a></li></ul></div><div class=\"sect1\"><h2 id=\"doc.summary\">1. Sumario</h2><div class=\"sectionbody\"></div></div>",
+  "articleBody": "\n\n\n1. Sumario\n2. JAVA ORM\n3. Java Especificações\n4. JPA\n5. Spring JdbcTemplate\n6. SQL Builder Utilities\n7. SQLJ (Proprietary)\n8. sqlbuilder\n9. Squiggle SQL Builder\n10. Amazom Carbonado (Java ORM)\n11. Jinq\n12. JDBI\n13. Ebean\n14. jOOQ\n15. Speedment\n16. Reladomo ORM\n17. Feedzai PulseDB\n18. Obevo (Schema Management, Migration)\n19. Liquibase (Schema Migration)\n20. PostgreSQL Advanced Features\n21. Reactive Relational Database Connectivity (R2DBC)\n22. Asynchronous Database Access API (ADBA)\n23. Reference\n\n\n\n1. Sumario\n\n\nObject-Relational Mapping (ORM)\n\n\n\n\n2. JAVA ORM\n\n\n\n\nSpeedment\n\n\nSpeedment JPAStreamer\n\n\njOOQ\n\n\nJinq\n\n\nEbean ORM for Java/Kotlin\n\n\niBATIS\n\n\nAvaje Ebean\n\n\nFeedzai PDB\n\n\nEclipse Link (JPA Implementation)\n\n\nHibernate (JPA Implementation)\n\n\nApache OpenJPA (JPA Implementation)\n\n\nDataNucleus Access Platform (JPA/JDO Implementation)\n\n\nReladomo\n\n\nApache Cayenne\n\n\nDAO Oriented Database Mapping Framework for Java \n\n\nJDBI\n\n\nORM Lite\n\n\nSpring JdbcTemplate\n\n\nSquiggle SQL Builder\n\n\nsqlbuilder\n\n\nSQLJ\n\n\n\n\n\n\n3. Java Especificações\n\n\n\n\nJDO API (JSR0012, JSR0243)\n\n\nJPA (PA 2.2+\n\n\n\n\n\npkg:maven/javax.persistence/javax.persistence.api/2.2\n\n\n\n\n\n4. JPA\n\n\nTODO ..\n\n\n\n\n5. Spring JdbcTemplate\n\n\nExample using JdbcTemplate\n\nPreparedStatementCreator psc =\n    new ParameterizedPreparedStatementCreator()\n        .setSql(&quot;update Employee set name = :name where id = :id&quot;)\n        .setParameter(&quot;name&quot;, &quot;Bob&quot;)\n        .setParameter(&quot;id&quot;, 42);\n\nnew JdbcTemplate(dataSource).update(psc);\n\n\n\n\n\n6. SQL Builder Utilities\n\n\n\n\nhttps://github.com/jkrasnay/sqlbuilder\n\n\ncompile 'ca.krasnay:sqlbuilder:1.2'\n\n\nCan be use with Spring JdbcTemplate\n\n\n\n\nExample Select\n\nnew SelectBuilder()\n    .column(&quot;name&quot;)\n    .column(&quot;age&quot;)\n    .from(&quot;Employee&quot;)\n    .where(&quot;dept = 'engineering'&quot;)\n    .where(&quot;salary &gt; 100000&quot;)\n    .toString();\n\n\n\nExample with integrate with JdbcTemplate\n\nPreparedStatementCreator psc =\n    new UpdateCreator(&quot;Employee&quot;)\n        .setValue(&quot;name&quot;, &quot;Bob&quot;)\n        .whereEquals(&quot;id&quot;, 42);\n\nnew JdbcTemplate(dataSource).update(psc);\n\n\n\n\n\n7. SQLJ (Proprietary)\n\n\n\n\nhttps://www.mojohaus.org/sqlj-maven-plugin/\n\n\n\norg.codehaus.mojo:sqlj-maven-plugin:1.4-SNAPSHOT:sqlj\n\n\n\n\n\n\n\nImplementations\n\n\n\n\nOracle (Reference Implementation)\n\n\nIBM\n\n\n\n\nSites\n\n\n\n\nhttps://www.infoworld.com/article/2076416/sqlj&#8212;&#8203;the&#8212;&#8203;open-sesame&#8212;&#8203;of-java-database-applications.html\n\n\nhttps://www.ibm.com/docs/en/radfws/9.6.1?topic=applications-introduction-sqlj\n\n\nhttps://www.ibm.com/docs/en/developer-for-zos/9.5.1?topic=support-what-is-sqlj\n\n\nhttp://kursinfo.himolde.no/in-kurs/in135/Oracle9i/901_doc/java.901/a90212/overview.htm\n\n\n\n\nExample with SQLJ\n\n#sql iterator SeatCursor(Integer row, Integer col, String type, int status);\n\nInteger status = ?;\nSeatCursor sc;\n#sql sc = {\n    select rownum, colnum from seats where status &lt;= :status\n};\nwhile(sc.next())\n{\n#sql { insert into categ values(:(sc.row()), :(sc.col())) };\n}\nsc.close();\n\n\n\n\n\n8. sqlbuilder\n\n\n\n\nhttps://openhms.sourceforge.io/sqlbuilder/\n\n\nLast Published: 2020-09-10| Version: 3.0.1\n\n\n\n\nExample with sqlbuilder\n\n// assuming these objects have already been created\nTable table1, table2;\nColumn t1Col1, t1Col2, t2Col1;\nJoin joinOfT1AndT2;\n\nString selectQuery =\n  (new SelectQuery())\n  .addColumns(t1Col1, t1Col2, t2Col1)\n  .addJoin(SelectQuery.JoinType.INNER_JOIN, joinOfT1AndT2)\n  .addOrderings(t1Col1)\n  .validate().toString();\n\n\n\n\n\n9. Squiggle SQL Builder\n\n\nSquiggle is a little Java library for dynamically generating SQL SELECT statements.\n\n\n\n\nhttps://code.google.com/archive/p/squiggle-sql/\n\n\njoe.truemesh.com/squiggle/\n\n\n\n\nExample with squiggle\n\nSelectQuery select = new SelectQuery();\n\nTable people = new Table(&quot;people&quot;);\n\nselect.addColumn(people, &quot;firstname&quot;); select.addColumn(people, &quot;lastname&quot;);\n\nselect.addOrder(people, &quot;age&quot;, Order.DESCENDING);\n\n\n\n\n\n10. Amazom Carbonado (Java ORM)\n\n\n\n\nhttps://github.com/Carbonado/Carbonado\n\n\n\n\n\n\n11. Jinq\n\n\nJINQ: Easy Database Queries for Java 8\n\n\nLINQ-style queries for Java 8\n\n\nSites\n\n\n\n\nhttps://github.com/my2iu/Jinq\n\n\n\n\n\n\n12. JDBI\n\n\n\n\nhttps://jdbi.org/\n\n\nhttps://github.com/jdbi/jdbi\n\n\n\n\n\n\n13. Ebean\n\n\nExample Ebean\n\nList&lt;Person&gt; boys =\n    Ebean.find(Person.class)\n    .where()\n        .eq(&quot;gender&quot;, &quot;M&quot;)\n        .le(&quot;age&quot;, 18)\n    .orderBy(&quot;firstName&quot;)\n    .findList();\n\n\n\n\n\n14. jOOQ\n\n\nSites\n\n\n\n\nhttps://groups.google.com/g/jooq-user\n\n\n\n\nExample jOOQ\n\nList&lt;EmployeeDTO&gt; records = create\n         .select(EMPLOYEE.LASTNAME, EMPLOYEE.FIRSTNAME, EMPLOYEE.SALARY)\n         .from(EMPLOYEE)\n         .where(EMPLOYEE.SALARY.between(80000, 100000))\n         .fetchInto(EmployeeDTO.class);\n\n\n\n\n\n15. Speedment\n\n\n\n\nSpeedment is a Stream ORM Java Toolkit and Runtime\n\n\n\n\nSites\n\n\n\n\nhttps://speedment.com/\n\n\nhttps://github.com/speedment/speedment\n\n\n\n\nSpeedment Edition (Licenses)\n\n\n\n\nSpeedment Open Source (OSS) - This site covers the Speedment Open Source project available under the Apache 2 license.\n\n\nSpeedment Stream - The same great features as Speedment OSS with support for commercial databases (i.e. Oracle, MS SQL Server, DB2, AS400). Learn more at speedment.com/stream.\n\n\nSpeedment HyperStream - An extension av Speedment Stream which also includes hypersonic query performance enabled by a unique in-JVM-memory management model. Learn more at speedment.com/hyperStream.\n\n\n\n\nSpeedment Open Source\n\n\n\n\nMySQL\n\n\nMariaDB\n\n\nPostgreSQL\n\n\nSQLite\n\n\n\n\nJPAStreamer\n\n\nExample JPAStreamer\n\nList&lt;Film&gt; list = films.stream()\n    .filter(Film.RATING.equal(&quot;PG-13&quot;))\n    .sorted(Film.LENGTH)\n    .collect(toList());\n\n\n\n\n\n16. Reladomo ORM\n\n\n\n\nReladomo is an enterprise grade object-relational mapping framework for Java.\n\n\nhttps://goldmansachs.github.io/reladomo/\n\n\nSupport: Sybase (ASE &amp; IQ), DB2, Oracle, Postgres, MS-SQL, H2, Derby, \"generic\" &#8230;&#8203;\n\n\n\n\nMapping\n\n\n\n\nTODO&#8230;&#8203;\n\n\n\n\n\n\n17. Feedzai PulseDB\n\n\n\n\nhttps://github.com/feedzai/pdb\n\n\n\n\n\nPulseDB is a database-mapping software library written in Java,\nit provides a transparent access and manipulation to a great variety\nof database implementations.\n\nPDB provides a DSL that covers most of SQL functionalities\nand allows to easily integrate persistence into your projects and modules.\n\n\n\n\n\n18. Obevo (Schema Management, Migration)\n\n\nGet Your Database SDLC under Control\n\n\nObevo is a database deployment tool that handles enterprise scale schemas and complexity\n\n\nSites\n\n\n\n\nhttps://github.com/goldmansachs/obevo\n\n\nhttps://www.infoq.com/articles/Obevo-Introduction\n\n\n\n\n\n\n19. Liquibase (Schema Migration)\n\n\nExample invoke liquidbase from cli\n\nliquibase --changeLogFile=dbchangelog_gen.sql --logLevel=debug generateChangeLog\n\n\n\nExample liquidbase configuration\n\nliquibase –driver=org.postgresql.Driver \\\n–classpath=myFiles\\postgresql-9.4.1212.jre7.jar \\\n–changeLogFile=myFiles/db.changelog-1.0.xml \\\n–url=”jdbc:postgresql://localhost:5432/MYDATABASE” \\\n–username=postgres \\\n–password=postgres \\\ngenerateChangeLog\n\n\n\nliquibase.properties\n\nurl=jdbc:mysql://localhost:3306/unicenta\nusername=root\npassword=root\ndriver=com.mysql.cj.jdbc.Driver\noutputChangeLogFile=src/main/resources/liquibase/liquibase-outputChangeLog.xml\n\n\n\nMaven plugin\n\n&lt;plugin&gt;\n    &lt;groupId&gt;org.liquibase&lt;/groupId&gt;\n    &lt;artifactId&gt;liquibase-maven-plugin&lt;/artifactId&gt;\n    &lt;version&gt;3.4.1&lt;/version&gt;\n    &lt;configuration&gt;\n        &lt;propertyFile&gt;src/main/resources/liquibase/liquibase.properties&lt;/propertyFile&gt;\n    &lt;/configuration&gt;\n\n    &lt;dependencies&gt;\n        &lt;dependency&gt;\n            &lt;groupId&gt;mysql&lt;/groupId&gt;\n            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;\n            &lt;version&gt;8.0.21&lt;/version&gt;\n            &lt;scope&gt;runtime&lt;/scope&gt;\n        &lt;/dependency&gt;\n    &lt;/dependencies&gt;\n&lt;/plugin&gt;\n\n\n\n\nmvn liquibase:generateChangeLog\n\n\n\n\n\n20. PostgreSQL Advanced Features\n\n\n\n\nUDT\n\n\n\n\n\n\n21. Reactive Relational Database Connectivity (R2DBC)\n\n\nTODO&#8230;&#8203;\n\n\n\n\n22. Asynchronous Database Access API (ADBA)\n\n\nTODO&#8230;&#8203;\n\n\n\n\nhttps://blogs.oracle.com/java/jdbc-next:-a-new-asynchronous-api-for-connecting-to-a-database\n\n\n\n\n\n\n23. Reference\n\n\n\n\nhttps://www.sciencedirect.com/science/article/abs/pii/S1477842415000020\n\n\n\n\n",
+  "datePublished": "2021-08-09 18:48:00 +0000",
+  "dateModified": "2021-08-09 18:48:00 +0000",
+  "author": {
+    "@type": "Person",
+    "name": null,
+    "givenName": null,
+    "familyName": null,
+    "email": null,
+    "@id": null
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Paulo Borges's Notes",
+    "url": "https://poolborges.github.io",
+    "logo": {
+      "@type": "ImageObject",
+      "width": 32,
+      "height": 32,
+      "url": "https://poolborges.github.io/icon/favicon.ico"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://poolborges.github.io/notes/pb-notes-java-database-access.html"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "width": ,
+    "height": ,
+    "url": "https://poolborges.github.io"
+  }
+}
+</script>
+
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Java Database Access</h1>
+
+    <p class="post-meta"><time class="dt-published" datetime="2021-08-09T18:48:00+00:00" itemprop="datePublished">
+        Aug 9, 2021
+      </time>~<time class="dt-modified" datetime="2021-08-09T18:48:00+00:00" itemprop="dateModified">
+          Aug 9, 2021
+        </time></p>
+
+  </header>
+
+  <div class="post-content">
+    <div id="toc" class="toc">
+<div id="toctitle"></div>
+<ul class="sectlevel1">
+<li><a href="#doc.summary">1. Sumario</a></li>
+<li><a href="#java_orm">2. JAVA ORM</a></li>
+<li><a href="#java_especificações">3. Java Especificações</a></li>
+<li><a href="#jpa">4. JPA</a></li>
+<li><a href="#spring_jdbctemplate">5. Spring JdbcTemplate</a></li>
+<li><a href="#sql_builder_utilities">6. SQL Builder Utilities</a></li>
+<li><a href="#sqlj_proprietary">7. SQLJ (Proprietary)</a></li>
+<li><a href="#sqlbuilder">8. sqlbuilder</a></li>
+<li><a href="#squiggle_sql_builder">9. Squiggle SQL Builder</a></li>
+<li><a href="#amazom_carbonado_java_orm">10. Amazom Carbonado (Java ORM)</a></li>
+<li><a href="#jinq">11. Jinq</a></li>
+<li><a href="#jdbi">12. JDBI</a></li>
+<li><a href="#ebean">13. Ebean</a></li>
+<li><a href="#jooq">14. jOOQ</a></li>
+<li><a href="#speedment">15. Speedment</a></li>
+<li><a href="#reladomo_orm">16. Reladomo ORM</a></li>
+<li><a href="#feedzai_pulsedb">17. Feedzai PulseDB</a></li>
+<li><a href="#obevo_schema_management_migration">18. Obevo (Schema Management, Migration)</a></li>
+<li><a href="#liquibase_schema_migration">19. Liquibase (Schema Migration)</a></li>
+<li><a href="#postgresql_advanced_features">20. PostgreSQL Advanced Features</a></li>
+<li><a href="#reactive_relational_database_connectivity_r2dbc">21. Reactive Relational Database Connectivity (R2DBC)</a></li>
+<li><a href="#asynchronous_database_access_api_adba">22. Asynchronous Database Access API (ADBA)</a></li>
+<li><a href="#reference">23. Reference</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="doc.summary">1. Sumario</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Object-Relational Mapping (ORM)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="java_orm">2. JAVA ORM</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/speedment/speedment">Speedment</a></p>
+</li>
+<li>
+<p><a href="https://github.com/speedment/jpa-streamer/jpa-streamer">Speedment JPAStreamer</a></p>
+</li>
+<li>
+<p><a href="http://www.jooq.org">jOOQ</a></p>
+</li>
+<li>
+<p><a href="http://www.jinq.org/">Jinq</a></p>
+</li>
+<li>
+<p><a href="https://ebean.io/">Ebean ORM for Java/Kotlin</a></p>
+</li>
+<li>
+<p><a href="https://github.com/mybatis/ibatis-2">iBATIS</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ebean-orm/avaje-ebeanorm">Avaje Ebean</a></p>
+</li>
+<li>
+<p><a href="https://github.com/feedzai/pdb">Feedzai PDB</a></p>
+</li>
+<li>
+<p><a href="https://www.eclipse.org/eclipselink/">Eclipse Link (JPA Implementation)</a></p>
+</li>
+<li>
+<p><a href="https://hibernate.org/">Hibernate (JPA Implementation)</a></p>
+</li>
+<li>
+<p><a href="http://openjpa.apache.org/">Apache OpenJPA (JPA Implementation)</a></p>
+</li>
+<li>
+<p><a href="https://www.datanucleus.org/">DataNucleus Access Platform (JPA/JDO Implementation)</a></p>
+</li>
+<li>
+<p><a href="https://github.com/goldmansachs/reladomo">Reladomo</a></p>
+</li>
+<li>
+<p><a href="https://cayenne.apache.org/">Apache Cayenne</a></p>
+</li>
+<li>
+<p><a href="https://github.com/domaframework/doma">DAO Oriented Database Mapping Framework for Java </a></p>
+</li>
+<li>
+<p><a href="https://github.com/jdbi/jdbi">JDBI</a></p>
+</li>
+<li>
+<p>ORM Lite</p>
+</li>
+<li>
+<p>Spring JdbcTemplate</p>
+</li>
+<li>
+<p>Squiggle SQL Builder</p>
+</li>
+<li>
+<p>sqlbuilder</p>
+</li>
+<li>
+<p>SQLJ</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="java_especificações">3. Java Especificações</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>JDO API (JSR0012, JSR0243)</p>
+</li>
+<li>
+<p>JPA (PA 2.2+</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>pkg:maven/javax.persistence/javax.persistence.api/2.2</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jpa">4. JPA</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TODO ..</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="spring_jdbctemplate">5. Spring JdbcTemplate</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">Example using JdbcTemplate</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">PreparedStatementCreator psc =
+    <span class="keyword">new</span> ParameterizedPreparedStatementCreator()
+        .setSql(<span class="string"><span class="delimiter">&quot;</span><span class="content">update Employee set name = :name where id = :id</span><span class="delimiter">&quot;</span></span>)
+        .setParameter(<span class="string"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Bob</span><span class="delimiter">&quot;</span></span>)
+        .setParameter(<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>, <span class="integer">42</span>);
+
+<span class="keyword">new</span> JdbcTemplate(dataSource).update(psc);</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sql_builder_utilities">6. SQL Builder Utilities</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/jkrasnay/sqlbuilder" class="bare">https://github.com/jkrasnay/sqlbuilder</a></p>
+</li>
+<li>
+<p>compile 'ca.krasnay:sqlbuilder:1.2'</p>
+</li>
+<li>
+<p>Can be use with Spring JdbcTemplate</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example Select</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">new</span> SelectBuilder()
+    .column(<span class="string"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>)
+    .column(<span class="string"><span class="delimiter">&quot;</span><span class="content">age</span><span class="delimiter">&quot;</span></span>)
+    .from(<span class="string"><span class="delimiter">&quot;</span><span class="content">Employee</span><span class="delimiter">&quot;</span></span>)
+    .where(<span class="string"><span class="delimiter">&quot;</span><span class="content">dept = 'engineering'</span><span class="delimiter">&quot;</span></span>)
+    .where(<span class="string"><span class="delimiter">&quot;</span><span class="content">salary &gt; 100000</span><span class="delimiter">&quot;</span></span>)
+    .toString();</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example with integrate with JdbcTemplate</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">PreparedStatementCreator psc =
+    <span class="keyword">new</span> UpdateCreator(<span class="string"><span class="delimiter">&quot;</span><span class="content">Employee</span><span class="delimiter">&quot;</span></span>)
+        .setValue(<span class="string"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Bob</span><span class="delimiter">&quot;</span></span>)
+        .whereEquals(<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>, <span class="integer">42</span>);
+
+<span class="keyword">new</span> JdbcTemplate(dataSource).update(psc);</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sqlj_proprietary">7. SQLJ (Proprietary)</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.mojohaus.org/sqlj-maven-plugin/" class="bare">https://www.mojohaus.org/sqlj-maven-plugin/</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>org.codehaus.mojo:sqlj-maven-plugin:1.4-SNAPSHOT:sqlj</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Implementations</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Oracle (Reference Implementation)</p>
+</li>
+<li>
+<p>IBM</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Sites</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.infoworld.com/article/2076416/sqlj&#8212;&#8203;the&#8212;&#8203;open-sesame&#8212;&#8203;of-java-database-applications.html" class="bare">https://www.infoworld.com/article/2076416/sqlj&#8212;&#8203;the&#8212;&#8203;open-sesame&#8212;&#8203;of-java-database-applications.html</a></p>
+</li>
+<li>
+<p><a href="https://www.ibm.com/docs/en/radfws/9.6.1?topic=applications-introduction-sqlj" class="bare">https://www.ibm.com/docs/en/radfws/9.6.1?topic=applications-introduction-sqlj</a></p>
+</li>
+<li>
+<p><a href="https://www.ibm.com/docs/en/developer-for-zos/9.5.1?topic=support-what-is-sqlj" class="bare">https://www.ibm.com/docs/en/developer-for-zos/9.5.1?topic=support-what-is-sqlj</a></p>
+</li>
+<li>
+<p><a href="http://kursinfo.himolde.no/in-kurs/in135/Oracle9i/901_doc/java.901/a90212/overview.htm" class="bare">http://kursinfo.himolde.no/in-kurs/in135/Oracle9i/901_doc/java.901/a90212/overview.htm</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example with SQLJ</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="error">#</span>sql iterator SeatCursor(<span class="predefined-type">Integer</span> row, <span class="predefined-type">Integer</span> col, <span class="predefined-type">String</span> type, <span class="type">int</span> status);
+
+<span class="predefined-type">Integer</span> status = ?;
+SeatCursor sc;
+<span class="error">#</span>sql sc = {
+    select rownum, colnum from seats where status &lt;= :status
+};
+<span class="keyword">while</span>(sc.next())
+{
+<span class="error">#</span>sql { insert into categ values(:(sc.row()), :(sc.col())) };
+}
+sc.close();</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sqlbuilder">8. sqlbuilder</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://openhms.sourceforge.io/sqlbuilder/" class="bare">https://openhms.sourceforge.io/sqlbuilder/</a></p>
+</li>
+<li>
+<p>Last Published: 2020-09-10| Version: 3.0.1</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example with sqlbuilder</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">// assuming these objects have already been created</span>
+Table table1, table2;
+Column t1Col1, t1Col2, t2Col1;
+Join joinOfT1AndT2;
+
+<span class="predefined-type">String</span> selectQuery =
+  (<span class="keyword">new</span> SelectQuery())
+  .addColumns(t1Col1, t1Col2, t2Col1)
+  .addJoin(SelectQuery.JoinType.INNER_JOIN, joinOfT1AndT2)
+  .addOrderings(t1Col1)
+  .validate().toString();</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="squiggle_sql_builder">9. Squiggle SQL Builder</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Squiggle is a little Java library for dynamically generating SQL SELECT statements.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://code.google.com/archive/p/squiggle-sql/" class="bare">https://code.google.com/archive/p/squiggle-sql/</a></p>
+</li>
+<li>
+<p>joe.truemesh.com/squiggle/</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example with squiggle</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">SelectQuery select = <span class="keyword">new</span> SelectQuery();
+
+Table people = <span class="keyword">new</span> Table(<span class="string"><span class="delimiter">&quot;</span><span class="content">people</span><span class="delimiter">&quot;</span></span>);
+
+select.addColumn(people, <span class="string"><span class="delimiter">&quot;</span><span class="content">firstname</span><span class="delimiter">&quot;</span></span>); select.addColumn(people, <span class="string"><span class="delimiter">&quot;</span><span class="content">lastname</span><span class="delimiter">&quot;</span></span>);
+
+select.addOrder(people, <span class="string"><span class="delimiter">&quot;</span><span class="content">age</span><span class="delimiter">&quot;</span></span>, Order.DESCENDING);</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="amazom_carbonado_java_orm">10. Amazom Carbonado (Java ORM)</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/Carbonado/Carbonado" class="bare">https://github.com/Carbonado/Carbonado</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jinq">11. Jinq</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>JINQ: Easy Database Queries for Java 8</p>
+</div>
+<div class="paragraph">
+<p>LINQ-style queries for Java 8</p>
+</div>
+<div class="paragraph">
+<p>Sites</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/my2iu/Jinq" class="bare">https://github.com/my2iu/Jinq</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jdbi">12. JDBI</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://jdbi.org/" class="bare">https://jdbi.org/</a></p>
+</li>
+<li>
+<p><a href="https://github.com/jdbi/jdbi" class="bare">https://github.com/jdbi/jdbi</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ebean">13. Ebean</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">Example Ebean</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="predefined-type">List</span>&lt;Person&gt; boys =
+    Ebean.find(Person.class)
+    .where()
+        .eq(<span class="string"><span class="delimiter">&quot;</span><span class="content">gender</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">M</span><span class="delimiter">&quot;</span></span>)
+        .le(<span class="string"><span class="delimiter">&quot;</span><span class="content">age</span><span class="delimiter">&quot;</span></span>, <span class="integer">18</span>)
+    .orderBy(<span class="string"><span class="delimiter">&quot;</span><span class="content">firstName</span><span class="delimiter">&quot;</span></span>)
+    .findList();</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="jooq">14. jOOQ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sites</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://groups.google.com/g/jooq-user" class="bare">https://groups.google.com/g/jooq-user</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example jOOQ</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="predefined-type">List</span>&lt;EmployeeDTO&gt; records = create
+         .select(EMPLOYEE.LASTNAME, EMPLOYEE.FIRSTNAME, EMPLOYEE.SALARY)
+         .from(EMPLOYEE)
+         .where(EMPLOYEE.SALARY.between(<span class="integer">80000</span>, <span class="integer">100000</span>))
+         .fetchInto(EmployeeDTO.class);</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="speedment">15. Speedment</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Speedment is a Stream ORM Java Toolkit and Runtime</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Sites</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://speedment.com/" class="bare">https://speedment.com/</a></p>
+</li>
+<li>
+<p><a href="https://github.com/speedment/speedment" class="bare">https://github.com/speedment/speedment</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Speedment Edition (Licenses)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Speedment Open Source (OSS) - This site covers the Speedment Open Source project available under the Apache 2 license.</p>
+</li>
+<li>
+<p>Speedment Stream - The same great features as Speedment OSS with support for commercial databases (i.e. Oracle, MS SQL Server, DB2, AS400). Learn more at speedment.com/stream.</p>
+</li>
+<li>
+<p>Speedment HyperStream - An extension av Speedment Stream which also includes hypersonic query performance enabled by a unique in-JVM-memory management model. Learn more at speedment.com/hyperStream.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Speedment Open Source</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>MySQL</p>
+</li>
+<li>
+<p>MariaDB</p>
+</li>
+<li>
+<p>PostgreSQL</p>
+</li>
+<li>
+<p>SQLite</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>JPAStreamer</p>
+</div>
+<div class="listingblock">
+<div class="title">Example JPAStreamer</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="predefined-type">List</span>&lt;Film&gt; list = films.stream()
+    .filter(Film.RATING.equal(<span class="string"><span class="delimiter">&quot;</span><span class="content">PG-13</span><span class="delimiter">&quot;</span></span>))
+    .sorted(Film.LENGTH)
+    .collect(toList());</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reladomo_orm">16. Reladomo ORM</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Reladomo is an enterprise grade object-relational mapping framework for Java.</p>
+</li>
+<li>
+<p><a href="https://goldmansachs.github.io/reladomo/" class="bare">https://goldmansachs.github.io/reladomo/</a></p>
+</li>
+<li>
+<p>Support: Sybase (ASE &amp; IQ), DB2, Oracle, Postgres, MS-SQL, H2, Derby, "generic" &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Mapping</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>TODO&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="feedzai_pulsedb">17. Feedzai PulseDB</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/feedzai/pdb" class="bare">https://github.com/feedzai/pdb</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>PulseDB is a database-mapping software library written in Java,
+it provides a transparent access and manipulation to a great variety
+of database implementations.
+
+PDB provides a DSL that covers most of SQL functionalities
+and allows to easily integrate persistence into your projects and modules.</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="obevo_schema_management_migration">18. Obevo (Schema Management, Migration)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Get Your Database SDLC under Control</p>
+</div>
+<div class="paragraph">
+<p>Obevo is a database deployment tool that handles enterprise scale schemas and complexity</p>
+</div>
+<div class="paragraph">
+<p>Sites</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/goldmansachs/obevo" class="bare">https://github.com/goldmansachs/obevo</a></p>
+</li>
+<li>
+<p><a href="https://www.infoq.com/articles/Obevo-Introduction" class="bare">https://www.infoq.com/articles/Obevo-Introduction</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="liquibase_schema_migration">19. Liquibase (Schema Migration)</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">Example invoke liquidbase from cli</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">liquibase --changeLogFile=dbchangelog_gen.sql --logLevel=debug generateChangeLog</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example liquidbase configuration</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="txt">liquibase –driver=org.postgresql.Driver \
+–classpath=myFiles\postgresql-9.4.1212.jre7.jar \
+–changeLogFile=myFiles/db.changelog-1.0.xml \
+–url=”jdbc:postgresql://localhost:5432/MYDATABASE” \
+–username=postgres \
+–password=postgres \
+generateChangeLog</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">liquibase.properties</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="txt">url=jdbc:mysql://localhost:3306/unicenta
+username=root
+password=root
+driver=com.mysql.cj.jdbc.Driver
+outputChangeLogFile=src/main/resources/liquibase/liquibase-outputChangeLog.xml</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Maven plugin</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;plugin&gt;</span>
+    <span class="tag">&lt;groupId&gt;</span>org.liquibase<span class="tag">&lt;/groupId&gt;</span>
+    <span class="tag">&lt;artifactId&gt;</span>liquibase-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
+    <span class="tag">&lt;version&gt;</span>3.4.1<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;configuration&gt;</span>
+        <span class="tag">&lt;propertyFile&gt;</span>src/main/resources/liquibase/liquibase.properties<span class="tag">&lt;/propertyFile&gt;</span>
+    <span class="tag">&lt;/configuration&gt;</span>
+
+    <span class="tag">&lt;dependencies&gt;</span>
+        <span class="tag">&lt;dependency&gt;</span>
+            <span class="tag">&lt;groupId&gt;</span>mysql<span class="tag">&lt;/groupId&gt;</span>
+            <span class="tag">&lt;artifactId&gt;</span>mysql-connector-java<span class="tag">&lt;/artifactId&gt;</span>
+            <span class="tag">&lt;version&gt;</span>8.0.21<span class="tag">&lt;/version&gt;</span>
+            <span class="tag">&lt;scope&gt;</span>runtime<span class="tag">&lt;/scope&gt;</span>
+        <span class="tag">&lt;/dependency&gt;</span>
+    <span class="tag">&lt;/dependencies&gt;</span>
+<span class="tag">&lt;/plugin&gt;</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">mvn liquibase:generateChangeLog</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="postgresql_advanced_features">20. PostgreSQL Advanced Features</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>UDT</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reactive_relational_database_connectivity_r2dbc">21. Reactive Relational Database Connectivity (R2DBC)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TODO&#8230;&#8203;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="asynchronous_database_access_api_adba">22. Asynchronous Database Access API (ADBA)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TODO&#8230;&#8203;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://blogs.oracle.com/java/jdbc-next:-a-new-asynchronous-api-for-connecting-to-a-database" class="bare">https://blogs.oracle.com/java/jdbc-next:-a-new-asynchronous-api-for-connecting-to-a-database</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reference">23. Reference</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.sciencedirect.com/science/article/abs/pii/S1477842415000020" class="bare">https://www.sciencedirect.com/science/article/abs/pii/S1477842415000020</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+  </div>
+
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Paulo Borges&#39;s Notes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Paulo Borges&#39;s Notes</li><li><a class="u-email" href="mailto:poolborges@hotmail.com">poolborges@hotmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/poolborges"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">poolborges</span></a></li><li><a href="https://www.linkedin.com/in/poolborges"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">poolborges</span></a></li><li><a href="https://www.twitter.com/poolborges"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">poolborges</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This site provide contents written by Paulo Borges (aka poolborges).</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

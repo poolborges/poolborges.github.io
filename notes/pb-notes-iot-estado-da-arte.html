@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>IoT Estado da Arte | Paulo Borges’s Notes</title>
+<meta name="generator" content="Jekyll v4.2.1" />
+<meta property="og:title" content="IoT Estado da Arte" />
+<meta name="author" content="Paulo Borges" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="IoT Estado da Arte" />
+<meta property="og:description" content="IoT Estado da Arte" />
+<link rel="canonical" href="https://poolborges.github.io/notes/pb-notes-iot-estado-da-arte.html" />
+<meta property="og:url" content="https://poolborges.github.io/notes/pb-notes-iot-estado-da-arte.html" />
+<meta property="og:site_name" content="Paulo Borges’s Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-03-08T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="IoT Estado da Arte" />
+<meta name="google-site-verification" content="_LLMR_ca_ZDaTsm3ZH8STl2K5ZpXuY6v77lcQ5eyL4U" />
+<script type="application/ld+json">
+{"author":{"@type":"Person","name":"Paulo Borges"},"headline":"IoT Estado da Arte","dateModified":"2022-03-08T00:00:00+00:00","datePublished":"2022-03-08T00:00:00+00:00","description":"IoT Estado da Arte","url":"https://poolborges.github.io/notes/pb-notes-iot-estado-da-arte.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://poolborges.github.io/notes/pb-notes-iot-estado-da-arte.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://poolborges.github.io/feed.xml" title="Paulo Borges's Notes" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Paulo Borges&#39;s Notes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/authors.html">Authors</a><a class="page-link" href="/notes.html">Notes</a><a class="page-link" href="/projects.html">Projects</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "url": "https://poolborges.github.io/notes/pb-notes-iot-estado-da-arte.html",
+  "name": "IoT Estado da Arte",
+  "headline": "IoT Estado da Arte",
+  "keywords": "",
+  "description": "<div id=\"toc\" class=\"toc\"><div id=\"toctitle\"></div><ul class=\"sectlevel1\"><li><a href=\"#doc.summary\">1. Sumario</a></li></ul></div><div class=\"sect1\"><h2 id=\"doc.summary\">1. Sumario</h2><div class=\"sectionbody\"><div class=\"ulist\"><ul><li><p>NOTES for \"IoT State of Art\"</p></li></ul></div></div></div>",
+  "articleBody": "\n\n\n1. Sumario\n2. Categorias de rede\n3. Link Layer\n4. Routing and Mobility\n5. Caracteristicas\n6. Wireless Frequency bands\n7. Cellular IoT\n8. Short-range radio connectivity\n\n8.1. WIFI\n8.2. Zigbee\n\n8.2.1. Zigbee Cluster Library (ZCL).\n\n\n8.3. ZWave\n8.4. Bluethoot 5\n8.5. Thread\n8.6. Dotdot\n8.7. DASH7\n8.8. Wireless M-BUS\n8.9. RFID\n\n\n9. 6LoWPAN\n10. Dotdot Specification\n11. KNX IoT\n12. LPWA\n\n12.1. SIGFOX\n12.2. LoRa (Long Range)\n12.3. NB-IoT (NBIoT)\n\n\n13. EC-GSM\n\n13.1. LTE Cat-M1\n\n\n14. LTE-M\n15. WeMo\n16. long-range Bluetooth\n17. Standard\n18. Organismos de Padronização\n19. Security\n20. Temas\n21. Inteligent Transport System (ITS)\n22. Projetos\n23. 6LoWPAN\n\n23.1. ROLL RPL \"Ripple\"\n23.2. IEFT\n23.3. IEEE 802.15.4\n\n\n24. ZigBee Protocol\n25. SmartConnect 6LoWPAN\n26. Hardware\n27. Z-Wave\n28. Aplication Protocol\n29. Aplication Protocol\n30. Other Application Protocols\n31. ECHONET Lite\n32. Devices Profile for Web Services (DPWS)\n33. Web Services for Devices (WS4D)\n34. SOA for Devices (SOA4D)\n35. Service Oriented Device and Delivery Architecture (SODA)\n36. WS-DD Specifications\n37. Protocols\n38. Universal Plug and Play (UPnP)\n39. Multicast Doman Name System (mDNS) - (bonjour)\n40. DNS Service-Discovery(DNS-SD)\n41. DLNA\n42. Reference\n43. PicoGW\n44. IEEE 802.11\n45. Network Security\n46. Thinking Things protocol\n47. ECHONET Lite Application Communication Interface (AIF) Specifications\n48. Reference\n\n\n\n1. Sumario\n\n\n\n\nNOTES for \"IoT State of Art\"\n\n\n\n\n\n\n2. Categorias de rede\n\n\n\n\nPersonal Area Network (PAN)\n\n\n\nWireless personal area networks (WPANs)\n\n\n\n\n\nLocal Area Network (LAN)\n\n\nWide Area Network (WAN)\n\n\nLow Power Wide Area (LPWA)\n\n\nHome Area Network (HAN)\n\n\n\n\n\n\n3. Link Layer\n\n\n\n\n802.15.4\n\n\nPower\n\n\n\n\n\n\n4. Routing and Mobility\n\n\n\n\nTODO\n\n\n\n\n\n\n5. Caracteristicas\n\n\n\n\nRange (Short rane, Long range)\n\n\nLagura de banda\n\n\nTaxa de transferencia\n\n\nData Throughput\n\n\n\n\n\n\n6. Wireless Frequency bands\n\n\n\n\nLicenciadas\n\n\nNão Licenciadas\n\n\n\n2.4 GHz ISM (Industrial, Scientific, and Medical) frequency bands\n\n\nSub-1 GHz ISM\n\n\n\n433/868/780/915 MHz ISM\n\n\n\n\n\n\n\n\n\n\nShort Range Device (SRD)\n\n\n\n\nhttps://en.wikipedia.org/wiki/Short-range_device\n\n\n\n\nULTRA WIDE BAND (UWB)\n\n\n\n\n7. Cellular IoT\n\n\n\n\nNarrowband-Internet of Things (NB-IoT) - 3GPP standards:\n\n\nLong-Term Evolution for Machines (LTE-M) - 3GPP standards:\n\n\n5G\n\n\nGSM\n\n\nLTE\n\n\n\n\n\n\n8. Short-range radio connectivity\n\n\n\n\nTODO\n\n\n\n\n8.1. WIFI\n\n\n\nShort Range\n\n\n\n\n\n8.2. Zigbee\n\nZigbee é nome de um conjunto de especificações IEEE 802.15.4\n\n\n\n\nLow-power,\n\n\nLow data rate: 250 kbit/s\n\n\nPhysical range: 10 to 20 meters (approx)\n\n\n\nline-of-sight: 10-100 meters\n\n\n\n\n\nApplications: Home energy monitors,\n\n\nSpecification Version:\n\n\n\nZigbee 2004 Specification (Specification 1.0)\n\n\nZigbee 2006 Specification\n\n\nZigbee 2007 Specification (Zigbee PRO\n\n\nZigbee Smart Energy V2.0 (on top of Zigbee IP\n\n\nZigbee RF4CE\n\n\n\n\n\n\n\nZigbee Alliance is supported by\n\n\n\n\nBoard Members from Comcast, Huawei, The Kroger Co., Landis+Gyr,\n\n\nLEEDARSON, Legrand Group, MMB Networks, NXP Semiconductors,\n\n\nSignify (formerly Philips Lighting), Schneider Electric, Silicon Labs,\n\n\nSmartThings, Somfy, Texas Instruments, and Wulian.\n\n\n\n\n8.2.1. Zigbee Cluster Library (ZCL).\n\nDoor Lock Cluster\n\n\nAt the application layer,\nZigbee provides a standardized communication protocol through entities called “clusters.”\nClusters define what commands a device can send or receive,\nand what pieces of data or attributes a device cares about.\nThe Door Lock Cluster defines everything from how a door is locked and unlocked to schedules and pin codes for the lock. Thus, at the absolute top of the Zigbee protocol stack, a door lock has a very specific and standardized way that it communicates with the rest of the Zigbee network and the outside world.\n\n\n\n\n8.3. ZWave\n\n\n\nTODO\n\n\n\n\n\n8.4. Bluethoot 5\n\n\n\nTODO\n\n\n\n\n\n8.5. Thread\n\nOpenThread, an open-source implementation of Thread\n\n\nThread is a 6LoWPAN-based protocol\nmesh networking (Up to 250 devices)\n\n\nTransport Layer\n* UDP + DTLS\n\n\nNetwork Layer\n* Distance Vector Routing\n* IPv6\n* 6LoWPAN\n\n\nOrganizations:\n* Apple, Arm, Google/Nest, Nordic Semiconductors, NXP Semiconductors, OSRAM, Qualcomm, Schneider Electric, Siemens, Silicon Labs, Somfy, and Yale Security.\n\n\nProducts\n\n\n\n\nComcast Xfinity Home Security, Echo Show,  Amazon Echo Plus\n\n\n\n\n\n8.6. Dotdot\n\nDotdot is based on the Zigbee Cluster Library (ZCL)\n\n\nThe core of the dotdot language is the zigbee interoperability layer,\nbut without the protocol. A layer comprises a protocol, interface,\nand service (the action that the layer performs).\nThe dotdot language is agnostic to underlying networks and protocol message structure,\nso it defines only the interface and the action. Hence, it is an interaction model,\ndefining the behavior and interaction between devices.\n\n\nFor each qualified network, a dotdot specification will also standardize\nor recommend protocols to complete the application layer\nFor example, a dotdot device on a zigbee network uses\nstandard ZCL APS messages (and defines the format).\nA dotdot device on an IP network uses standard ZCLIP URI messages.\n\n\nOrganization: DSR, MMB Networks, NXP Semiconductors, Silicon Labs, and Ubilogix.\n\n\n\n8.7. DASH7\n\nWireless Data Communication that evole from on ISO/IEC 18000-7\n\n\n\n\n433 MHz ISM band\n\n\nMedium Range\n\n\n100m to 500m.\n\n\nOSS-7: Dash7 Open Source Stack: Apache License, Version 2.0.\n\n\nISO/IEC 18000-7 Information technology - Radio frequency identification for item management - Part 7: Parameters for active air interface communications at 433 MHz\n\n\nhttps://www.youtube.com/watch?v=ead-fFj4fyc\n\n\n\n\nFrequency vs Range\n\n\n\n\n433MHz (Range: 1Km )\n\n\n868/915MHz (Range: 0.45 Km) - 863-870 MHz (EU) or the 902-928 MHz (US) frequency bands.\n\n\n2.4 GHz (Range: 0.2 Km)\n\n\n\n\nTree topology\n\n\n\n\nSimple Routing (2 hops)\n\n\n\n\nTopology\n\n\n\n\nGateway\n\n\nSubcontroller\n\n\nEndpoint\n\n\n\n\nFeatures\n\n\n\n\nMid to Long range\n\n\nLow Power\n\n\nhardwre provider independent\n\n\nMobile\n\n\nFul stack spcification\n\n\nDynamic pull/push\n\n\nLow power wakeup\n\n\nLight: packet size limited to 256bytes\n\n\n\n\nHardware\n\n\n\n\nhttps://blog.st.com/wizzilab-wizzikit-da7/\n\n\n\n\nUse Case\n\n\n\n\nWizzilab (france, Parking guidance and information)\n\n\nMatrix product Development (EUA, sensor measure for food industry,\n\n\nuniversity Antwerpen (bird track System: sensor with 1g, bird with 20g)\n\n\nBelivium (Stralo, Museum location content based on beacon)\n\n\n\n\n\n8.8. Wireless M-BUS\n\nA radio variant of M-Bus (Wireless M-Bus) is also specified in EN 13757-4. The M-Bus was developed to fill the need for a system for the networking and remote reading of utility meters, for example to measure the consumption of gas or water in the home.\n\n\nWireless M-Bus is the European standard for wireless meter communication with gas, electric, water and heat meters (EN 13757).\n\n\nThe Silicon Labs wireless M-Bus software and stack provide: Fully compliant wireless M-Bus protocol stack. Worldwide wireless M-Bus support with modes and configurations 868 MHz modes S1, S1-m, S2, T1, T2, C1, C2.\n\n\n\n8.9. RFID\n\n\n\nTODO\n\n\n\n\n\n\n\n9. 6LoWPAN\n\n\n6LoWPAN (Ipv6 Over Low Power Area Network) is defined in RFC 4944.\n\n\n\n\n10. Dotdot Specification\n\n\n\n\nTODO\n\n\n\n\n\n\n11. KNX IoT\n\n\n\n\nKNX over Thread Stack\n\n\nhttps://openweave.io/\n\n\n\n\n\n\n12. LPWA\n\n\n\n\nTODO\n\n\n\n\n12.1. SIGFOX\n\n\n\nbegan in 2009\n\n\nLong Range\n\n\n\n\n\n12.2. LoRa (Long Range)\n\nWhat is LoRa\n\nLoRa is the physical (PHY) silicon layer, or wireless modulation, used to create the long range communication link\n\nLoRaWAN refers to a network protocol with LoRa chips for communication.\nIt is based on the base station, which can monitor 8 frequencies with several spreading factors and almost 43 channels.\n\n\n\n\n\nISM band (Europe) and SRD band\n\n\n\n433.05 MHz to 434.79 MHz\n\n\n863 MHz to 870 MHz.\n\n\n\n\n\nUp to 55 kilometers\n\n\n\n\n\n12.3. NB-IoT (NBIoT)\n\n\n\n20 dB coverage enhancement,\n\n\n100,000 connections in each cell,\n\n\nterminal batteries with a 10-year service lifespan\n\n\n\n\n\n\n\n13. EC-GSM\n\n\n\n\nTODO\n\n\n\n\n13.1. LTE Cat-M1\n\n\n\n1.4 Frontend(vs. 20 MHz) + 1 Antena (Expensive Chipset)\n\n\n1 Mbps Half-Duplex\n\n\nPower Safe: Power Saving Mode(PSM), Extended Discontinuous Reception (eDRx)\n\n\nCosts\n\n\n\nModules: $15\n\n\nData: $1-$3/Month\n\n\n\n\n\nLTE-M Sensor Suite (LinkLabs)\n\n\n\nPTCRB and VZN Certified communication board\n\n\nOpen Source Atmel L21 project for user Application\n\n\nOpen source power/sensor board\n\n\n\n\n\n\n\n\n\n\n14. LTE-M\n\n\n\n\nTODO\n\n\n\n\n\n\n15. WeMo\n\n\n\n\nTODO\n\n\n\n\n\n\n16. long-range Bluetooth\n\n\nData Throughput\n\n\n\n\n6 lane\n\n\n\n\n\n\n17. Standard\n\n\n\n\nOMA Lightweight M2M 1.1 (LwM2M 1.1)\n\n\n\n\n\n\n18. Organismos de Padronização\n\n\n\n\n3GPP\n\n\nGSMA\n\n\n\n\n\n\n19. Security\n\n\n\n\nGSMA’s IoT Security Guidelines.\n\n\n\nETSI TS 103 645 V1.1.1 (2019-02) - CYBER; Cyber Security for Consumer Internet of Things\n\n\n\n\n\n\n\n\n\n20. Temas\n\n\n\n\nSmartThings hubs\n\n\nHome Energy Management System (HEMS)\n\n\n\n\n\n\n21. Inteligent Transport System (ITS)\n\n\n\n\nITS G5 (802.11p)\n\n\nV2X\n\n\n\n\n\n\n22. Projetos\n\n\n\n\nGoogle Lighthouse 3.0 (JSON, Node)\n\n\n\n\n\n\n23. 6LoWPAN\n\n\n\n\nhttps://www.youtube.com/watch?v=4baf7N2N_Wo\n\n\n\n\n23.1. ROLL RPL \"Ripple\"\n\n\n\nProactive Distance Vector\n\n\nLow-Power and Lossy Network (LLN)\n\n\n\n\n\n23.2. IEFT\n\n\n\n6LoWPAN\n\n\nROLL\n\n\nIPv6\n\n\n\n\n\n23.3. IEEE 802.15.4\n\n\n\nIEEE 802.15.4 MAC\n\n\nIPv6/6LoWPAN\n\n\nZigBee Radio Frequency for Consumer Electronics (RF4CE)\n\n\nZigBee Smart Energy\n\n\nZigBee® PRO\n\n\n\n\n\n\n\n24. ZigBee Protocol\n\n\n\n\nZigBee LightLink (ZLL)\n\n\nZigBee Home Automation (ZHA)\n\n\nZigBee Smart Energy (ZSE)\n\n\nZigBee Building Automation (ZBA),\n\n\nZigBee Remote Control (ZRC).\n\n\n\n\n\n\n25. SmartConnect 6LoWPAN\n\n\n\n\nTODO\n\n\n\n\n\n\n26. Hardware\n\n\n\n\nSAMR21-XPRO\n\n\n\n\nSerial Remote Procedure Call\n\n\n\n\n27. Z-Wave\n\n\n\n\nPropetary\n\n\nOnly one manufacture\n\n\n\n\n\n\n28. Aplication Protocol\n\n\n\n\nFirewall\n\n\nCompression\n\n\nLossy links\n\n\nFrame-size, Bandwith Limitation\n\n\nMulticast (Expensive\n\n\nApplication Securty\n\n\nMobility\n\n\nNode Ientification\n\n\nSleep Cycle\n\n\n\n\n\n\n29. Aplication Protocol\n\n\n\n\nDotdot 1.0 specification\n\n\n\nDotdot over Thread\n\n\n\n\n\nRTP\n\n\nHTTP (Webservice: SOAP, REST)\n\n\n\n6lowapp.net (\n\n\n\n\n\nCoAP (from: Constraint Rest Enviroment working group)\n\n\nProtocol X From : Open Connectivity Foundation (OCF) merged with AllSeen Alliance\n\n\n\n\n\n\n30. Other Application Protocols\n\n\nService Discovery\n\n\n\n\nService Location Protocol (SLP)\n\n\nDevice Profile Web Service (DPWS)\n\n\n\n\nManagement\n\n\n\n\nSimple Network Management Protocol (SNMP)\n\n\nLWM2M\n\n\n\n\nM2M Telemetry\n\n\n\n\nMQ Telemetry Transport for Swnsors (MQTT-S)\n\n\n\n\nBuild Automation (Specilize industry protocol)\n\n\n\n\nBACnet/IP\n\n\noBIX\n\n\n\n\nEnergy Industry (Specilize industry protocol)\n\n\n\n\nANSI c12\n\n\nDevice Language Message Specification (DLMS)\n\n\nZipBee Smart Energy 2.0\n\n\n\n\nHome\n\n\n\n\nECHONET Lite\n\n\n\n\n\n\n31. ECHONET Lite\n\n\n\n\nHEMS (Home Energy Management System)\n\n\n\n\n\n\n32. Devices Profile for Web Services (DPWS)\n\n\n\n\nTODO\n\n\n\n\n\n\n33. Web Services for Devices (WS4D)\n\n\n\n\nWS4D.org\n\n\n\n\nWeb Services for Devices (WS4D)\nis an initiative bringing Service-Oriented Architecture (SOA)\nand Web services technology to the application domains of\nindustrial automation, home entertainment, automotive systems\nand telecommunication systems.\n\n\n\n\n34. SOA for Devices (SOA4D)\n\n\n\n\nSOA4D.org\n\n\nDPWS stack (both C and Java versions)\n\n\nadd-ons (like WS-Management and WS-Security implementations)\n\n\n\n\n\n\n35. Service Oriented Device and Delivery Architecture (SODA)\n\n\n\n\nTODO\n\n\n\n\n\n\n36. WS-DD Specifications\n\n\nOASIS Web Services Discovery (WS-DD) and Web Services Devices Profile DPWS\n\n\n\n\nDevices Profile for Web Services (DPWS) 1.1\n\n\nSOAP-over-UDP 1.1\n\n\nWeb Services Dynamic Discovery (WS-Discovery) 1.1\n\n\n\n\nWS-I Basic Profile Version 1.1 specification\nWS-I Basic Profile 2.0 specification\n\n\n\n\n37. Protocols\n\n\n\n\nUPnP - Universal Plug and Play\n\n\nSSDP - Simple Service Discovery Protocol\n\n\nSCPD - Service Control Protocol Definition\n\n\nSOAP - Simple Object Acess Protocol\n\n\nDLNA -\n\n\n\n\n\n\n38. Universal Plug and Play (UPnP)\n\n\nUPnP-arch-DeviceArchitecture-v1-0\n\n\n\n\nhttp://upnp.org/specs/arch/UPnP-arch-DeviceArchitecture-v1.0.pdf\n\n\nhttp://upnp.org/specs/arch/UPnP-arch-DeviceArchitecture-v1.1-AnnexA.pdf\n\n\n\n\nAbout\n\n\n\n\nUDP/1900\n\n\n\nHTTP over UDP allowing devices to discovery each other\n\n\nMulticast 2.39.255.255.250\n\n\n\n\n\nUPnP Stack\n\n\n\nDiscovery - Advertising and Searching\n\n\nDescription -  An XML file describing the device\n\n\nControl - Call and action or query for value\n\n\nEventing - User for announcing state changes\n\n\nPresentation - UI&#8230;&#8203;Web page or management portal\n\n\n\n\n\n\n\n\n\n39. Multicast Doman Name System (mDNS) - (bonjour)\n\n\n\n\nTODO\n\n\n\n\n\n\n40. DNS Service-Discovery(DNS-SD)\n\n\n\n\nTODO\n\n\n\n\n\n\n41. DLNA\n\n\n\n\nLinux dLeyna\n\n\n\n\n\n\n42. Reference\n\n\n\n\nhttp://docs.oasis-open.org/ws-dd/ns/dpws/2009/01\n\n\nsensei-project.eu\n\n\n\n\n\n\n43. PicoGW\n\n\nAn open source device server, distributed by Kanagawa institute of technology\nIt converts various devices specific protocols to webapi\nA minimalist&#8217;s housing Web API gateway that supports ECHONET Lite (works on node.js)\nbased on Housing API by Daiwa House Industry(http://www.daiwahouse.co.jp/lab/HousingAPI/)\n\n\nhttps://github.com/KAIT-HEMS/PicoGW\n\n\n\n\n44. IEEE 802.11\n\n\n\n\nIEEE802.11ai - Fast Initial Link Set-up\n\n\nhttp://www.ieee802.org/11/Reports/tgai_update.htm\n\n\n\n\n\n\n45. Network Security\n\n\n\n\nTLS - required for encrypting information in TCP/IP communication\n\n\nIPSec - for communication encrypted with IP layer.\n\n\nPANA\n\n\nDTLS\n\n\n\n\n\n\n46. Thinking Things protocol\n\n\n\n\nDeveloped by: telfonica\n\n\nClosed protocol\n\n\n\n\n\n\n47. ECHONET Lite Application Communication Interface (AIF) Specifications\n\n\n\n\nprotocol for HEMS (Home Energy Management System)\n\n\nhttps://www.meti.go.jp/english/press/2019/0206_002.html\n\n\nAs international standards for this technology\n\n\n\nISO/IEC14543-4-3 - Information technology&#8201;&#8212;&#8201;Home electronic systems (HES) architecture&#8201;&#8212;&#8201;Part 3-10: Wireless short-packet (WSP) protocol optimized for energy harvesting&#8201;&#8212;&#8201;Architecture and lower layer protocols\n\n\nIEC62394\n\n\n\n\n\n\n\n\n\n48. Reference\n\n\n\n\nsensei-project.eu\n\n\n\n\n",
+  "datePublished": "2022-03-08 00:00:00 +0000",
+  "dateModified": "2022-03-08 00:00:00 +0000",
+  "author": {
+    "@type": "Person",
+    "name": null,
+    "givenName": null,
+    "familyName": null,
+    "email": null,
+    "@id": null
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Paulo Borges's Notes",
+    "url": "https://poolborges.github.io",
+    "logo": {
+      "@type": "ImageObject",
+      "width": 32,
+      "height": 32,
+      "url": "https://poolborges.github.io/icon/favicon.ico"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://poolborges.github.io/notes/pb-notes-iot-estado-da-arte.html"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "width": ,
+    "height": ,
+    "url": "https://poolborges.github.io"
+  }
+}
+</script>
+
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">IoT Estado da Arte</h1>
+
+    <p class="post-meta"><time class="dt-published" datetime="2022-03-08T00:00:00+00:00" itemprop="datePublished">
+        Mar 8, 2022
+      </time>~<time class="dt-modified" datetime="2022-03-08T00:00:00+00:00" itemprop="dateModified">
+          Mar 8, 2022
+        </time></p>
+
+  </header>
+
+  <div class="post-content">
+    <div id="toc" class="toc">
+<div id="toctitle"></div>
+<ul class="sectlevel1">
+<li><a href="#doc.summary">1. Sumario</a></li>
+<li><a href="#categorias_de_rede">2. Categorias de rede</a></li>
+<li><a href="#link_layer">3. Link Layer</a></li>
+<li><a href="#routing_and_mobility">4. Routing and Mobility</a></li>
+<li><a href="#caracteristicas">5. Caracteristicas</a></li>
+<li><a href="#wireless_frequency_bands">6. Wireless Frequency bands</a></li>
+<li><a href="#cellular_iot">7. Cellular <strong>IoT</strong></a></li>
+<li><a href="#short_range_radio_connectivity">8. Short-range radio connectivity</a>
+<ul class="sectlevel2">
+<li><a href="#wifi">8.1. WIFI</a></li>
+<li><a href="#zigbee">8.2. Zigbee</a>
+<ul class="sectlevel3">
+<li><a href="#zigbee_cluster_library_zcl">8.2.1. Zigbee Cluster Library (ZCL).</a></li>
+</ul>
+</li>
+<li><a href="#zwave">8.3. ZWave</a></li>
+<li><a href="#bluethoot_5">8.4. Bluethoot 5</a></li>
+<li><a href="#thread">8.5. Thread</a></li>
+<li><a href="#dotdot">8.6. Dotdot</a></li>
+<li><a href="#dash7">8.7. DASH7</a></li>
+<li><a href="#wireless_m_bus">8.8. Wireless M-BUS</a></li>
+<li><a href="#rfid">8.9. RFID</a></li>
+</ul>
+</li>
+<li><a href="#6lowpan">9. 6LoWPAN</a></li>
+<li><a href="#dotdot_specification">10. Dotdot Specification</a></li>
+<li><a href="#knx_iot">11. KNX IoT</a></li>
+<li><a href="#lpwa">12. LPWA</a>
+<ul class="sectlevel2">
+<li><a href="#sigfox">12.1. SIGFOX</a></li>
+<li><a href="#lora_long_range">12.2. LoRa (Long Range)</a></li>
+<li><a href="#nb_iot_nbiot">12.3. NB-IoT (NBIoT)</a></li>
+</ul>
+</li>
+<li><a href="#ec_gsm">13. EC-GSM</a>
+<ul class="sectlevel2">
+<li><a href="#lte_cat_m1">13.1. LTE Cat-M1</a></li>
+</ul>
+</li>
+<li><a href="#lte_m">14. LTE-M</a></li>
+<li><a href="#wemo">15. WeMo</a></li>
+<li><a href="#long_range_bluetooth">16. long-range Bluetooth</a></li>
+<li><a href="#standard">17. Standard</a></li>
+<li><a href="#organismos_de_padronização">18. Organismos de Padronização</a></li>
+<li><a href="#security">19. Security</a></li>
+<li><a href="#temas">20. Temas</a></li>
+<li><a href="#inteligent_transport_system_its">21. Inteligent Transport System (ITS)</a></li>
+<li><a href="#projetos">22. Projetos</a></li>
+<li><a href="#6lowpan_2">23. 6LoWPAN</a>
+<ul class="sectlevel2">
+<li><a href="#roll_rpl_ripple">23.1. ROLL RPL "Ripple"</a></li>
+<li><a href="#ieft">23.2. IEFT</a></li>
+<li><a href="#ieee_802_15_4">23.3. IEEE 802.15.4</a></li>
+</ul>
+</li>
+<li><a href="#zigbee_protocol">24. ZigBee Protocol</a></li>
+<li><a href="#smartconnect_6lowpan">25. SmartConnect 6LoWPAN</a></li>
+<li><a href="#hardware">26. Hardware</a></li>
+<li><a href="#z_wave">27. Z-Wave</a></li>
+<li><a href="#aplication_protocol">28. Aplication Protocol</a></li>
+<li><a href="#aplication_protocol_2">29. Aplication Protocol</a></li>
+<li><a href="#other_application_protocols">30. Other Application Protocols</a></li>
+<li><a href="#echonet_lite">31. ECHONET Lite</a></li>
+<li><a href="#devices_profile_for_web_services_dpws">32. Devices Profile for Web Services (DPWS)</a></li>
+<li><a href="#web_services_for_devices_ws4d">33. Web Services for Devices (WS4D)</a></li>
+<li><a href="#soa_for_devices_soa4d">34. SOA for Devices (SOA4D)</a></li>
+<li><a href="#service_oriented_device_and_delivery_architecture_soda">35. Service Oriented Device and Delivery Architecture (SODA)</a></li>
+<li><a href="#ws_dd_specifications">36. WS-DD Specifications</a></li>
+<li><a href="#protocols">37. Protocols</a></li>
+<li><a href="#universal_plug_and_play_upnp">38. Universal Plug and Play (UPnP)</a></li>
+<li><a href="#multicast_doman_name_system_mdns_bonjour">39. Multicast Doman Name System (mDNS) - (bonjour)</a></li>
+<li><a href="#dns_service_discoverydns_sd">40. DNS Service-Discovery(DNS-SD)</a></li>
+<li><a href="#dlna">41. DLNA</a></li>
+<li><a href="#reference">42. Reference</a></li>
+<li><a href="#picogw">43. PicoGW</a></li>
+<li><a href="#ieee_802_11">44. IEEE 802.11</a></li>
+<li><a href="#network_security">45. Network Security</a></li>
+<li><a href="#thinking_things_protocol">46. Thinking Things protocol</a></li>
+<li><a href="#echonet_lite_application_communication_interface_aif_specifications">47. ECHONET Lite Application Communication Interface (AIF) Specifications</a></li>
+<li><a href="#reference_2">48. Reference</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="doc.summary">1. Sumario</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>NOTES for "IoT State of Art"</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="categorias_de_rede">2. Categorias de rede</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Personal Area Network (PAN)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Wireless personal area networks (WPANs)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Local Area Network (LAN)</p>
+</li>
+<li>
+<p>Wide Area Network (WAN)</p>
+</li>
+<li>
+<p>Low Power Wide Area (LPWA)</p>
+</li>
+<li>
+<p>Home Area Network (HAN)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="link_layer">3. Link Layer</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>802.15.4</p>
+</li>
+<li>
+<p>Power</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="routing_and_mobility">4. Routing and Mobility</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>TODO</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="caracteristicas">5. Caracteristicas</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Range (Short rane, Long range)</p>
+</li>
+<li>
+<p>Lagura de banda</p>
+</li>
+<li>
+<p>Taxa de transferencia</p>
+</li>
+<li>
+<p>Data Throughput</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="wireless_frequency_bands">6. Wireless Frequency bands</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Licenciadas</p>
+</li>
+<li>
+<p>Não Licenciadas</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2.4 GHz ISM (Industrial, Scientific, and Medical) frequency bands</p>
+</li>
+<li>
+<p>Sub-1 GHz ISM</p>
+<div class="ulist">
+<ul>
+<li>
+<p>433/868/780/915 MHz ISM</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Short Range Device (SRD)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Short-range_device" class="bare">https://en.wikipedia.org/wiki/Short-range_device</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>ULTRA WIDE BAND (UWB)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cellular_iot">7. Cellular <strong>IoT</strong></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Narrowband-Internet of Things (NB-IoT) - 3GPP standards:</p>
+</li>
+<li>
+<p>Long-Term Evolution for Machines (LTE-M) - 3GPP standards:</p>
+</li>
+<li>
+<p>5G</p>
+</li>
+<li>
+<p>GSM</p>
+</li>
+<li>
+<p>LTE</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="short_range_radio_connectivity">8. Short-range radio connectivity</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>TODO</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="wifi">8.1. WIFI</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Short Range</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="zigbee">8.2. Zigbee</h3>
+<div class="paragraph">
+<p>Zigbee é nome de um conjunto de especificações IEEE 802.15.4</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Low-power,</p>
+</li>
+<li>
+<p>Low data rate: 250 kbit/s</p>
+</li>
+<li>
+<p>Physical range: 10 to 20 meters (approx)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>line-of-sight: 10-100 meters</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Applications: Home energy monitors,</p>
+</li>
+<li>
+<p>Specification Version:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Zigbee 2004 Specification (Specification 1.0)</p>
+</li>
+<li>
+<p>Zigbee 2006 Specification</p>
+</li>
+<li>
+<p>Zigbee 2007 Specification (Zigbee PRO</p>
+</li>
+<li>
+<p>Zigbee Smart Energy V2.0 (on top of Zigbee IP</p>
+</li>
+<li>
+<p>Zigbee RF4CE</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Zigbee Alliance is supported by</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Board Members from Comcast, Huawei, The Kroger Co., Landis+Gyr,</p>
+</li>
+<li>
+<p>LEEDARSON, Legrand Group, MMB Networks, NXP Semiconductors,</p>
+</li>
+<li>
+<p>Signify (formerly Philips Lighting), Schneider Electric, Silicon Labs,</p>
+</li>
+<li>
+<p>SmartThings, Somfy, Texas Instruments, and Wulian.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="zigbee_cluster_library_zcl">8.2.1. Zigbee Cluster Library (ZCL).</h4>
+<div class="paragraph">
+<p>Door Lock Cluster</p>
+</div>
+<div class="paragraph">
+<p>At the application layer,
+Zigbee provides a standardized communication protocol through entities called “clusters.”
+Clusters define what commands a device can send or receive,
+and what pieces of data or attributes a device cares about.
+The Door Lock Cluster defines everything from how a door is locked and unlocked to schedules and pin codes for the lock. Thus, at the absolute top of the Zigbee protocol stack, a door lock has a very specific and standardized way that it communicates with the rest of the Zigbee network and the outside world.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="zwave">8.3. ZWave</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>TODO</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="bluethoot_5">8.4. Bluethoot 5</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>TODO</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="thread">8.5. Thread</h3>
+<div class="paragraph">
+<p>OpenThread, an open-source implementation of Thread</p>
+</div>
+<div class="paragraph">
+<p>Thread is a 6LoWPAN-based protocol
+mesh networking (Up to 250 devices)</p>
+</div>
+<div class="paragraph">
+<p>Transport Layer
+* UDP + DTLS</p>
+</div>
+<div class="paragraph">
+<p>Network Layer
+* Distance Vector Routing
+* IPv6
+* 6LoWPAN</p>
+</div>
+<div class="paragraph">
+<p>Organizations:
+* Apple, Arm, Google/Nest, Nordic Semiconductors, NXP Semiconductors, OSRAM, Qualcomm, Schneider Electric, Siemens, Silicon Labs, Somfy, and Yale Security.</p>
+</div>
+<div class="paragraph">
+<p>Products</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Comcast Xfinity Home Security, Echo Show,  Amazon Echo Plus</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="dotdot">8.6. Dotdot</h3>
+<div class="paragraph">
+<p>Dotdot is based on the Zigbee Cluster Library (ZCL)</p>
+</div>
+<div class="paragraph">
+<p>The core of the dotdot language is the zigbee interoperability layer,
+but without the protocol. A layer comprises a protocol, interface,
+and service (the action that the layer performs).
+The dotdot language is agnostic to underlying networks and protocol message structure,
+so it defines only the interface and the action. Hence, it is an interaction model,
+defining the behavior and interaction between devices.</p>
+</div>
+<div class="paragraph">
+<p>For each qualified network, a dotdot specification will also standardize
+or recommend protocols to complete the application layer
+For example, a dotdot device on a zigbee network uses
+standard ZCL APS messages (and defines the format).
+A dotdot device on an IP network uses standard ZCLIP URI messages.</p>
+</div>
+<div class="paragraph">
+<p>Organization: DSR, MMB Networks, NXP Semiconductors, Silicon Labs, and Ubilogix.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="dash7">8.7. DASH7</h3>
+<div class="paragraph">
+<p>Wireless Data Communication that evole from on ISO/IEC 18000-7</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>433 MHz ISM band</p>
+</li>
+<li>
+<p>Medium Range</p>
+</li>
+<li>
+<p>100m to 500m.</p>
+</li>
+<li>
+<p>OSS-7: Dash7 Open Source Stack: Apache License, Version 2.0.</p>
+</li>
+<li>
+<p>ISO/IEC 18000-7 Information technology - Radio frequency identification for item management - Part 7: Parameters for active air interface communications at 433 MHz</p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=ead-fFj4fyc" class="bare">https://www.youtube.com/watch?v=ead-fFj4fyc</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Frequency vs Range</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>433MHz (Range: 1Km )</p>
+</li>
+<li>
+<p>868/915MHz (Range: 0.45 Km) - 863-870 MHz (EU) or the 902-928 MHz (US) frequency bands.</p>
+</li>
+<li>
+<p>2.4 GHz (Range: 0.2 Km)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Tree topology</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Simple Routing (2 hops)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Topology</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Gateway</p>
+</li>
+<li>
+<p>Subcontroller</p>
+</li>
+<li>
+<p>Endpoint</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Features</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mid to Long range</p>
+</li>
+<li>
+<p>Low Power</p>
+</li>
+<li>
+<p>hardwre provider independent</p>
+</li>
+<li>
+<p>Mobile</p>
+</li>
+<li>
+<p>Ful stack spcification</p>
+</li>
+<li>
+<p>Dynamic pull/push</p>
+</li>
+<li>
+<p>Low power wakeup</p>
+</li>
+<li>
+<p>Light: packet size limited to 256bytes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Hardware</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://blog.st.com/wizzilab-wizzikit-da7/" class="bare">https://blog.st.com/wizzilab-wizzikit-da7/</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Use Case</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Wizzilab (france, Parking guidance and information)</p>
+</li>
+<li>
+<p>Matrix product Development (EUA, sensor measure for food industry,</p>
+</li>
+<li>
+<p>university Antwerpen (bird track System: sensor with 1g, bird with 20g)</p>
+</li>
+<li>
+<p>Belivium (Stralo, Museum location content based on beacon)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="wireless_m_bus">8.8. Wireless M-BUS</h3>
+<div class="paragraph">
+<p>A radio variant of M-Bus (Wireless M-Bus) is also specified in EN 13757-4. The M-Bus was developed to fill the need for a system for the networking and remote reading of utility meters, for example to measure the consumption of gas or water in the home.</p>
+</div>
+<div class="paragraph">
+<p>Wireless M-Bus is the European standard for wireless meter communication with gas, electric, water and heat meters (EN 13757).</p>
+</div>
+<div class="paragraph">
+<p>The Silicon Labs wireless M-Bus software and stack provide: Fully compliant wireless M-Bus protocol stack. Worldwide wireless M-Bus support with modes and configurations 868 MHz modes S1, S1-m, S2, T1, T2, C1, C2.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rfid">8.9. RFID</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>TODO</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="6lowpan">9. 6LoWPAN</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>6LoWPAN (Ipv6 Over Low Power Area Network) is defined in RFC 4944.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dotdot_specification">10. Dotdot Specification</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>TODO</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="knx_iot">11. KNX IoT</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>KNX over Thread Stack</p>
+</li>
+<li>
+<p><a href="https://openweave.io/" class="bare">https://openweave.io/</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="lpwa">12. LPWA</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>TODO</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="sigfox">12.1. SIGFOX</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>began in 2009</p>
+</li>
+<li>
+<p>Long Range</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="lora_long_range">12.2. LoRa (Long Range)</h3>
+<div class="listingblock">
+<div class="title">What is LoRa</div>
+<div class="content">
+<pre>LoRa is the physical (PHY) silicon layer, or wireless modulation, used to create the long range communication link
+
+LoRaWAN refers to a network protocol with LoRa chips for communication.
+It is based on the base station, which can monitor 8 frequencies with several spreading factors and almost 43 channels.</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ISM band (Europe) and SRD band</p>
+<div class="ulist">
+<ul>
+<li>
+<p>433.05 MHz to 434.79 MHz</p>
+</li>
+<li>
+<p>863 MHz to 870 MHz.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Up to 55 kilometers</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="nb_iot_nbiot">12.3. NB-IoT (NBIoT)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>20 dB coverage enhancement,</p>
+</li>
+<li>
+<p>100,000 connections in each cell,</p>
+</li>
+<li>
+<p>terminal batteries with a 10-year service lifespan</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ec_gsm">13. EC-GSM</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>TODO</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="lte_cat_m1">13.1. LTE Cat-M1</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>1.4 Frontend(vs. 20 MHz) + 1 Antena (Expensive Chipset)</p>
+</li>
+<li>
+<p>1 Mbps Half-Duplex</p>
+</li>
+<li>
+<p>Power Safe: Power Saving Mode(PSM), Extended Discontinuous Reception (eDRx)</p>
+</li>
+<li>
+<p>Costs</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Modules: $15</p>
+</li>
+<li>
+<p>Data: $1-$3/Month</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>LTE-M Sensor Suite (LinkLabs)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PTCRB and VZN Certified communication board</p>
+</li>
+<li>
+<p>Open Source Atmel L21 project for user Application</p>
+</li>
+<li>
+<p>Open source power/sensor board</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="lte_m">14. LTE-M</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>TODO</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="wemo">15. WeMo</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>TODO</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="long_range_bluetooth">16. long-range Bluetooth</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Data Throughput</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>6 lane</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="standard">17. Standard</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>OMA Lightweight M2M 1.1 (LwM2M 1.1)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="organismos_de_padronização">18. Organismos de Padronização</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>3GPP</p>
+</li>
+<li>
+<p>GSMA</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="security">19. Security</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.gsma.com/iot/iot-security/iot-security-guidelines/">GSMA’s IoT Security Guidelines</a>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ETSI TS 103 645 V1.1.1 (2019-02) - CYBER; Cyber Security for Consumer Internet of Things</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="temas">20. Temas</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/SmartThings">SmartThings</a> hubs</p>
+</li>
+<li>
+<p>Home Energy Management System (HEMS)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="inteligent_transport_system_its">21. Inteligent Transport System (ITS)</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>ITS G5 (802.11p)</p>
+</li>
+<li>
+<p>V2X</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="projetos">22. Projetos</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Google Lighthouse 3.0 (JSON, Node)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="6lowpan_2">23. 6LoWPAN</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=4baf7N2N_Wo" class="bare">https://www.youtube.com/watch?v=4baf7N2N_Wo</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="roll_rpl_ripple">23.1. ROLL RPL "Ripple"</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Proactive Distance Vector</p>
+</li>
+<li>
+<p>Low-Power and Lossy Network (LLN)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ieft">23.2. IEFT</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>6LoWPAN</p>
+</li>
+<li>
+<p>ROLL</p>
+</li>
+<li>
+<p>IPv6</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ieee_802_15_4">23.3. IEEE 802.15.4</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>IEEE 802.15.4 MAC</p>
+</li>
+<li>
+<p>IPv6/6LoWPAN</p>
+</li>
+<li>
+<p>ZigBee Radio Frequency for Consumer Electronics (RF4CE)</p>
+</li>
+<li>
+<p>ZigBee Smart Energy</p>
+</li>
+<li>
+<p>ZigBee® PRO</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="zigbee_protocol">24. ZigBee Protocol</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>ZigBee LightLink (ZLL)</p>
+</li>
+<li>
+<p>ZigBee Home Automation (ZHA)</p>
+</li>
+<li>
+<p>ZigBee Smart Energy (ZSE)</p>
+</li>
+<li>
+<p>ZigBee Building Automation (ZBA),</p>
+</li>
+<li>
+<p>ZigBee Remote Control (ZRC).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="smartconnect_6lowpan">25. SmartConnect 6LoWPAN</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>TODO</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="hardware">26. Hardware</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>SAMR21-XPRO</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Serial Remote Procedure Call</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="z_wave">27. Z-Wave</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Propetary</p>
+</li>
+<li>
+<p>Only one manufacture</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="aplication_protocol">28. Aplication Protocol</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Firewall</p>
+</li>
+<li>
+<p>Compression</p>
+</li>
+<li>
+<p>Lossy links</p>
+</li>
+<li>
+<p>Frame-size, Bandwith Limitation</p>
+</li>
+<li>
+<p>Multicast (Expensive</p>
+</li>
+<li>
+<p>Application Securty</p>
+</li>
+<li>
+<p>Mobility</p>
+</li>
+<li>
+<p>Node Ientification</p>
+</li>
+<li>
+<p>Sleep Cycle</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="aplication_protocol_2">29. Aplication Protocol</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Dotdot 1.0 specification</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Dotdot over Thread</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>RTP</p>
+</li>
+<li>
+<p>HTTP (Webservice: SOAP, REST)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>6lowapp.net (</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>CoAP (from: Constraint Rest Enviroment working group)</p>
+</li>
+<li>
+<p>Protocol X From : Open Connectivity Foundation (OCF) merged with AllSeen Alliance</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="other_application_protocols">30. Other Application Protocols</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Service Discovery</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Service Location Protocol (SLP)</p>
+</li>
+<li>
+<p>Device Profile Web Service (DPWS)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Management</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Simple Network Management Protocol (SNMP)</p>
+</li>
+<li>
+<p>LWM2M</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>M2M Telemetry</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>MQ Telemetry Transport for Swnsors (MQTT-S)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Build Automation (Specilize industry protocol)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>BACnet/IP</p>
+</li>
+<li>
+<p>oBIX</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Energy Industry (Specilize industry protocol)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ANSI c12</p>
+</li>
+<li>
+<p>Device Language Message Specification (DLMS)</p>
+</li>
+<li>
+<p>ZipBee Smart Energy 2.0</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Home</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ECHONET Lite</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="echonet_lite">31. ECHONET Lite</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>HEMS (Home Energy Management System)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="devices_profile_for_web_services_dpws">32. Devices Profile for Web Services (DPWS)</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>TODO</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="web_services_for_devices_ws4d">33. Web Services for Devices (WS4D)</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>WS4D.org</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Web Services for Devices (WS4D)
+is an initiative bringing Service-Oriented Architecture (SOA)
+and Web services technology to the application domains of
+industrial automation, home entertainment, automotive systems
+and telecommunication systems.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="soa_for_devices_soa4d">34. SOA for Devices (SOA4D)</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>SOA4D.org</p>
+</li>
+<li>
+<p>DPWS stack (both C and Java versions)</p>
+</li>
+<li>
+<p>add-ons (like WS-Management and WS-Security implementations)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="service_oriented_device_and_delivery_architecture_soda">35. Service Oriented Device and Delivery Architecture (SODA)</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>TODO</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ws_dd_specifications">36. WS-DD Specifications</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OASIS Web Services Discovery (WS-DD) and Web Services Devices Profile DPWS</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Devices Profile for Web Services (DPWS) 1.1</p>
+</li>
+<li>
+<p>SOAP-over-UDP 1.1</p>
+</li>
+<li>
+<p>Web Services Dynamic Discovery (WS-Discovery) 1.1</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>WS-I Basic Profile Version 1.1 specification
+WS-I Basic Profile 2.0 specification</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="protocols">37. Protocols</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>UPnP - Universal Plug and Play</p>
+</li>
+<li>
+<p>SSDP - Simple Service Discovery Protocol</p>
+</li>
+<li>
+<p>SCPD - Service Control Protocol Definition</p>
+</li>
+<li>
+<p>SOAP - Simple Object Acess Protocol</p>
+</li>
+<li>
+<p>DLNA -</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="universal_plug_and_play_upnp">38. Universal Plug and Play (UPnP)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>UPnP-arch-DeviceArchitecture-v1-0</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://upnp.org/specs/arch/UPnP-arch-DeviceArchitecture-v1.0.pdf" class="bare">http://upnp.org/specs/arch/UPnP-arch-DeviceArchitecture-v1.0.pdf</a></p>
+</li>
+<li>
+<p><a href="http://upnp.org/specs/arch/UPnP-arch-DeviceArchitecture-v1.1-AnnexA.pdf" class="bare">http://upnp.org/specs/arch/UPnP-arch-DeviceArchitecture-v1.1-AnnexA.pdf</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>About</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>UDP/1900</p>
+<div class="ulist">
+<ul>
+<li>
+<p>HTTP over UDP allowing devices to discovery each other</p>
+</li>
+<li>
+<p>Multicast 2.39.255.255.250</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>UPnP Stack</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Discovery - Advertising and Searching</p>
+</li>
+<li>
+<p>Description -  An XML file describing the device</p>
+</li>
+<li>
+<p>Control - Call and action or query for value</p>
+</li>
+<li>
+<p>Eventing - User for announcing state changes</p>
+</li>
+<li>
+<p>Presentation - UI&#8230;&#8203;Web page or management portal</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="multicast_doman_name_system_mdns_bonjour">39. Multicast Doman Name System (mDNS) - (bonjour)</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>TODO</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dns_service_discoverydns_sd">40. DNS Service-Discovery(DNS-SD)</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>TODO</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dlna">41. DLNA</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Linux dLeyna</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reference">42. Reference</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01" class="bare">http://docs.oasis-open.org/ws-dd/ns/dpws/2009/01</a></p>
+</li>
+<li>
+<p>sensei-project.eu</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="picogw">43. PicoGW</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An open source device server, distributed by Kanagawa institute of technology
+It converts various devices specific protocols to webapi
+A minimalist&#8217;s housing Web API gateway that supports ECHONET Lite (works on node.js)
+based on Housing API by Daiwa House Industry(<a href="http://www.daiwahouse.co.jp/lab/HousingAPI/" class="bare">http://www.daiwahouse.co.jp/lab/HousingAPI/</a>)</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/KAIT-HEMS/PicoGW" class="bare">https://github.com/KAIT-HEMS/PicoGW</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ieee_802_11">44. IEEE 802.11</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>IEEE802.11ai - Fast Initial Link Set-up</p>
+</li>
+<li>
+<p><a href="http://www.ieee802.org/11/Reports/tgai_update.htm" class="bare">http://www.ieee802.org/11/Reports/tgai_update.htm</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="network_security">45. Network Security</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>TLS - required for encrypting information in TCP/IP communication</p>
+</li>
+<li>
+<p>IPSec - for communication encrypted with IP layer.</p>
+</li>
+<li>
+<p>PANA</p>
+</li>
+<li>
+<p>DTLS</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="thinking_things_protocol">46. Thinking Things protocol</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Developed by: telfonica</p>
+</li>
+<li>
+<p>Closed protocol</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="echonet_lite_application_communication_interface_aif_specifications">47. ECHONET Lite Application Communication Interface (AIF) Specifications</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>protocol for HEMS (Home Energy Management System)</p>
+</li>
+<li>
+<p><a href="https://www.meti.go.jp/english/press/2019/0206_002.html" class="bare">https://www.meti.go.jp/english/press/2019/0206_002.html</a></p>
+</li>
+<li>
+<p>As international standards for this technology</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ISO/IEC14543-4-3 - Information technology&#8201;&#8212;&#8201;Home electronic systems (HES) architecture&#8201;&#8212;&#8201;Part 3-10: Wireless short-packet (WSP) protocol optimized for energy harvesting&#8201;&#8212;&#8201;Architecture and lower layer protocols</p>
+</li>
+<li>
+<p>IEC62394</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reference_2">48. Reference</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>sensei-project.eu</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+  </div>
+
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Paulo Borges&#39;s Notes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Paulo Borges&#39;s Notes</li><li><a class="u-email" href="mailto:poolborges@hotmail.com">poolborges@hotmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/poolborges"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">poolborges</span></a></li><li><a href="https://www.linkedin.com/in/poolborges"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">poolborges</span></a></li><li><a href="https://www.twitter.com/poolborges"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">poolborges</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This site provide contents written by Paulo Borges (aka poolborges).</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
